@@ -1,0 +1,54 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 1134 >>
+stream
+BT /F2 9 Tf 50 790 Td (CloudSoft Solutions Ltd. \267 1 Dock Road \267 Dublin 2 \267 Ireland) Tj ET
+BT /F2 16 Tf 50 756 Td (Invoice / Rechnung) Tj ET
+BT /F1 10 Tf 50 726 Td (Kaffeer\366sterei Testbohne GmbH) Tj ET
+BT /F1 10 Tf 50 712 Td (R\366ststra\337e 1, 12345 Testhausen) Tj ET
+BT /F1 10 Tf 50 698 Td (Germany) Tj ET
+BT /F1 10 Tf 50 672 Td (Rechnungsnummer: INV-IE-30981) Tj ET
+BT /F1 10 Tf 50 658 Td (Rechnungsdatum: 01.10.2026) Tj ET
+BT /F1 10 Tf 50 644 Td (Leistungszeitraum: 01.10.2026 - 31.10.2026) Tj ET
+BT /F1 10 Tf 50 630 Td (USt-IdNr.: IE9876543X) Tj ET
+BT /F1 10 Tf 50 616 Td (USt-IdNr. des Leistungsempf\344ngers: DE298765432) Tj ET
+BT /F2 9 Tf 50 586 Td (Beschreibung) Tj ET
+BT /F2 9 Tf 480 586 Td (Betrag) Tj ET
+BT /F1 10 Tf 50 570 Td (RoastLog Pro \226 R\366stprofil-Software, Monatslizenz) Tj ET
+BT /F1 10 Tf 480 570 Td (49,00 \200) Tj ET
+BT /F1 10 Tf 300 546 Td (Nettobetrag) Tj ET
+BT /F1 10 Tf 480 546 Td (49,00 \200) Tj ET
+BT /F1 10 Tf 300 531 Td (Steuerschuldnerschaft des Leistungsempf\344ngers \(Reverse Charge\)) Tj ET
+BT /F2 10 Tf 300 516 Td (Rechnungsbetrag) Tj ET
+BT /F2 10 Tf 480 516 Td (49,00 \200) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1636
+%%EOF

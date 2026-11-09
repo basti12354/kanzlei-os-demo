@@ -1,0 +1,28 @@
+Lohn-Testpaket (alles erfunden) – Café Probestück GmbH, November 2026
+
+Der Mandant „Café Probestück GmbH“ ist in der Demo angelegt: Gastronomie (Sofortmeldepflicht),
+sechs Mitarbeitende mit Stammdaten, Lohn 11/2026 wartet auf die Monatsmeldung.
+
+So testen (Portal → Vorschau als „Café Probestück GmbH“ → „Lohn melden“):
+ 1. „Neue Mitarbeiterin / neuer Mitarbeiter“: Emil Neumann aus personalfragebogen-emil-neumann.txt
+    eintragen – Steuer-ID und Sozialversicherungsnummer leer lassen.
+ 2. „CSV wählen“: zeiterfassung-2026-11.csv (Stunden für P002, P003, P004, P007).
+ 3. Jana Wiesel: Krank (Tage) 21, Krank seit 05.10.2026.
+ 4. Max Fallobst → „Stammdaten“ → Letzter Arbeitstag 15.11.2026.
+ 5. „Fertig – Lohndaten senden“.
+
+Was die Prüfung finden muss:
+ - Fehler: Ole Teigmann 13,50 €/Std. unter dem Mindestlohn 13,90 €; Emil Neumann ohne Steuer-ID.
+ - Hinweise: Sara Minz über der Minijob-Grenze (639,40 € > 603 €), Jana Wiesel länger als 6 Wochen krank
+   (Krankengeld), U1-Erstattung, Abmeldung Max Fallobst, Anmeldung und Sofortmeldung Emil Neumann,
+   Versicherungsnummer fehlt.
+ 6. Kanzlei: Klärungsliste → „Rückfrage an Mandant“.
+ 7. Portal: Ole Teigmann Stundenlohn auf 13,90 ändern, Emil Neumann Steuer-ID 78912345670
+    eintragen, zur Versicherungsnummer kurz antworten. „Angaben senden“.
+ 8. Kanzlei: Hinweise abhaken (Minijob nur mit Begründung), „geklärt“, „freigeben“, übergeben.
+ 9. Danach liegt Lohn 12/2026 an; 7 Abrechnungen werden als Leistung erfasst.
+
+Fristen November 2026: Monatsdaten 18.11., Beitragsnachweise zu Beginn des 24.11.,
+SV-Beiträge fällig 26.11., Lohnsteuer-Anmeldung 10.12.
+
+sollwerte.json liest nur der Test (tests/lohn.test.ts), nie die App.

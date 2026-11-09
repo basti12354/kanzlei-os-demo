@@ -1,0 +1,29 @@
+FiBu-Testpaket (Oktober 2026) – alle Firmen, Nummern und Bankdaten sind erfunden.
+Erzeugt mit: node scripts/fibu-testdaten.mjs
+
+Mandant in der Demo: Kaffeerösterei Testbohne GmbH (Mandantenportal → „Vorschau als“).
+Der Buchungsmonat Oktober 2026 ist dort schon angelegt.
+
+So testen
+1. Portal → Belege hochladen → alle Dateien aus belege/ und EINEN Kontoauszug auf einmal wählen:
+   kontoauszug-2026-10.csv (CSV-Export) oder kontoauszug-2026-10.camt053.xml (CAMT.053, gleiche Umsätze).
+   Lädt man beide, erkennt die App die Umsätze als schon vorhanden.
+2. „Fertig – alles für Oktober 2026 hochgeladen“.
+3. Kanzlei: Vorgang „UStVA 10/2026“ → Buchungen. Offen sind absichtlich:
+   - 08 CloudSoft: Reverse Charge (§ 13b) bestätigen → 3123
+   - 09 Autohaus: Steuernummer fehlt, keine Regel → 4540 Kfz-Reparaturen
+   - 11 Scan ohne Text: Parkhaus Zentrum GmbH, 22.10.2026, 18,00, 19 % → 4530
+   - PayPal 59,99 € ohne Beleg → Rückfrage an den Mandanten, danach z. B. 4980 mit Grund
+4. Freigeben, im Portal zustimmen, Übergabe ans FiBu-Tool (simuliert, es wird nichts gesendet).
+   Im Panel „Buchungen“ lassen sich DATEV-Buchungsstapel (CSV), Übergabepaket (JSON) und
+   DATEV-Belegpaket (ZIP mit document.xml, Belegsatzdaten und Belegdateien) herunterladen.
+
+Was automatisch passieren soll
+- 10 Telekom-Zweitschrift wird als Dublette erkannt und nicht gebucht.
+- 03 Kassenbon: Kleinbetragsrechnung (bis 250 €), Rechnungsnummer und Empfänger nicht nötig.
+- 07 XRechnung (UBL) und 12 ZUGFeRD (CII) werden ohne Unsicherheit gelesen.
+- 06 Ausgangsrechnung ist noch nicht bezahlt → Diverse Debitoren (10000).
+- Bankentgelt, USt-Vorauszahlung und Privatentnahme werden ohne Rechnung gebucht (Kontoauszug ist Beleg).
+- Die Kontoführung vom 30.09. gehört nicht in den Oktober und wird übersprungen.
+
+UStVA nach der Klärung (Sollwerte): Kz 81 450 €, Kz 86 1500 €, Kz 46 49 €, Kz 66 293,73 €, Kz 83 -103,23 €

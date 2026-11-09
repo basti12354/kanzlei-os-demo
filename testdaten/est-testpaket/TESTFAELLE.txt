@@ -1,0 +1,66 @@
+Kanzlei OS | ESt-Testfälle 2025
+
+Alle PDFs enthalten frei erfundene Daten und sind ausschließlich für lokale
+Tests gedacht. Sie sind an die Nummern des BMF-Musters angelehnt und keine
+amtlichen Ausdrucke. Die Beträge sind feste Prüfwerte, keine nachgerechnete
+Lohnabrechnung. Das Paket enthält keine echten Steuer-IDs, IBANs oder
+Steuernummern. Nutze für Pflichtfelder bei Bedarf die vorhandene Demo-
+Funktion. Keine Testdokumente an die Finanzverwaltung übermitteln.
+
+So spielst du die Fälle durch
+Lege pro Ordner einen eigenen ESt-Demovorgang für 2025 an oder nutze je Fall
+eine frische Demo. Öffne „Meine Unterlagen“, beantworte die Fragen aus der
+jeweiligen Fallbeschreibung und lade die Lohnsteuerbescheinigung über die
+neue Upload-Option hoch. Prüfe im Kanzlei-Detail unter „Unterlagen“ Werte,
+Fundstelle und Original. Die Zusatzbelege dienen zum Durchspielen der
+vorhandenen Erfassung bzw. als Unterlage für die manuelle Prüfung. Der
+erste Ausbau liest ausschließlich die Lohnsteuerbescheinigung.
+
+01 | Standard - Mara Testquell
+Angestellt: ja. Ein Arbeitgeber, das ganze Jahr. Pendeln: ja. Einfache
+Strecke: 18 km. 186 Tage vor Ort. Homeoffice und weitere Einkünfte: nein.
+Erwartet: Nr. 3 = 48.600,00 EUR; Nr. 4 = 6.132,42 EUR; jeweils Seite 1.
+Fragebogen-Test: Lass zunächst die Anwesenheitstage offen und ergänze sie
+nachträglich. Eine neue automatische Rückfrage ist hier kein Abnahmepunkt.
+
+02 | Angestellt und vermietet - Jan Musterhain
+Angestellt: ja. Ein Arbeitgeber. Vermietung: ja. Eine ganzjährig vermietete
+Wohnung ohne Eigennutzung. Die Miet- und Kostenübersicht enthält die
+Einnahmen und einige Ausgaben; Angaben zur Abschreibung fehlen bewusst.
+Erwartet: Nr. 3 = 62.400,00 EUR; Nr. 4 = 9.658,18 EUR; jeweils Seite 1.
+Die Mietübersicht bleibt ein separater Beleg für die manuelle Prüfung
+der Anlage V. Eine vollständige Anlage V ist aus dem Paket nicht ableitbar.
+
+03 | Arbeitgeberwechsel - Nele Probefeld
+Angestellt: ja. Nordstern im ersten Halbjahr, Südstern im zweiten Halbjahr.
+Kein Überschneiden der Zeiträume, keine weiteren Einkünfte. Beide
+Lohnsteuerbescheinigungen gehören in denselben Vorgang.
+03a: Nr. 3 = 25.150,35 EUR; Nr. 4 = 3.124,56 EUR; jeweils Seite 1.
+03b: Nr. 3 = 31.650,40 EUR; Nr. 4 = 4.617,23 EUR; jeweils Seite 2.
+Erwartet: zwei getrennte Einträge. Das Deckblatt in 03b enthält keine Beträge.
+
+04 | Angestellt und Elterngeld - Leonie Testgarten
+Angestellt: ja. Einkommensersatzleistungen: ja. 3.750,00 EUR Elterngeld
+im April bis Juni 2025 laut separater Zahlungsübersicht. Kind vorhanden;
+Anlage Kind und weitere Angaben bleiben außerhalb des ersten Ausbaus.
+Erwartet: Nr. 3 = 38.400,00 EUR; Nr. 4 = 4.953,37 EUR; jeweils Seite 1.
+Das Elterngeld bleibt getrennt vom Arbeitslohn und von Nr. 15 der
+Arbeitgeberbescheinigung. Die separate Übersicht ist Prüfstoff für später.
+
+Kontrollfälle | separat vom Standardfall hochladen
+K01: Der Dateiname erwähnt 2025, die PDF und ihr Zeitraum weisen 2024 aus.
+      Erwartet: Prüfhinweis mit dem erkannten Jahr; keine Werte übernehmen.
+K02: Nr. 4 zeigt absichtlich „unlesbar“. Nr. 5 enthält direkt darunter 0,00.
+      Erwartet: Nr. 3 = 48.600,00 EUR auf Seite 1, Nr. 4 bleibt offen.
+Zusätzlich: Versuche, eine Miet- oder Elterngeldübersicht über die neue
+      Lohnsteuer-Upload-Option hochzuladen. Sie darf keinen Vorschlag erzeugen.
+
+sollwerte.json enthält dieselben Erwartungen in maschinenlesbarer Form.
+Die Statuscodes darin beschreiben die erwartete Bedeutung; die App kann
+ihre vorhandenen Statusnamen verwenden.
+
+Fachliche Referenzen
+BMF-Muster für die Lohnsteuerbescheinigung 2025:
+https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Lohnsteuer/2025-02-20-geaen-ausdruck-elektron-LSt-besch-2025.html
+ELSTER-Anleitung 2025, Anlage N, Anlage V und Einkommensersatzleistungen:
+https://www.elster.de/elsterweb/helpGlobal?themaGlobal=help_est_ufa_10_2025

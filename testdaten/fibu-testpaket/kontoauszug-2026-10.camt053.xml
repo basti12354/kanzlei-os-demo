@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:camt.053.001.08">
+  <BkToCstmrStmt>
+    <GrpHdr><MsgId>TESTBANK-2026-10</MsgId><CreDtTm>2026-11-01T06:00:00</CreDtTm></GrpHdr>
+    <Stmt>
+      <Id>2026-10-001</Id>
+      <ElctrncSeqNb>10</ElctrncSeqNb>
+      <CreDtTm>2026-11-01T06:00:00</CreDtTm>
+      <FrToDt><FrDtTm>2026-09-30T00:00:00</FrDtTm><ToDtTm>2026-10-31T23:59:59</ToDtTm></FrToDt>
+      <Acct><Id><IBAN>DE00123456780000111122</IBAN></Id><Ccy>EUR</Ccy><Ownr><Nm>Kaffeerösterei Testbohne GmbH</Nm></Ownr></Acct>
+      <Ntry>
+        <NtryRef>1</NtryRef>
+        <Amt Ccy="EUR">25.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-09-30</Dt></BookgDt>
+        <ValDt><Dt>2026-09-30</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Testbank AG</Nm></Pty></Cdtr>
+          </RltdPties>
+          <RmtInf><Ustrd>Kontoführungsentgelt 09/2026</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>2</NtryRef>
+        <Amt Ccy="EUR">49.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-02</Dt></BookgDt>
+        <ValDt><Dt>2026-10-02</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>CloudSoft Solutions Ltd.</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>IE29AIBK93115212345678</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>RoastLog Pro Subscription INV-IE-30981</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>3</NtryRef>
+        <Amt Ccy="EUR">46.41</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-03</Dt></BookgDt>
+        <ValDt><Dt>2026-10-03</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Hetzner Online GmbH</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>DE92760700120750007700</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>R0021044215 Kd 99812</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>4</NtryRef>
+        <Amt Ccy="EUR">71.40</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-07</Dt></BookgDt>
+        <ValDt><Dt>2026-10-07</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Telekom Deutschland GmbH</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>DE00300400000123456789</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>Kd-Nr 4711 RE 2026-10-884512</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>5</NtryRef>
+        <Amt Ccy="EUR">23.80</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-10</Dt></BookgDt>
+        <ValDt><Dt>2026-10-10</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Schreibwaren Krause e.K.</Nm></Pty></Cdtr>
+          </RltdPties>
+          <RmtInf><Ustrd>Kartenzahlung Schreibwaren Krause</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>6</NtryRef>
+        <Amt Ccy="EUR">1130.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-12</Dt></BookgDt>
+        <ValDt><Dt>2026-10-12</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Finanzamt Testhausen</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>DE00860000000086001000</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>Umsatzsteuer 09/2026 StNr 12/345/67890</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>7</NtryRef>
+        <Amt Ccy="EUR">89.25</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-14</Dt></BookgDt>
+        <ValDt><Dt>2026-10-14</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Stadtwerke Testhausen GmbH</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>DE00100500000012345678</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>Lastschrift SW-2026-10-5521</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>8</NtryRef>
+        <Amt Ccy="EUR">2140.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-15</Dt></BookgDt>
+        <ValDt><Dt>2026-10-15</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Rohkaffee Import Grosshandel GmbH</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>DE00200400000600700800</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>RE-77812</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>9</NtryRef>
+        <Amt Ccy="EUR">416.50</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-20</Dt></BookgDt>
+        <ValDt><Dt>2026-10-20</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Autohaus Beispielstadt GmbH</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>DE00500105175400000000</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>Rechnung 55120</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>10</NtryRef>
+        <Amt Ccy="EUR">1605.00</Amt>
+        <CdtDbtInd>CRDT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-20</Dt></BookgDt>
+        <ValDt><Dt>2026-10-20</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NTRF+166</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Dbtr><Pty><Nm>Cafe Sonnenseite Testbetrieb OHG</Nm></Pty></Dbtr>
+            <DbtrAcct><Id><IBAN>DE00370400440532013000</IBAN></Id></DbtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>AR-2026-031</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>11</NtryRef>
+        <Amt Ccy="EUR">18.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-22</Dt></BookgDt>
+        <ValDt><Dt>2026-10-22</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Parkhaus Zentrum GmbH</Nm></Pty></Cdtr>
+          </RltdPties>
+          <RmtInf><Ustrd>Parkhaus Zentrum Ticket 8812</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>12</NtryRef>
+        <Amt Ccy="EUR">297.50</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-23</Dt></BookgDt>
+        <ValDt><Dt>2026-10-23</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Druckerei Testdruck GmbH</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>DE00700202700015012345</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>DR-2026-1188</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>13</NtryRef>
+        <Amt Ccy="EUR">1500.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-25</Dt></BookgDt>
+        <ValDt><Dt>2026-10-25</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Mia Testbohne</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>DE00120300000012345678</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>Privatentnahme Oktober</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>14</NtryRef>
+        <Amt Ccy="EUR">59.99</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-26</Dt></BookgDt>
+        <ValDt><Dt>2026-10-26</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>PayPal Europe S.a.r.l. et Cie S.C.A</Nm></Pty></Cdtr>
+            <CdtrAcct><Id><IBAN>LU89751000135104200E</IBAN></Id></CdtrAcct>
+          </RltdPties>
+          <RmtInf><Ustrd>1043398712 PP.1234.PP Kauf bei Haendler XY</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <NtryRef>15</NtryRef>
+        <Amt Ccy="EUR">12.90</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>BOOK</Cd></Sts>
+        <BookgDt><Dt>2026-10-30</Dt></BookgDt>
+        <ValDt><Dt>2026-10-30</Dt></ValDt>
+        <BkTxCd><Prtry><Cd>NDDT+105</Cd><Issr>DK</Issr></Prtry></BkTxCd>
+        <NtryDtls><TxDtls>
+          <RltdPties>
+            <Cdtr><Pty><Nm>Testbank AG</Nm></Pty></Cdtr>
+          </RltdPties>
+          <RmtInf><Ustrd>Kontoführungsentgelt 10/2026</Ustrd></RmtInf>
+        </TxDtls></NtryDtls>
+      </Ntry>
+      <Ntry>
+        <Amt Ccy="EUR">99.00</Amt>
+        <CdtDbtInd>DBIT</CdtDbtInd>
+        <Sts><Cd>PDNG</Cd></Sts>
+        <BookgDt><Dt>2026-10-31</Dt></BookgDt>
+        <NtryDtls><TxDtls><RltdPties><Cdtr><Pty><Nm>Vorgemerkt GmbH</Nm></Pty></Cdtr></RltdPties><RmtInf><Ustrd>noch nicht gebucht</Ustrd></RmtInf></TxDtls></NtryDtls>
+      </Ntry>
+    </Stmt>
+  </BkToCstmrStmt>
+</Document>
