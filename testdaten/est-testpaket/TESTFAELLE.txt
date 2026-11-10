@@ -1,8 +1,8 @@
 Kanzlei OS | ESt-Testfälle 2025
 
-Alle PDFs enthalten frei erfundene Daten und sind ausschließlich für lokale
-Tests gedacht. Sie sind an die Nummern des BMF-Musters angelehnt und keine
-amtlichen Ausdrucke. Die Beträge sind feste Prüfwerte, keine nachgerechnete
+Alle Dateien enthalten frei erfundene Daten und sind für Tests in der Demo
+gedacht. Die Lohnsteuerbescheinigungen sind an die Nummern des BMF-Musters
+angelehnt. Die Beträge sind feste Prüfwerte, keine nachgerechnete
 Lohnabrechnung. Das Paket enthält keine echten Steuer-IDs, IBANs oder
 Steuernummern. Nutze für Pflichtfelder bei Bedarf die vorhandene Demo-
 Funktion. Keine Testdokumente an die Finanzverwaltung übermitteln.
@@ -30,6 +30,14 @@ Einnahmen und einige Ausgaben; Angaben zur Abschreibung fehlen bewusst.
 Erwartet: Nr. 3 = 62.400,00 EUR; Nr. 4 = 9.658,18 EUR; jeweils Seite 1.
 Die Mietübersicht bleibt ein separater Beleg für die manuelle Prüfung
 der Anlage V. Eine vollständige Anlage V ist aus dem Paket nicht ableitbar.
+
+Mandantenakte im ESt-Pilot
+Lade die Miet- und Kostenübersicht (PDF), die Vermietungsnotiz (DOCX)
+und die Einnahmen und Kosten (XLSX) unter „Kosten der vermieteten Immobilie“
+hoch. Öffne in der Kanzleiansicht „Mandantenakte · ESt-Uploads“ bei Jan
+Musterhain. Alle drei Dateien liegen im Vorgangsjahr 2025. Die Word-Datei
+trägt absichtlich 2024 im Dateinamen. „Ansehen“ zeigt die PDF-Seite,
+die Word-Notiz samt Tabelle oder die Excel-Blätter „Einnahmen“ und „Kosten“.
 
 03 | Arbeitgeberwechsel - Nele Probefeld
 Angestellt: ja. Nordstern im ersten Halbjahr, Südstern im zweiten Halbjahr.
