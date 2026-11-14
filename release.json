@@ -1,0 +1,12 @@
+{
+  "release": "2026-11-14-est-ocr-onboarding",
+  "tests": 148,
+  "sourceBase": "ecfb6d2",
+  "features": [
+    "Anlage V: neun Felder, lokale Scan-OCR, Quellen und Einzelprüfung",
+    "Aufwandsfragebogen vor Angebot",
+    "Gebührenregler mit centgenauer Eingabe",
+    "Go-Live-Übersicht: lokale Nachweise und Plattformlücken"
+  ],
+  "indexSha256": "9801f6b04275b6dc221d186416a23a98ff00dd05fcd2d169d9eda5a97d7aa009"
+}
