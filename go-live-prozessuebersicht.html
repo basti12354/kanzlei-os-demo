@@ -713,14 +713,14 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 .skill-node.local-red .skill-orb, .skill-phase.local-red .skill-orb { color: #ff9e9b; border-color: #ff9e9b; }
 .skill-phase.local-yellow .skill-orb { color: #f2cc70; border-color: #f2cc70; }
 .skill-node.local-green::after { content: 'Lokal abgenommen · separater Stand'; color: #a8ebc3; font-size: .7rem; display: block; }
-.skill-node.local-red::after { content: 'Offen'; color: #ffc3c0; font-size: .7rem; display: block; }
+.skill-node.local-red::after { content: 'Offen'; color: #ffc3c0; font-size: .7rem; display: block; white-space: nowrap; flex-shrink: 0; }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt</a>
 <header class="hero">
   <div class="wrap">
-    <div class="hero-top"><span class="eyebrow">Kanzlei OS</span><span>Stand <time datetime="2026-11-14">14. November 2026</time> · Quellstand <a href="https://github.com/basti12354/kanzlei-os/commit/ecfb6d26f4948a3bd35350f0d56ae2aeaa3e1bf1">ecfb6d2</a> + geprüfte ESt-/Onboarding-Änderungen vom 14.11.</span></div>
+    <div class="hero-top"><span class="eyebrow">Kanzlei OS</span><span>Stand <time datetime="2026-11-15">15. November 2026</time> · Quellstand <a href="https://github.com/basti12354/kanzlei-os/commit/ecfb6d26f4948a3bd35350f0d56ae2aeaa3e1bf1">ecfb6d2</a> + geprüfte ESt-/Onboarding-Änderungen vom 14.11.</span></div>
     <h1>Prozesse und Go-Live-Reife</h1>
     <p class="lead">Vom Mandatsbeginn bis zu Übermittlung, Bescheid und Rechnung. Die Ampeln zeigen, welche Schritte vor dem Einsatz mit echten Mandantendaten noch Arbeit oder Abnahme brauchen.</p>
     <div class="summary"><span>9 Abläufe</span><span>88 bewertete Schritte</span><span>14 gemeinsame Aufgaben</span></div>
@@ -764,7 +764,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <p class="intro">Zwei belegte Entwicklungsstände: der abgenommene Agentenlauf und die aktuelle Pages-Demo. Grün bei „Lokal“ gilt für den benannten Testumfang. Die Go-Live-Ampeln in den Prozessschritten bewerten weiterhin den Einsatz mit echten Mandantendaten.</p>
 <div class="legend">
 <div><span class="status green">Lokal · 20 / 20 abgenommen</span><p>Ursprüngliche lokale Aufgaben im separaten Integrationsstand <code>87baf51</code>. Abschlussreview bestanden; 160 gespeicherte Prüflogs am 14.11. auf Prüfsumme und erfolgreichen Exitcode kontrolliert.</p></div>
-<div><span class="status green">Demo · ESt-Ausbau getestet</span><p>148 Tests, vollständiger Qualitätscheck und Build bestanden. Fragebogen → Gebührenentscheidung sowie Anlage-V-Erfassung im Browser geprüft. Neun Jahresbeträge aus echtem synthetischem Bildscan erkannt; OCR-Gegenfälle getestet.</p></div>
+<div><span class="status green">Demo · ESt-Ausbau getestet</span><p>150 Tests, vollständiger Qualitätscheck und Build bestanden. Fragebogen → Gebührenentscheidung sowie Anlage-V-Erfassung im Browser geprüft. Neun Jahresbeträge aus echtem synthetischem Bildscan erkannt; OCR-Gegenfälle getestet. Live-Prüfung auf GitHub Pages am 15.11.: Fragebogen, 350,37-€-Gebühr, Foto-OCR und bestätigter Vermietungsüberschuss 5.374,50 €.</p></div>
 <div><span class="status yellow">Zusammenführung · noch offen</span><p>Der 20er-Integrationsstand ist noch nicht Bestandteil dieser Pages-Demo. Erst beide Stände zusammenführen und den gemeinsamen Stand erneut prüfen.</p></div>
 </div>
 <ul class="points">
@@ -775,7 +775,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <li><strong>Noch lokal:</strong> Stände integrieren; objektbezogene Anlage V ergänzen. Die aktuelle Demo erfasst Gesamtsummen je Kategorie.</li>
 <li><strong>Weiterhin Plattform / Abnahme:</strong> Hosting, Test-/Produktivtrennung, echte Anmeldung, serverseitige Mandatsrechte, Audit-Speicher, Backups, produktive Schnittstellen und dokumentierte fachliche/Datenschutz-Freigaben.</li>
 </ul>
-<p class="meta">Nachweise: aktueller Arbeitsstand mit 148 Tests; separates Abschlussreview vom 13.11.2026 für 87baf51 mit 1.491 Projekttests und 78 Orchestrierungs-Tests. Die historischen Tests wurden für diese Bestandsaufnahme nicht erneut ausgeführt; ihre gespeicherten Nachweise wurden geprüft.</p>
+<p class="meta">Nachweise: aktueller Arbeitsstand mit 150 Tests; separates Abschlussreview vom 13.11.2026 für 87baf51 mit 1.491 Projekttests und 78 Orchestrierungs-Tests. Die historischen Tests wurden für diese Bestandsaufnahme nicht erneut ausgeführt; ihre gespeicherten Nachweise wurden geprüft.</p>
 </section>
 <section id="diagramme" aria-labelledby="diagramme-titel">
   <h2 id="diagramme-titel">Ablaufdiagramme</h2>
@@ -3094,7 +3094,7 @@ Arbeitsrahmen
 </details>
 </section>
 </main>
-<footer><div class="wrap">Kanzlei OS · Go-Live-Übersicht · 14. November 2026</div></footer>
+<footer><div class="wrap">Kanzlei OS · Go-Live-Übersicht · 15. November 2026</div></footer>
 <script>
 
 const statusFilter = document.getElementById('reife-filter');
