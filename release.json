@@ -1,12 +1,17 @@
 {
-  "release": "2026-11-14-est-ocr-onboarding",
-  "tests": 150,
-  "sourceBase": "ecfb6d2",
+  "release": "2026-11-16-lokale-integration",
+  "sourceCommit": "61d4d267ac13fcd91d80c9c83c4949fbfcd523d8",
+  "tests": 1527,
+  "orchestrationTests": 78,
+  "localTasksAccepted": 22,
+  "liveVerification": "pending",
+  "sensitiveDataAllowed": false,
+  "storage": "Browser-local; no central recipient",
   "features": [
-    "Anlage V: neun Felder, lokale Scan-OCR, Quellen und Einzelprüfung",
-    "Aufwandsfragebogen vor Angebot",
-    "Gebührenregler mit centgenauer Eingabe",
-    "Go-Live-Übersicht: lokale Nachweise und Plattformlücken"
+    "Mietobjekte mit getrennten Quellen und Entscheidungen",
+    "Aufwandsfragebogen vor Gebührenentscheidung",
+    "PDF, Word und Excel im Browser",
+    "5 synthetische ESt-Testakten"
   ],
-  "indexSha256": "a464c391a18e03bda391e251b53c2edf68ad60e81c61279e68f63c5b974970b7"
+  "indexSha256": "bd852656bbde17a7327cf3dc486b444106df6a11782c8799ca033d196f9026d9"
 }

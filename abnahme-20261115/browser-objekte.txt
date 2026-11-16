@@ -1,0 +1,495 @@
+- banner:
+  - generic: Kanzlei OS Prototyp
+  - navigation "Perspektive":
+    - link "Kanzlei":
+      - /url: "#heute"
+    - link "Steuerberaterin 1":
+      - /url: "#stb"
+      - text: Steuerberaterin
+      - generic: "1"
+    - link "Mandant":
+      - /url: "#portal"
+  - generic "Demo":
+    - text: Demo
+  - option "schnell"
+  - option "normal" [selected]
+  - option "langsam"
+- main:
+  - paragraph: Arbeitskorb
+  - heading "Guten Abend" [level=1]
+  - paragraph: 1 Entscheidung wartet auf dich. Alles andere läuft automatisch oder liegt beim Mandanten.
+  - button "JM Prüfung + Gestaltung Jan Musterhain · ESt 2025 · vor 23 Std.":
+    - generic: JM
+    - generic: Prüfung + Gestaltung
+    - generic: Jan Musterhain · ESt 2025 · vor 23 Std.
+  - paragraph: "Freigabe gesperrt: 23 Positionen sind noch nicht entschieden (4 fehlt, 9 prüfen, 10 manuell). Bitte im Erklärungsentwurf übernehmen, Wert ändern oder als nicht relevant markieren."
+  - paragraph: "Erklärungsentwurf Version 1: jede Position übernehmen, Wert ändern (mit Begründung) oder als nicht relevant markieren – unter „Alle Details“ → „Erklärungsentwurf“."
+  - list:
+    - text: Unterlagen auf Vollständigkeit prüfen
+    - text: 2 Dateien und 0 Angaben auf Vollständigkeit geprüft · Inhalt prüft die Steuerberaterin
+    - text: Vollständig?
+    - text: "Entscheidung: ja"
+    - text: Entwurf + Vergleich Vorjahr
+    - text: "Entwurf v1 erstellt (Steuerjahr 2025, Rechtsstand 2025) · 14 Positionen, davon 11 zu entscheiden: 1 ok, 0 fehlt, 9 prüfen, 1 manuell · keine Steuerberechnung"
+  - generic "Notiz hinzufügen"
+  - button "An Mandant zur Freigabe" [disabled]
+  - button "Rückfrage an Mandant"
+  - button "Alle Details"
+- dialog:
+  - button "Fertig"
+  - paragraph: Einkommensteuererklärung
+  - heading "ESt 2025" [level=1]
+  - link "Jan Musterhain":
+    - /url: "#"
+  - button "Mandantenakte"
+  - generic: fällig 01.03.2027
+  - 'generic "Jahresstart: Unterlagen-Abfrage im Portal"'
+  - generic "Mandant beantwortet Fragen + lädt Unterlagen hoch"
+  - generic "Datenabruf vorausgefüllte Erklärung"
+  - generic "Unterlagen auf Vollständigkeit prüfen"
+  - generic "Vollständig?"
+  - generic "Entwurf + Vergleich Vorjahr"
+  - generic "Prüfung + Gestaltung"
+  - generic "Freigabe durch Mandant im Portal (§ 87d AO)"
+  - generic "Übermittlung"
+  - paragraph: Schritt 7 von etwa 9
+  - generic: Bei der Steuerberaterin · vor 23 Std.
+  - heading "Prüfung + Gestaltung" [level=2]
+  - paragraph: Diese Entscheidung trifft die Steuerberaterin – normalerweise in ihrem Arbeitskorb.
+  - paragraph: "Freigabe gesperrt: 23 Positionen sind noch nicht entschieden (4 fehlt, 9 prüfen, 10 manuell). Bitte im Erklärungsentwurf übernehmen, Wert ändern oder als nicht relevant markieren."
+  - paragraph: "Erklärungsentwurf Version 1: jede Position übernehmen, Wert ändern (mit Begründung) oder als nicht relevant markieren – unter „Alle Details“ → „Erklärungsentwurf“."
+  - button "An Mandant zur Freigabe" [disabled]
+  - button "Rückfrage an Mandant"
+  - generic "Erklärungsentwurf v1 · 23 offen":
+    - text: Erklärungsentwurf
+    - generic: v1 · 23 offen
+  - paragraph: Version 1 · Rechtsstand 2025 · berechnet 15.11., 23:04
+  - paragraph: "24 Positionen zu entscheiden: 1 ok · 4 fehlt · 9 prüfen · 10 manuell. Keine Steuerberechnung, keine Erstattungsprognose."
+  - paragraph: "Freigabe gesperrt: 23 Positionen sind noch nicht entschieden (4 fehlt, 9 prüfen, 10 manuell). Bitte im Erklärungsentwurf übernehmen, Wert ändern oder als nicht relevant markieren."
+  - button "Neu berechnen"
+  - button "PDFs erneut auslesen"
+  - generic: Erneutes Auslesen aktualisiert die Werte aus gespeicherten Lohnsteuer-PDFs und Vermietungsbelegen (inklusive Scan-OCR im Browser). Entscheidungen bleiben, solange sich der Ausgangswert nicht ändert.
+  - region "Mietobjekte":
+    - heading "Mietobjekte und Belegzuordnung" [level=4]
+    - paragraph: Jede vermietete Einheit erhält eigene Werte, Quellen und Entscheidungen. Belege werden ausdrücklich zugeordnet. Alte Sammelwerte müssen abgeglichen werden.
+    - button "Mietobjekt anlegen"
+    - paragraph:
+      - text: Testobjekt A · Testweg 1, Wohnung EG
+      - button "Bearbeiten"
+    - paragraph:
+      - text: Testobjekt B · Testweg 2, Wohnung OG
+      - button "Bearbeiten"
+    - paragraph:
+      - text: 2025_Mieteinnahmen_Musterhain.pdf
+      - combobox "2025_Mieteinnahmen_Musterhain.pdf":
+        - option "Bitte Mietobjekt auswählen" [disabled] [selected]
+        - option "Testobjekt A · Testweg 1, Wohnung EG"
+        - option "Testobjekt B · Testweg 2, Wohnung OG"
+    - paragraph:
+      - text: 2025_Kosten_Vermietung_Musterhain.pdf
+      - combobox "2025_Kosten_Vermietung_Musterhain.pdf":
+        - option "Bitte Mietobjekt auswählen" [disabled] [selected]
+        - option "Testobjekt A · Testweg 1, Wohnung EG"
+        - option "Testobjekt B · Testweg 2, Wohnung OG"
+    - paragraph:
+      - text: 2025_Kosten_Vermietung_Musterhain_2.pdf
+      - combobox "2025_Kosten_Vermietung_Musterhain_2.pdf":
+        - option "Bitte Mietobjekt auswählen" [disabled]
+        - option "Testobjekt A · Testweg 1, Wohnung EG" [selected]
+        - option "Testobjekt B · Testweg 2, Wohnung OG"
+    - paragraph:
+      - text: 2025_Zinsbescheinigung_Darlehen_Musterhain.pdf
+      - combobox "2025_Zinsbescheinigung_Darlehen_Musterhain.pdf":
+        - option "Bitte Mietobjekt auswählen" [disabled] [selected]
+        - option "Testobjekt A · Testweg 1, Wohnung EG"
+        - option "Testobjekt B · Testweg 2, Wohnung OG"
+  - heading "Hauptvordruck" [level=4]
+  - table:
+    - rowgroup:
+      - row "Position · Quelle Wert Status":
+        - columnheader "Position · Quelle"
+        - columnheader "Wert"
+        - columnheader "Status"
+    - rowgroup:
+      - 'row "Familienstand: ledig Persönliche Angaben Mandant · Antworten: partner, frueherVerheiratet, trennung, verwitwet Aus den Ja/Nein-Antworten abgeleitet. – ok Bestätigen Wert ändern Nicht relevant"':
+        - 'cell "Familienstand: ledig Persönliche Angaben Mandant · Antworten: partner, frueherVerheiratet, trennung, verwitwet Aus den Ja/Nein-Antworten abgeleitet."':
+          - text: "Familienstand: ledig"
+          - generic: Persönliche Angaben
+          - generic: "Mandant · Antworten: partner, frueherVerheiratet, trennung, verwitwet"
+          - generic: Aus den Ja/Nein-Antworten abgeleitet.
+        - cell "–"
+        - cell "ok Bestätigen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Bestätigen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+  - heading "Anlage V" [level=4]
+  - paragraph: PDF-Text und gescannte Vermietungsbelege werden automatisch ausgelesen. Erkannte Beträge mit Quelle bestätigen; unklare Beträge bleiben zur Erfassung offen. OCR läuft auf diesem Gerät. Einnahmen und Kosten getrennt erfassen. Betriebskosten enthalten zum Beispiel Grundsteuer, Gebäudeversicherung und umlagefähige Kosten. Verwaltung und Reparaturen nur zusätzlich erfassen, soweit sie dort noch nicht enthalten sind. Hausgeldzahlungen und Rücklagen sind nicht pauschal Werbungskosten. Belegjahr und steuerliche Zuordnung bitte prüfen. Belege mehrerer Objekte bitte getrennt hochladen und oben dem jeweiligen Mietobjekt zuordnen.
+  - table:
+    - rowgroup:
+      - row "Position · Quelle Wert Status":
+        - columnheader "Position · Quelle"
+        - columnheader "Wert"
+        - columnheader "Status"
+    - rowgroup:
+      - 'row "Beleg einem Mietobjekt zuordnen: 2025_Mieteinnahmen_Musterhain.pdf Objektzuordnung Bitte Objektstammdaten oder Belegzuordnung korrigieren. Diese Sperre kann nicht durch eine Betragsentscheidung aufgehoben werden. – fehlt"':
+        - 'cell "Beleg einem Mietobjekt zuordnen: 2025_Mieteinnahmen_Musterhain.pdf Objektzuordnung Bitte Objektstammdaten oder Belegzuordnung korrigieren. Diese Sperre kann nicht durch eine Betragsentscheidung aufgehoben werden."':
+          - text: "Beleg einem Mietobjekt zuordnen: 2025_Mieteinnahmen_Musterhain.pdf"
+          - generic: Objektzuordnung
+          - generic: Bitte Objektstammdaten oder Belegzuordnung korrigieren. Diese Sperre kann nicht durch eine Betragsentscheidung aufgehoben werden.
+        - cell "–"
+        - cell "fehlt":
+          - generic: fehlt
+      - 'row "Beleg einem Mietobjekt zuordnen: 2025_Kosten_Vermietung_Musterhain.pdf Objektzuordnung Bitte Objektstammdaten oder Belegzuordnung korrigieren. Diese Sperre kann nicht durch eine Betragsentscheidung aufgehoben werden. – fehlt"':
+        - 'cell "Beleg einem Mietobjekt zuordnen: 2025_Kosten_Vermietung_Musterhain.pdf Objektzuordnung Bitte Objektstammdaten oder Belegzuordnung korrigieren. Diese Sperre kann nicht durch eine Betragsentscheidung aufgehoben werden."':
+          - text: "Beleg einem Mietobjekt zuordnen: 2025_Kosten_Vermietung_Musterhain.pdf"
+          - generic: Objektzuordnung
+          - generic: Bitte Objektstammdaten oder Belegzuordnung korrigieren. Diese Sperre kann nicht durch eine Betragsentscheidung aufgehoben werden.
+        - cell "–"
+        - cell "fehlt":
+          - generic: fehlt
+      - 'row "Beleg einem Mietobjekt zuordnen: 2025_Zinsbescheinigung_Darlehen_Musterhain.pdf Objektzuordnung Bitte Objektstammdaten oder Belegzuordnung korrigieren. Diese Sperre kann nicht durch eine Betragsentscheidung aufgehoben werden. – fehlt"':
+        - 'cell "Beleg einem Mietobjekt zuordnen: 2025_Zinsbescheinigung_Darlehen_Musterhain.pdf Objektzuordnung Bitte Objektstammdaten oder Belegzuordnung korrigieren. Diese Sperre kann nicht durch eine Betragsentscheidung aufgehoben werden."':
+          - text: "Beleg einem Mietobjekt zuordnen: 2025_Zinsbescheinigung_Darlehen_Musterhain.pdf"
+          - generic: Objektzuordnung
+          - generic: Bitte Objektstammdaten oder Belegzuordnung korrigieren. Diese Sperre kann nicht durch eine Betragsentscheidung aufgehoben werden.
+        - cell "–"
+        - cell "fehlt":
+          - generic: fehlt
+      - row "Kaltmiete Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Kaltmiete 10.800,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 10.800,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Kaltmiete Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Kaltmiete 10.800,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Kaltmiete
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - text: PDF 2025_Kosten_Vermietung_Musterhain_2.pdf
+          - link "· Seite 1":
+            - /url: blob:http://127.0.0.1:5174/352666cd-559f-4acd-b7ec-dcb7ffeee50a#page=1
+          - text: · „Kaltmiete 10.800,00 EUR“ · Inhaltsnachweis fehlt
+          - generic: Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "10.800,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Nebenkostenvorauszahlungen Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Nebenkostenvorauszahlungen 2.160,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 2.160,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Nebenkostenvorauszahlungen Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Nebenkostenvorauszahlungen 2.160,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Nebenkostenvorauszahlungen
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - text: PDF 2025_Kosten_Vermietung_Musterhain_2.pdf
+          - link "· Seite 1":
+            - /url: blob:http://127.0.0.1:5174/352666cd-559f-4acd-b7ec-dcb7ffeee50a#page=1
+          - text: · „Nebenkostenvorauszahlungen 2.160,00 EUR“ · Inhaltsnachweis fehlt
+          - generic: Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "2.160,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Betriebskosten Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Betriebskosten 2.310,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 2.310,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Betriebskosten Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Betriebskosten 2.310,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Betriebskosten
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - text: PDF 2025_Kosten_Vermietung_Musterhain_2.pdf
+          - link "· Seite 1":
+            - /url: blob:http://127.0.0.1:5174/352666cd-559f-4acd-b7ec-dcb7ffeee50a#page=1
+          - text: · „Betriebskosten 2.310,00 EUR“ · Inhaltsnachweis fehlt
+          - generic: Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "2.310,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Erhaltungsaufwand Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Erhaltungsaufwand 780,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 780,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Erhaltungsaufwand Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Erhaltungsaufwand 780,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Erhaltungsaufwand
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - text: PDF 2025_Kosten_Vermietung_Musterhain_2.pdf
+          - link "· Seite 1":
+            - /url: blob:http://127.0.0.1:5174/352666cd-559f-4acd-b7ec-dcb7ffeee50a#page=1
+          - text: · „Erhaltungsaufwand 780,00 EUR“ · Inhaltsnachweis fehlt
+          - generic: Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "780,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Schuldzinsen Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Schuldzinsen 1.650,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 1.650,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Schuldzinsen Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Schuldzinsen 1.650,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Schuldzinsen
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - text: PDF 2025_Kosten_Vermietung_Musterhain_2.pdf
+          - link "· Seite 1":
+            - /url: blob:http://127.0.0.1:5174/352666cd-559f-4acd-b7ec-dcb7ffeee50a#page=1
+          - text: · „Schuldzinsen 1.650,00 EUR“ · Inhaltsnachweis fehlt
+          - generic: Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "1.650,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Nebenkostenerstattung 120,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. -120,00 € prüfen Übernehmen Wert ändern Nicht relevant"':
+        - 'cell "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Nebenkostenerstattung 120,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen."':
+          - text: "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter"
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - text: PDF 2025_Kosten_Vermietung_Musterhain_2.pdf
+          - link "· Seite 1":
+            - /url: blob:http://127.0.0.1:5174/352666cd-559f-4acd-b7ec-dcb7ffeee50a#page=1
+          - text: · „Nebenkostenerstattung 120,00 EUR“ · Inhaltsnachweis fehlt
+          - generic: Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "-120,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Hausverwaltung und sonstige Verwaltungskosten Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Verwaltungskosten 240,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 240,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Hausverwaltung und sonstige Verwaltungskosten Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Verwaltungskosten 240,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Hausverwaltung und sonstige Verwaltungskosten
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - text: PDF 2025_Kosten_Vermietung_Musterhain_2.pdf
+          - link "· Seite 1":
+            - /url: blob:http://127.0.0.1:5174/352666cd-559f-4acd-b7ec-dcb7ffeee50a#page=1
+          - text: · „Verwaltungskosten 240,00 EUR“ · Inhaltsnachweis fehlt
+          - generic: Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "240,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Sonstige Werbungskosten der Vermietung Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Sonstige Werbungskosten 85,50 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 85,50 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Sonstige Werbungskosten der Vermietung Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Sonstige Werbungskosten 85,50 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Sonstige Werbungskosten der Vermietung
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - text: PDF 2025_Kosten_Vermietung_Musterhain_2.pdf
+          - link "· Seite 1":
+            - /url: blob:http://127.0.0.1:5174/352666cd-559f-4acd-b7ec-dcb7ffeee50a#page=1
+          - text: · „Sonstige Werbungskosten 85,50 EUR“ · Inhaltsnachweis fehlt
+          - generic: Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "85,50 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Abschreibung (AfA) Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Jahres-AfA 2.400,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 2.400,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Abschreibung (AfA) Testobjekt A · Testweg 1, Wohnung EG PDF 2025_Kosten_Vermietung_Musterhain_2.pdf · Seite 1 · „Jahres-AfA 2.400,00 EUR“ · Inhaltsnachweis fehlt Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Abschreibung (AfA)
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - text: PDF 2025_Kosten_Vermietung_Musterhain_2.pdf
+          - link "· Seite 1":
+            - /url: blob:http://127.0.0.1:5174/352666cd-559f-4acd-b7ec-dcb7ffeee50a#page=1
+          - text: · „Jahres-AfA 2.400,00 EUR“ · Inhaltsnachweis fehlt
+          - generic: Inhaltsnachweis fehlt. Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "2.400,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Kaltmiete Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Kaltmiete Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Kaltmiete
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Nebenkostenvorauszahlungen Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Nebenkostenvorauszahlungen Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Nebenkostenvorauszahlungen
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Betriebskosten Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Betriebskosten Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Betriebskosten
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Erhaltungsaufwand Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Erhaltungsaufwand Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Erhaltungsaufwand
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Schuldzinsen Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Schuldzinsen Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Schuldzinsen
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter"
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Hausverwaltung und sonstige Verwaltungskosten Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Hausverwaltung und sonstige Verwaltungskosten Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Hausverwaltung und sonstige Verwaltungskosten
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Sonstige Werbungskosten der Vermietung Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Sonstige Werbungskosten der Vermietung Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Sonstige Werbungskosten der Vermietung
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Abschreibung (AfA) Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Für die Abschreibung fehlen Angaben aus dem Kaufvertrag sowie Baujahr und Gebäudeanteil oder ein belegter AfA-Jahresbetrag. – fehlt Wert ändern Nicht relevant"':
+        - 'cell "Abschreibung (AfA) Testobjekt B · Testweg 2, Wohnung OG miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch Für die Abschreibung fehlen Angaben aus dem Kaufvertrag sowie Baujahr und Gebäudeanteil oder ein belegter AfA-Jahresbetrag."':
+          - text: Abschreibung (AfA)
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "miete: Geprüft · vm_kosten: Geprüft · darlehen: Geprüft · kaufvertrag: Fehlt noch"
+          - generic: Für die Abschreibung fehlen Angaben aus dem Kaufvertrag sowie Baujahr und Gebäudeanteil oder ein belegter AfA-Jahresbetrag.
+        - cell "–"
+        - cell "fehlt Wert ändern Nicht relevant":
+          - generic: fehlt
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.erhaltung Altdaten abgleichen Mandant: V.erhaltung = „1.234,56 € · Synthetische Reparaturrechnung geprüft“ Historischer Wert 1.234,56 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.erhaltung Altdaten abgleichen Mandant: V.erhaltung = „1.234,56 € · Synthetische Reparaturrechnung geprüft“ Historischer Wert 1.234,56 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.erhaltung
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.erhaltung = „1.234,56 € · Synthetische Reparaturrechnung geprüft“"
+          - generic: Historischer Wert 1.234,56 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Summe Einnahmen Testobjekt A · Testweg 1, Wohnung EG Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Summe Einnahmen Testobjekt A · Testweg 1, Wohnung EG Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Summe Einnahmen
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - generic: "Berechnet: Summe bestätigter Einzelpositionen"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Summe Werbungskosten einschließlich AfA Testobjekt A · Testweg 1, Wohnung EG Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Summe Werbungskosten einschließlich AfA Testobjekt A · Testweg 1, Wohnung EG Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Summe Werbungskosten einschließlich AfA
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - generic: "Berechnet: Summe bestätigter Einzelpositionen"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Überschuss / Verlust aus Vermietung Testobjekt A · Testweg 1, Wohnung EG Berechnet: Einnahmen − Werbungskosten Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Überschuss / Verlust aus Vermietung Testobjekt A · Testweg 1, Wohnung EG Berechnet: Einnahmen − Werbungskosten Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Überschuss / Verlust aus Vermietung
+          - generic: Testobjekt A · Testweg 1, Wohnung EG
+          - generic: "Berechnet: Einnahmen − Werbungskosten"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Summe Einnahmen Testobjekt B · Testweg 2, Wohnung OG Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Summe Einnahmen Testobjekt B · Testweg 2, Wohnung OG Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Summe Einnahmen
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "Berechnet: Summe bestätigter Einzelpositionen"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Summe Werbungskosten einschließlich AfA Testobjekt B · Testweg 2, Wohnung OG Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Summe Werbungskosten einschließlich AfA Testobjekt B · Testweg 2, Wohnung OG Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Summe Werbungskosten einschließlich AfA
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "Berechnet: Summe bestätigter Einzelpositionen"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Überschuss / Verlust aus Vermietung Testobjekt B · Testweg 2, Wohnung OG Berechnet: Einnahmen − Werbungskosten Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Überschuss / Verlust aus Vermietung Testobjekt B · Testweg 2, Wohnung OG Berechnet: Einnahmen − Werbungskosten Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Überschuss / Verlust aus Vermietung
+          - generic: Testobjekt B · Testweg 2, Wohnung OG
+          - generic: "Berechnet: Einnahmen − Werbungskosten"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Gesamter Überschuss / Verlust Alle Mietobjekte Berechnet: Summe der geprüften Objektergebnisse – prüfen"':
+        - 'cell "Gesamter Überschuss / Verlust Alle Mietobjekte Berechnet: Summe der geprüften Objektergebnisse"':
+          - text: Gesamter Überschuss / Verlust
+          - generic: Alle Mietobjekte
+          - generic: "Berechnet: Summe der geprüften Objektergebnisse"
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+  - heading "Haushaltsnahe Aufwendungen (§ 35a EStG)" [level=4]
+  - table:
+    - rowgroup:
+      - row "Position · Quelle Wert Status":
+        - columnheader "Position · Quelle"
+        - columnheader "Wert"
+        - columnheader "Status"
+    - rowgroup:
+      - 'row "Haushaltsnahe Anteile aus der Nebenkostenabrechnung Haushaltsnahe Aufwendungen Nebenkostenabrechnung Ihrer Wohnung: 2025_Nebenkostenabrechnung_Musterhain.pdf Von der Steuerberaterin zu erfassen. Unterlagen: Nebenkostenabrechnung Ihrer Wohnung: 1 Datei. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Haushaltsnahe Anteile aus der Nebenkostenabrechnung Haushaltsnahe Aufwendungen Nebenkostenabrechnung Ihrer Wohnung: 2025_Nebenkostenabrechnung_Musterhain.pdf Von der Steuerberaterin zu erfassen. Unterlagen: Nebenkostenabrechnung Ihrer Wohnung: 1 Datei."':
+          - text: Haushaltsnahe Anteile aus der Nebenkostenabrechnung
+          - generic: Haushaltsnahe Aufwendungen
+          - generic: "Nebenkostenabrechnung Ihrer Wohnung: 2025_Nebenkostenabrechnung_Musterhain.pdf"
+          - generic: "Von der Steuerberaterin zu erfassen. Unterlagen: Nebenkostenabrechnung Ihrer Wohnung: 1 Datei."
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+  - generic "Unterlagen 1/6":
+    - text: Unterlagen
+    - generic: 1/6
+  - generic "Ablaufdiagramm"
+  - generic "Verlauf 13":
+    - text: Verlauf
+    - generic: "13"
+  - generic "Anmerkungen zu „Prüfung + Gestaltung“ 0":
+    - text: Anmerkungen zu „Prüfung + Gestaltung“
+    - generic: "0"
+  - generic "Erweitert"
+- generic: Beleg zugeordnet

@@ -1,0 +1,92 @@
+- banner:
+  - generic: Kanzlei OS Prototyp
+  - navigation "Perspektive":
+    - link "Kanzlei":
+      - /url: "#heute"
+    - link "Steuerberaterin 2":
+      - /url: "#stb"
+      - text: Steuerberaterin
+      - generic: "2"
+    - link "Mandant":
+      - /url: "#portal"
+  - generic "Demo":
+    - text: Demo
+  - option "schnell"
+  - option "normal" [selected]
+  - option "langsam"
+- main:
+  - paragraph: Arbeitskorb
+  - heading "Guten Abend" [level=1]
+  - paragraph: 2 Entscheidungen warten auf dich. Alles andere läuft automatisch oder liegt beim Mandanten.
+  - button "JM Prüfung + Gestaltung Jan Musterhain · ESt 2025 · vor 24 Std.":
+    - generic: JM
+    - generic: Prüfung + Gestaltung
+    - generic: Jan Musterhain · ESt 2025 · vor 24 Std.
+  - button "QI Aufwand prüfen, Gebühr festlegen und Mandat annehmen QA Integration November · Onboarding · gerade eben":
+    - generic: QI
+    - generic: Aufwand prüfen, Gebühr festlegen und Mandat annehmen
+    - generic: QA Integration November · Onboarding · gerade eben
+  - generic: Vor der Entscheidung prüfen
+  - checkbox "Keine Interessenkollision mit bestehenden Mandaten (§ 57 StBerG, Konfliktprüfung)" [checked]
+  - text: Keine Interessenkollision mit bestehenden Mandaten (§ 57 StBerG, Konfliktprüfung)
+  - checkbox "Auftrag liegt im zulässigen Tätigkeitsbereich und kann fachlich übernommen werden" [checked]
+  - text: Auftrag liegt im zulässigen Tätigkeitsbereich und kann fachlich übernommen werden
+  - generic: Aufwand laut Mandantenfragebogen
+  - list:
+    - listitem: Welche Unterlagen aus dem Vorjahr können Sie bereitstellen? Nur Bescheid vorhanden
+    - listitem: Wie sind Ihre Unterlagen vorbereitet? Vollständig und digital sortiert
+  - paragraph: Offene Angaben vor dem Angebot klären. Der Vorschlag bewertet diese Angaben nicht automatisch mit Zuschlägen.
+  - generic: Welchen Satz möchtest du ansetzen?
+  - generic: StBVV-Rahmen 141,90 € – 1.135,20 €
+  - text: "Betrag fein wählen:"
+  - generic: 350,37 € netto pro Jahr
+  - slider "Gebühr netto fein wählen": "350.37"
+  - generic: Minimum 141,90 €
+  - generic: Kanzleitarif 380,00 €
+  - generic: Maximum 1.135,20 €
+  - button "Kanzleitarif 380,00 €":
+    - generic: Kanzleitarif
+    - generic: 380,00 €
+  - button "Mindestsatz 141,90 €":
+    - generic: Mindestsatz
+    - generic: 141,90 €
+  - button "Mittelgebühr 638,55 €":
+    - generic: Mittelgebühr
+    - generic: 638,55 €
+  - button "Höchstsatz 1.135,20 €":
+    - generic: Höchstsatz
+    - generic: 1.135,20 €
+  - button "Eigener Betrag …":
+    - generic: Eigener Betrag
+    - generic: …
+  - text: Betrag netto pro Jahr in €
+  - spinbutton "Betrag netto pro Jahr in €": "350.37"
+  - generic: Gründe nach § 11 StBVV (Pflicht beim gewählten Satz)
+  - checkbox "Umfang der Arbeit" [checked]
+  - text: Umfang der Arbeit
+  - checkbox "Schwierigkeit"
+  - text: Schwierigkeit
+  - checkbox "Bedeutung der Angelegenheit"
+  - text: Bedeutung der Angelegenheit
+  - checkbox "Einkommens- und Vermögensverhältnisse"
+  - text: Einkommens- und Vermögensverhältnisse
+  - checkbox "Haftungsrisiko"
+  - text: Haftungsrisiko
+  - generic: Verwandtschaft oder ob du das Mandat gern machst, zählen nach § 11 nicht. Ein Preisnachlass, etwa für die Familie, ist eine Vergütungsvereinbarung (§§ 4, 4a).
+  - text: Notiz zur Begründung (optional, landet im Protokoll)
+  - textbox "Notiz zur Begründung (optional, landet im Protokoll)" [active]:
+    - /placeholder: z. B. viele Belege, Auslandsbezug
+    - text: "Synthetischer Abnahmetest: sortierte Unterlagen, Gebühr individuell gewählt."
+  - paragraph: "Angebot an den Mandanten: 416,94 € inkl. USt pro Jahr (350,37 € netto) – liegt im geschätzten Rahmen."
+  - generic "Berechnung nach StBVV"
+  - list:
+    - text: Anfrage über Website/Portal
+    - text: Anfrage gesendet · „Synthetischer Abnahmetest Einkommensteuer“
+    - text: "Fragebogen: Rechtsform, Umfang, Belegvolumen"
+    - text: "Fragebogen absenden · Was beschreibt Sie am besten?: Privatperson · Wie viel haben Sie im Jahr ungefähr verdient – vor Abzug der Steuern?: 20.000 – 40.000 € · Welche Unterlagen aus dem Vorjahr können Sie bereitstellen?: Nur Bescheid vorhanden · Wie sind Ihre Unterlagen vorbereitet?: Vollständig und digital sortiert"
+    - text: Aufwand auswerten und internen Gebührenvorschlag erstellen
+    - text: Angebot 81470529, Fassung 1 erzeugt
+  - generic "Notiz hinzufügen"
+  - button "Ja"
+  - button "Nein"
+  - button "Alle Details"

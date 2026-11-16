@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mandantenakte · synthetischer Browsertest</title>
+    <style>body{color:#17212b;margin:24px;font:16px/1.5 system-ui}button{margin:5px;padding:8px}table{border-collapse:collapse;width:100%}td,th{text-align:left;border:1px solid #aab4be;padding:8px}pre{white-space:pre-wrap}.BESTANDEN{background:#e0f5e7}.FEHLGESCHLAGEN{background:#ffddd9}</style>
+    <script type="module" crossorigin src="/kanzlei-os-demo/assets/akte-BvOU1RDs.js"></script>
+    <link rel="modulepreload" crossorigin href="/kanzlei-os-demo/assets/DateiVorschau-DkdLmW9u.js">
+    <link rel="stylesheet" crossorigin href="/kanzlei-os-demo/assets/DateiVorschau-CSMDGoxM.css">
+  </head>
+  <body>
+    <h1>Mandantenakte · Browserpflichtnachweise</h1>
+    <p>
+      Nur synthetische Fixtures. Echte Anwendung, IndexedDB, pdf.js, Mammoth/DOMPurify und read-excel-file. Keine
+      Anbieterantworten.
+    </p>
+    <button id="start">Start / Reset und alle Fälle ausführen</button><button id="cleanup">Testdaten aufräumen</button>
+    <p id="status" role="status">OFFEN · Noch nicht ausgeführt</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Fall</th>
+          <th>Soll</th>
+          <th>Ist</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="results"></tbody>
+    </table>
+    <h2>Dialoge visuell prüfen</h2>
+    <p>
+      Nach dem Lauf: Format öffnen, Inhalt und Originaldownload prüfen, Dialog schließen. PDF-Text wird zusätzlich durch
+      pdf.js geprüft; interne Texte des Browser-PDF-Viewers werden nicht behauptet.
+    </p>
+    <div id="inspect"></div>
+    <div id="preview"></div>
+    <h2>Strukturierte Ergebnisse</h2>
+    <pre id="json">[]</pre>
+  </body>
+</html>

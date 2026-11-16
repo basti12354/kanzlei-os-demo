@@ -720,7 +720,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <a class="skip" href="#main">Zum Inhalt</a>
 <header class="hero">
   <div class="wrap">
-    <div class="hero-top"><span class="eyebrow">Kanzlei OS</span><span>Stand <time datetime="2026-11-15">15. November 2026</time> · Quellstand <a href="https://github.com/basti12354/kanzlei-os/commit/ecfb6d26f4948a3bd35350f0d56ae2aeaa3e1bf1">ecfb6d2</a> + geprüfte ESt-/Onboarding-Änderungen vom 14.11.</span></div>
+    <div class="hero-top"><span class="eyebrow">Kanzlei OS</span><span>Stand <time datetime="2026-11-16">16. November 2026</time> · Lokal integrierter Stand · <a href="abnahme-20261115/index.html">Abnahme vom 15.11.</a></span></div>
     <h1>Prozesse und Go-Live-Reife</h1>
     <p class="lead">Vom Mandatsbeginn bis zu Übermittlung, Bescheid und Rechnung. Die Ampeln zeigen, welche Schritte vor dem Einsatz mit echten Mandantendaten noch Arbeit oder Abnahme brauchen.</p>
     <div class="summary"><span>9 Abläufe</span><span>88 bewertete Schritte</span><span>14 gemeinsame Aufgaben</span></div>
@@ -761,21 +761,21 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 
 <section id="fortschritt" aria-labelledby="fortschritt-titel">
 <h2 id="fortschritt-titel">Was ist bereits erledigt?</h2>
-<p class="intro">Zwei belegte Entwicklungsstände: der abgenommene Agentenlauf und die aktuelle Pages-Demo. Grün bei „Lokal“ gilt für den benannten Testumfang. Die Go-Live-Ampeln in den Prozessschritten bewerten weiterhin den Einsatz mit echten Mandantendaten.</p>
+<p class="intro">Gemeinsamer lokaler Entwicklungsstand: Agentenlauf, ESt/OCR, Onboarding und objektbezogene Anlage V sind integriert. Der Pages-Build vom 16.11. enthält diesen integrierten Stand; die Demo bleibt ausschließlich für synthetische Daten. Grün bei „Lokal“ gilt für den benannten Testumfang. Die Go-Live-Ampeln in den Prozessschritten bewerten weiterhin den Einsatz mit echten Mandantendaten.</p>
 <div class="legend">
-<div><span class="status green">Lokal · 20 / 20 abgenommen</span><p>Ursprüngliche lokale Aufgaben im separaten Integrationsstand <code>87baf51</code>. Abschlussreview bestanden; 160 gespeicherte Prüflogs am 14.11. auf Prüfsumme und erfolgreichen Exitcode kontrolliert.</p></div>
-<div><span class="status green">Demo · ESt-Ausbau getestet</span><p>150 Tests, vollständiger Qualitätscheck und Build bestanden. Fragebogen → Gebührenentscheidung sowie Anlage-V-Erfassung im Browser geprüft. Neun Jahresbeträge aus echtem synthetischem Bildscan erkannt; OCR-Gegenfälle getestet. Live-Prüfung auf GitHub Pages am 15.11.: Fragebogen, 350,37-€-Gebühr, Foto-OCR und bestätigter Vermietungsüberschuss 5.374,50 €.</p></div>
-<div><span class="status yellow">Zusammenführung · noch offen</span><p>Der 20er-Integrationsstand ist noch nicht Bestandteil dieser Pages-Demo. Erst beide Stände zusammenführen und den gemeinsamen Stand erneut prüfen.</p></div>
+<div><span class="status green">Lokal · 22 / 22 abgenommen</span><p>20 Originalaufgaben aus <code>87baf51</code> und beide Folgeaufgaben gemeinsam integriert und erneut geprüft. <a href="abnahme-20261115/index.html">Abnahmebericht und Testnachweise öffnen</a>.</p></div>
+<div><span class="status green">Demo · gemeinsamer Integrationsstand</span><p>Pages-Build vom 16.11.: Fragebogen vor Gebührenentscheidung, centgenauer Regler, objektbezogene Anlage V sowie PDF-, Word- und Excel-Vorschauen. <a href="pages-abnahme-20261116.html">Veröffentlichung und Live-Prüfung</a>. Die frühere Demo vom 15.11. wird damit ersetzt.</p></div>
+<div><span class="status green">Zusammenführung · lokal bestanden</span><p>1.527 Projekttests, 78 Orchestrierungstests, Qualitätscheck und Build. Elf Browserfälle zur Mandantenakte sowie Objektverwaltung, Aufwandsfragebogen und 350,37-€-Gebühr geprüft. PDF-Seiten werden jetzt auch ohne eingebauten PDF-Viewer angezeigt.</p></div>
 </div>
 <ul class="points">
 <li><strong>Onboarding:</strong> Mandant beantwortet Aufwandsfragen vor der Gebührenentscheidung; Vorjahresunterlagen, neue Mietobjekte, Objektanzahl, Sortierung und Buchungsstand werden erfasst.</li>
 <li><strong>Gebühren:</strong> Schieberegler und centgenaue Eingabe; Begründung und Rahmenprüfung bleiben wirksam. Angebot erst nach Annahme durch die Kanzlei.</li>
 <li><strong>Anlage V:</strong> automatische PDF-Textauslese und lokale Scan-/Foto-OCR (keine Belegübertragung an OCR-Dienst); neun Einzelpositionen, Einnahmen-/Kostensummen und Überschuss bzw. Verlust; keine stille Nullsetzung offener Werte. Alte Sammelwerte bleiben zum Abgleich sichtbar. Erkannte Beträge bleiben prüfpflichtige Vorschläge; unklare, doppelte und Vorjahreswerte werden nicht blind übernommen.</li>
 <li><strong>Belegjahre:</strong> Vorjahr bei Hausgeld-/Nebenkostenabrechnungen auswählbar; keine automatische Übernahme von Vorjahresbeträgen. Lohnsteuerbescheinigungen behalten ihre Steuerjahresprüfung.</li>
-<li><strong>Noch lokal:</strong> Stände integrieren; objektbezogene Anlage V ergänzen. Die aktuelle Demo erfasst Gesamtsummen je Kategorie.</li>
+<li><strong>Lokal testbereit:</strong> Mietobjekte mit eigenen Stammdaten, Belegen, Entscheidungen, Rückfragen und Überschüssen. Altsummen werden nicht automatisch verteilt. Offene Zuordnung und doppelte Originale sperren die Freigabe.</li>
 <li><strong>Weiterhin Plattform / Abnahme:</strong> Hosting, Test-/Produktivtrennung, echte Anmeldung, serverseitige Mandatsrechte, Audit-Speicher, Backups, produktive Schnittstellen und dokumentierte fachliche/Datenschutz-Freigaben.</li>
 </ul>
-<p class="meta">Nachweise: aktueller Arbeitsstand mit 150 Tests; separates Abschlussreview vom 13.11.2026 für 87baf51 mit 1.491 Projekttests und 78 Orchestrierungs-Tests. Die historischen Tests wurden für diese Bestandsaufnahme nicht erneut ausgeführt; ihre gespeicherten Nachweise wurden geprüft.</p>
+<p class="meta">Nachweise: gemeinsamer lokaler Qualitätscheck, Build und Testlauf vom 15.11.2026. Details, Grenzen und Browsernachweise im <a href="abnahme-20261115/index.html">Abnahmebericht</a>. Grün gilt für den definierten lokalen Testumfang; die fachliche Erprobung mit realistischen Testakten folgt.</p>
 </section>
 <section id="diagramme" aria-labelledby="diagramme-titel">
   <h2 id="diagramme-titel">Ablaufdiagramme</h2>
@@ -1355,7 +1355,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Feste Regeln</strong> · Beauftragte Fachprozesse bei aktivem Mandat und zulässigem Beginn starten</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/main/src/domain/flows/onboarding.ts">Prozessdefinition und Projektstand</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/src/domain/flows/onboarding.ts">Prozessdefinition und Projektstand</a></p>
 </details><details class="process" id="p-belege" open>
 <summary><h3>Belegeingang und Mandantenakte</h3><span class="meta">Laufend · Teil von ESt und FiBu · 7 Schritte</span></summary>
 <p class="desc">Vom Eingang bis zur fachlich zugeordneten Originaldatei. Der Ablauf liegt heute in den Fachprozessen.</p>
@@ -1411,7 +1411,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Original, Fundstelle und Entscheidung in der Mandantenakte verknüpfen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/main/docs/ARCHITEKTUR.md#digitale-mandantenakte">Prozessdefinition und Projektstand</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/docs/ARCHITEKTUR.md#digitale-mandantenakte">Prozessdefinition und Projektstand</a></p>
 </details><details class="process" id="p-fibu" open>
 <summary><h3>Finanzbuchhaltung und UStVA</h3><span class="meta">Monatlich · Unternehmen · 13 Schritte</span></summary>
 <p class="desc">Vom Kontoauszug und Beleg bis zur geprüften Übergabe, Umsatzsteuer-Voranmeldung und Monatsfortführung.</p>
@@ -1509,7 +1509,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Schnittstellen</strong> · Übermittlungsstatus und Quittung vom Fachsystem abrufen und dem Zeitraum zuordnen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/main/src/domain/flows/laufend.ts">Prozessdefinition und Projektstand</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/src/domain/flows/laufend.ts">Prozessdefinition und Projektstand</a></p>
 </details><details class="process" id="p-lohn" open>
 <summary><h3>Lohnabrechnung</h3><span class="meta">Monatlich · Arbeitgeber · 12 Schritte</span></summary>
 <p class="desc">Vom Personalstamm über den Monatslauf bis zu Abrechnung, Meldungen und Rücklieferung ins Portal.</p>
@@ -1600,7 +1600,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Aufgaben und Termine für Jahreswechsel, Bescheinigungen und Korrekturen anlegen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/main/src/domain/flows/laufend.ts">Prozessdefinition und Projektstand</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/main/docs/LOHN.md">Lohnprozess und Schnittstellen im Projekt</a> · <a href="https://www.gkv-datenaustausch.de/arbeitgeber/entgeltabrechnung/entgeltabrechnung.jsp">GKV-Datenaustausch · Systemuntersuchung</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/src/domain/flows/laufend.ts">Prozessdefinition und Projektstand</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/docs/LOHN.md">Lohnprozess und Schnittstellen im Projekt</a> · <a href="https://www.gkv-datenaustausch.de/arbeitgeber/entgeltabrechnung/entgeltabrechnung.jsp">GKV-Datenaustausch · Systemuntersuchung</a></p>
 </details><details class="process" id="p-est" open>
 <summary><h3>Einkommensteuer</h3><span class="meta">Jährlich · Privatmandate · 12 Schritte</span></summary>
 <p class="desc">Von der Unterlagenabfrage über Entwurf und Rückfragen bis zur bestätigten Übermittlung.</p>
@@ -1688,7 +1688,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Quittung ablegen, Mandant informieren und die Bescheidprüfung anstoßen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/main/src/domain/flows/est.ts">Prozessdefinition und Projektstand</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/main/docs/ENTWURF.md">ESt-Erklärungsentwurf im Projekt</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/main/docs/LSTB_AUSLESE.md">Lohnsteuer-PDF-Auslese im Projekt</a> · <a href="https://github.com/basti12354/kanzlei-os/issues/14">Issue #14</a> · <a href="https://github.com/basti12354/kanzlei-os/issues/15">Issue #15</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__87d.html">§ 87d AO · Datenübermittlung im Auftrag</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/src/domain/flows/est.ts">Prozessdefinition und Projektstand</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/docs/ENTWURF.md">ESt-Erklärungsentwurf im Projekt</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/docs/LSTB_AUSLESE.md">Lohnsteuer-PDF-Auslese im Projekt</a> · <a href="https://github.com/basti12354/kanzlei-os/issues/14">Issue #14</a> · <a href="https://github.com/basti12354/kanzlei-os/issues/15">Issue #15</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__87d.html">§ 87d AO · Datenübermittlung im Auftrag</a></p>
 </details><details class="process" id="p-ja" open>
 <summary><h3>Jahresabschluss und EÜR</h3><span class="meta">Jährlich · Unternehmen · 10 Schritte</span></summary>
 <p class="desc">Von Abschlussunterlagen und Buchungsstand über Bilanz oder EÜR bis zu Abgabe und gegebenenfalls Offenlegung.</p>
@@ -1765,7 +1765,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Abgabenachweis archivieren und Aufgaben für Bescheidprüfung und Abrechnung erstellen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/main/src/domain/flows/jaehrlich.ts">Prozessdefinition und Projektstand</a> · <a href="https://www.gesetze-im-internet.de/hgb/__245.html">§ 245 HGB · Unterzeichnung</a> · <a href="https://www.gesetze-im-internet.de/hgb/__325.html">§ 325 HGB · Offenlegung</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/src/domain/flows/jaehrlich.ts">Prozessdefinition und Projektstand</a> · <a href="https://www.gesetze-im-internet.de/hgb/__245.html">§ 245 HGB · Unterzeichnung</a> · <a href="https://www.gesetze-im-internet.de/hgb/__325.html">§ 325 HGB · Offenlegung</a></p>
 </details><details class="process" id="p-fristen" open>
 <summary><h3>Fristen und Bescheidprüfung</h3><span class="meta">Querschnittlich · Alle Mandate · 10 Schritte</span></summary>
 <p class="desc">Vom Bescheideingang über Frist und Abweichung bis zur erledigten Zahlung oder zum Verfahrensabschluss.</p>
@@ -1839,7 +1839,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Nach Abschluss Bescheid und Nachweise ablegen und offene Folgeaufgaben anzeigen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/main/src/domain/flows/jaehrlich.ts">Prozessdefinition und Projektstand</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__122a.html">§ 122a AO · Digitale Bekanntgabe</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__355.html">§ 355 AO · Einspruchsfrist</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/src/domain/flows/jaehrlich.ts">Prozessdefinition und Projektstand</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__122a.html">§ 122a AO · Digitale Bekanntgabe</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__355.html">§ 355 AO · Einspruchsfrist</a></p>
 </details><details class="process" id="p-zusatzauftrag" open>
 <summary><h3>Zusatzaufträge im Bestandsmandat</h3><span class="meta">Bei Bedarf · Lokaler Entwicklungsstand · 6 Schritte</span></summary>
 <p class="desc">Von der Anfrage für eine zusätzliche Leistung bis zur Bestätigung oder Ablehnung. Die Schritte sind im lokalen Arbeitsstand sichtbar.</p>
@@ -1888,7 +1888,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Freigegebenen Absagehinweis zustellen und die Zustellung protokollieren</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/main/src/domain/flows/zusatzauftrag.ts">Lokale Prozessdefinition</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/src/domain/flows/zusatzauftrag.ts">Lokale Prozessdefinition</a></p>
 </details><details class="process" id="p-abrechnung" open>
 <summary><h3>Kanzleiabrechnung</h3><span class="meta">Monatlich und nach Leistung · 6 Schritte</span></summary>
 <p class="desc">Von der erbrachten Leistung über die Rechnung bis zum Zahlungseingang. Querschnittsfunktion im Prototyp.</p>
@@ -1937,7 +1937,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Schnittstellen</strong> · Rechnung, Zahlung und Korrekturbeleg an die FiBu übergeben und den Abgleich nachweisen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/main/src/domain/abrechnung/abrechnung.ts">Prozessdefinition und Projektstand</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/src/domain/abrechnung/abrechnung.ts">Prozessdefinition und Projektstand</a></p>
 </details>
 </section>
 <section id="gemeinsam" aria-labelledby="gemeinsam-titel">
@@ -2058,7 +2058,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <section id="quellen" aria-labelledby="quellen-titel">
   <h2 id="quellen-titel">Grundlagen der Bewertung</h2>
   <p class="intro">Die Bewertung stützt sich auf Prozessdefinitionen und Fachmodule im Repository, den Architekturplan und die verifizierten GitHub-Issues. Lokaler Funktionsstand und Go-Live-Ampeln beschreiben unterschiedliche Kriterien. Externe Quellen sind bei den betroffenen Aufgaben verlinkt.</p>
-  <div class="sources"><a href="https://github.com/basti12354/kanzlei-os/blob/main/docs/ARCHITEKTUR.md">Architekturplan</a> <a href="https://github.com/basti12354/kanzlei-os/blob/main/docs/RECHT_UMSETZUNG.md">Rechtsprüfung im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/main/docs/LOHN.md">Lohnprozess und Schnittstellen im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/main/docs/ENTWURF.md">ESt-Erklärungsentwurf im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/main/docs/LSTB_AUSLESE.md">Lohnsteuer-PDF-Auslese im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/issues">GitHub-Issues im privaten Repository</a></div>
+  <div class="sources"><a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/docs/ARCHITEKTUR.md">Architekturplan</a> <a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/docs/RECHT_UMSETZUNG.md">Rechtsprüfung im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/docs/LOHN.md">Lohnprozess und Schnittstellen im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/docs/ENTWURF.md">ESt-Erklärungsentwurf im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/61d4d267ac13fcd91d80c9c83c4949fbfcd523d8/docs/LSTB_AUSLESE.md">Lohnsteuer-PDF-Auslese im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/issues">GitHub-Issues im privaten Repository</a></div>
 </section>
 <section id="aufgaben" aria-labelledby="aufgaben-titel">
 <h2 id="aufgaben-titel">To-do-Liste bis zum Go-Live</h2>
@@ -2078,17 +2078,19 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 </dialog>
 <details class="skill-list" id="aufgaben-liste" open>
 <summary>Listenansicht</summary>
-<p class="intro">Die ursprünglichen lokalen Aufgaben sind abgenommen und liefern wiederverwendbare Regeln, Datenformate und Tests. Die Zusammenführung mit der aktuellen Demo steht noch aus. Die folgenden Phasen zeigen, welche Entscheidungen, Anschlüsse und Nachweise noch erforderlich sind.</p>
+<p class="intro">Die ursprünglichen lokalen Aufgaben sind abgenommen und liefern wiederverwendbare Regeln, Datenformate und Tests. Die Zusammenführung mit dem aktuellen ESt-/Onboarding-Stand ist lokal abgeschlossen. Die folgenden Phasen zeigen, welche Entscheidungen, Anschlüsse und Nachweise noch erforderlich sind.</p>
 <nav class="diagram-nav" aria-label="Phasen der To-do-Liste"><a href="#aufgaben-lokal">Lokal</a><a href="#aufgaben-entscheidung">Plattformentscheidung</a><a href="#aufgaben-plattform">Plattform</a><a href="#aufgaben-abnahme">Go-Live-Abnahme</a></nav>
 <section class="todo-phase" id="aufgaben-lokal" aria-labelledby="aufgaben-lokal-titel">
   <h3 id="aufgaben-lokal-titel">Lokal</h3>
   <ul class="points phase-intro">
-    <li>Die 20 ursprünglichen Aufgaben sind im separaten Integrationsstand 87baf51 lokal abgenommen. Zwei neue Folgeaufgaben bleiben offen. Die Nachweise gelten jeweils für den angegebenen Stand.</li>
+    <li>Alle 22 definierten lokalen Aufgaben sind gemeinsam integriert und lokal abgenommen. Der Stand ist zur fachlichen Erprobung mit synthetischen Akten bereit. Neue Anforderungen und produktive Freigaben sind damit nicht vorweggenommen.</li>
     <li>Gemeinsame Aufgaben sind gebündelt und aus den betroffenen Prozessschritten verlinkt. Jeder Prompt enthält einen Normalfall, einen Gegenfall und klare Kriterien für den lokalen Status.</li>
-    <li><strong>OCR</strong> · Zuerst synthetische Belege, Sollwerte, Seitenbezug und Prüfregeln festlegen. Ein lokales OCR-Werkzeug lohnt sich nur bei Bedarf als einmalige Hilfe für Scan-Testausgaben. Die spätere Integration nutzt denselben Prüfkorpus.</li>
+    <li><strong>OCR</strong> · PDF-Text und lokale Browser-OCR sind im Pilot vorhanden. Vorschläge bleiben an Original, Seite und Prüfregeln gebunden. Fünf neue Testakten ergänzen den Korpus; eine universelle steuerliche Erkennung beliebiger Belege und der produktive OCR-Anschluss sind damit nicht abgenommen.</li>
   </ul>
   <p class="copy-feedback" id="copy-feedback" role="status"></p>
-  <div class="todo-list"><details class="todo-group" id="todo-gruppe-folge" open><summary><strong>Neue lokale Folgeaufgaben</strong><span class="meta">2 offene Prompts</span></summary><div class="todo-items"><details class="todo-item" id="todo-integration" data-local="red"><summary><strong>P0 · Lokale Stände zusammenführen</strong><span class="status red">Lokal offen</span></summary><div class="todo-body"><ul class="points"><li>Separaten abgenommenen 20er-Stand 87baf51 mit den ESt-/Onboarding-Änderungen vom 14.11. in einem eigenen Integrationszweig zusammenführen.</li><li>Konflikte fachlich auflösen: Versionsbindung, Mandatsrechte, Audit, Dokumentoriginale, Vorjahresregeln und neue Anlage-V-Positionen erhalten.</li><li>Bestehende Arbeitsstände sichern; nicht einfach ältere Dateien über neuere kopieren.</li></ul><div class="todo-actions"><button type="button" class="copy-prompt">Prompt kopieren</button></div><pre class="agent-prompt" tabindex="0">Kanzlei OS · Lokal · P0 · Lokale Stände zusammenführen
+  <div class="todo-list"><details class="todo-group" id="todo-gruppe-folge" open><summary><strong>Lokale Folgeaufgaben</strong><span class="meta">2 / 2 lokal abgenommen</span></summary><div class="todo-items"><details class="todo-item" id="todo-integration" data-local="green"><summary><strong>P0 · Lokale Stände zusammenführen</strong><span class="status green">Lokal abgenommen · 15.11.</span></summary><div class="todo-body"><ul class="points"><li>Separaten abgenommenen 20er-Stand 87baf51 mit den ESt-/Onboarding-Änderungen vom 14.11. in einem eigenen Integrationszweig zusammenführen.</li><li>Konflikte fachlich auflösen: Versionsbindung, Mandatsrechte, Audit, Dokumentoriginale, Vorjahresregeln und neue Anlage-V-Positionen erhalten.</li><li>Bestehende Arbeitsstände sichern; nicht einfach ältere Dateien über neuere kopieren.</li></ul><div class="todo-actions"><button type="button" class="copy-prompt">Prompt kopieren</button></div><pre class="agent-prompt" tabindex="0">Kanzlei OS · Lokal · P0 · Lokale Stände zusammenführen
+
+Abnahme 15.11.2026: BESTANDEN im gemeinsamen lokalen Stand. Nachweise: docs/abnahme-20261115/index.html.
 
 Aufgabe
 - Separaten abgenommenen 20er-Stand 87baf51 mit den ESt-/Onboarding-Änderungen vom 14.11. in einem eigenen Integrationszweig zusammenführen.
@@ -2105,7 +2107,9 @@ Erfolg
 - OFFEN: Umsetzung, Integration oder Pflichtnachweis fehlt.
 
 Rahmen
-- Nur lokale synthetische Daten. Plattformzugänge und Produktionsfreigaben bleiben in späteren Phasen.</pre></div></details><details class="todo-item" id="todo-est-objekte" data-local="red"><summary><strong>P1 · Anlage V je Mietobjekt erfassen</strong><span class="status red">Lokal offen</span></summary><div class="todo-body"><ul class="points"><li>Objektkennung und Stammdaten sowie die Einzelpositionen je vermieteter Immobilie führen.</li><li>Bestands-Sammelwerte nachvollziehbar zuordnen; keine erfundene automatische Aufteilung.</li><li>Quellen, Entscheidungen, Rückfragen und Summen objektbezogen führen und zur späteren API übertragbar halten.</li></ul><div class="todo-actions"><button type="button" class="copy-prompt">Prompt kopieren</button></div><pre class="agent-prompt" tabindex="0">Kanzlei OS · Lokal · P1 · Anlage V je Mietobjekt erfassen
+- Nur lokale synthetische Daten. Plattformzugänge und Produktionsfreigaben bleiben in späteren Phasen.</pre></div></details><details class="todo-item" id="todo-est-objekte" data-local="green"><summary><strong>P1 · Anlage V je Mietobjekt erfassen</strong><span class="status green">Lokal abgenommen · 15.11.</span></summary><div class="todo-body"><ul class="points"><li>Objektkennung und Stammdaten sowie die Einzelpositionen je vermieteter Immobilie führen.</li><li>Bestands-Sammelwerte nachvollziehbar zuordnen; keine erfundene automatische Aufteilung.</li><li>Quellen, Entscheidungen, Rückfragen und Summen objektbezogen führen und zur späteren API übertragbar halten.</li></ul><div class="todo-actions"><button type="button" class="copy-prompt">Prompt kopieren</button></div><pre class="agent-prompt" tabindex="0">Kanzlei OS · Lokal · P1 · Anlage V je Mietobjekt erfassen
+
+Abnahme 15.11.2026: BESTANDEN im gemeinsamen lokalen Stand. Nachweise: docs/abnahme-20261115/index.html.
 
 Aufgabe
 - Objektkennung und Stammdaten sowie die Einzelpositionen je vermieteter Immobilie führen.
@@ -2126,7 +2130,7 @@ Rahmen
   <summary><strong>Gemeinsame Bausteine</strong><span class="meta">9 Prompts</span></summary>
   <div class="todo-items"><details class="todo-item" id="todo-startpruefung" data-local="green">
   <summary><strong>Onboarding-Prüfung für jeden Prozessstart</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Dieselbe Startregel wird an der späteren serverseitigen API ausgeführt.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Onboarding-Prüfung für jeden Prozessstart">Prompt kopieren</button>
@@ -2136,7 +2140,7 @@ Rahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/prozess/engine.ts, src/application/prozessDienst.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2173,7 +2177,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-rechte" data-local="green">
   <summary><strong>Mandatsrechte als serverfähige Prüfregeln</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Dieselbe Rollenmatrix und dieselben Prüffälle sichern später die API mit dem gewählten Identitätsdienst ab.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Mandatsrechte als serverfähige Prüfregeln">Prompt kopieren</button>
@@ -2183,7 +2187,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/state/zugriff.ts, src/application/ports.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2219,7 +2223,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-audit" data-local="green">
   <summary><strong>Fachliche Audit-Ereignisse definieren</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Das Ereignisformat und die Tests bleiben beim späteren Audit-Speicher und Monitoring verwendbar.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Fachliche Audit-Ereignisse definieren">Prompt kopieren</button>
@@ -2229,7 +2233,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/application/ports.ts, src/application/prozessDienst.ts, src/application/entwurfDienst.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2266,7 +2270,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-akte" data-local="green">
   <summary><strong>Mandantenakte und Upload-Zuordnung</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li><li>Aktuelle Demo: Zuordnung nach Mandant, Aktenjahr und Kategorie, PDF-/DOCX-/XLSX-Vorschau; Vorjahres-Metadaten für Abrechnungen ergänzt.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li><li>Aktuelle Demo: Zuordnung nach Mandant, Aktenjahr und Kategorie, PDF-/DOCX-/XLSX-Vorschau; Vorjahres-Metadaten für Abrechnungen ergänzt.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Die Metadaten, Zuordnungsregeln und Vorschautests gelten auch bei späterem Objektspeicher.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Mandantenakte und Upload-Zuordnung">Prompt kopieren</button>
@@ -2276,7 +2280,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/est/unterlagen/akte.ts, src/application/unterlagenDienst.ts, src/infrastructure/officeVorschau.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2312,7 +2316,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-ocr" data-local="green">
   <summary><strong>OCR-Prüfkorpus und fachliche Ausleseregeln</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Derselbe Korpus, dieselben Sollwerte und Tests prüfen später den gewählten OCR-Adapter und die anschließende Fachlogik.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · OCR-Prüfkorpus und fachliche Ausleseregeln">Prompt kopieren</button>
@@ -2322,7 +2326,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/infrastructure/pdfjsLeser.ts, src/domain/est/lstb/, src/domain/fibu/lesen.ts, testdaten/est-testpaket/, testdaten/fibu-testpaket/. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2361,7 +2365,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-archiv" data-local="green">
   <summary><strong>Portabler Export und Import der Mandantenakte</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Das Format und der Wiederimport-Test bleiben als Migrations- und Exit-Nachweis nutzbar.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Portabler Export und Import der Mandantenakte">Prompt kopieren</button>
@@ -2371,7 +2375,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/application/systemDienst.ts, src/application/zip.ts, src/domain/est/unterlagen/akte.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2408,7 +2412,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-kommunikation" data-local="green">
   <summary><strong>Portal-Rückfragen und Antworten nachvollziehbar machen</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Die Portalansicht, Statuslogik und neutralen Vorlagen funktionieren später mit dem gewählten Zustellweg.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Portal-Rückfragen und Antworten nachvollziehbar machen">Prompt kopieren</button>
@@ -2418,7 +2422,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/application/prozessDienst.ts, src/domain/est/entwurf/rueckfragen.ts, src/viewmodels/portal.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2455,7 +2459,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-uebergabe" data-local="green">
   <summary><strong>Übergabestatus und Wiederholung absichern</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Reale Adapter übernehmen später dieselben Zustandsregeln, Wiederholungsfälle und Fehlernachweise.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Übergabestatus und Wiederholung absichern">Prompt kopieren</button>
@@ -2465,7 +2469,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/application/ports.ts, src/application/uebergabeTakt.ts, src/application/fibuDienst.ts, src/application/lohnDienst.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2501,7 +2505,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-freigaben" data-local="green">
   <summary><strong>Freigabe an eine konkrete Version binden</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Dieselbe Versionsbindung gilt im Portal sowie bei späteren Unterschrift- und Fachsoftware-Integrationen.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Freigabe an eine konkrete Version binden">Prompt kopieren</button>
@@ -2511,7 +2515,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/application/entwurfDienst.ts, src/application/prozessDienst.ts, src/domain/vertrag/texte.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2550,7 +2554,7 @@ Arbeitsrahmen
   <summary><strong>Onboarding und Zusatzaufträge</strong><span class="meta">2 Prompts</span></summary>
   <div class="todo-items"><details class="todo-item" id="todo-onboarding" data-local="green">
   <summary><strong>Aufnahmebogen, Leistungsumfang und Angebot</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li><li>Zusätzlich in der aktuellen Demo: Aufwandsfragen, Gebührenregler, Begründungspflicht und Angebot nach Annahme getestet.</li><li>Neuer Gegenfall: ausgeblendete Pflichtfragen dürfen Privatmandate nicht blockieren.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li><li>Zusätzlich in der aktuellen Demo: Aufwandsfragen, Gebührenregler, Begründungspflicht und Angebot nach Annahme getestet.</li><li>Neuer Gegenfall: ausgeblendete Pflichtfragen dürfen Privatmandate nicht blockieren.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Formular, Angebotsdaten und Statusübergänge werden im späteren Portal weitergenutzt.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Aufnahmebogen, Leistungsumfang und Angebot">Prompt kopieren</button>
@@ -2560,7 +2564,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/flows/onboarding.ts, src/domain/formular/, src/domain/stbvv/. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2596,7 +2600,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-zusatzauftrag" data-local="green">
   <summary><strong>Zusatzleistungen im Bestandsmandat freigeben</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Der fachliche Ablauf und die Nachweise bleiben unabhängig vom späteren Hosting und Zustellweg verwendbar.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Zusatzleistungen im Bestandsmandat freigeben">Prompt kopieren</button>
@@ -2606,7 +2610,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/flows/zusatzauftrag.ts, src/application/prozessDienst.ts, tests/zusatzauftrag.test.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2645,7 +2649,7 @@ Arbeitsrahmen
   <summary><strong>Finanzbuchhaltung und UStVA</strong><span class="meta">2 Prompts</span></summary>
   <div class="todo-items"><details class="todo-item" id="todo-fibu-regeln" data-local="green">
   <summary><strong>Kontierung mit festen Regeln und Bankabgleich</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Regeln, Parser und Prüfdatensätze bleiben mit verschiedenen Datei- und Fachsoftware-Übergaben nutzbar.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Kontierung mit festen Regeln und Bankabgleich">Prompt kopieren</button>
@@ -2655,7 +2659,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/fibu/kontierung.ts, src/domain/fibu/bank.ts, src/domain/fibu/camt.ts, tests/fibu.test.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2691,7 +2695,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-fibu-ustva" data-local="green">
   <summary><strong>UStVA vorbereiten und Ausgabedaten prüfen</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Berechnung, Prüfliste und Datenpaket lassen sich später an die gewählte Fachsoftware oder den Übermittlungsweg anbinden.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · UStVA vorbereiten und Ausgabedaten prüfen">Prompt kopieren</button>
@@ -2701,7 +2705,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/fibu/ustva.ts, src/domain/fibu/export.ts, src/application/fibuDienst.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2740,7 +2744,7 @@ Arbeitsrahmen
   <summary><strong>Lohnabrechnung</strong><span class="meta">1 Prompts</span></summary>
   <div class="todo-items"><details class="todo-item" id="todo-lohn" data-local="green">
   <summary><strong>Lohn-Stamm- und Bewegungsdaten prüfen</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Validierung und Exporttest bleiben vor der späteren Anbindung des Lohnprogramms erhalten.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Lohn-Stamm- und Bewegungsdaten prüfen">Prompt kopieren</button>
@@ -2750,7 +2754,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/lohn/regeln.ts, src/domain/lohn/export.ts, src/application/lohnDienst.ts, tests/lohn.test.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2789,7 +2793,7 @@ Arbeitsrahmen
   <summary><strong>Einkommensteuer</strong><span class="meta">2 Prompts</span></summary>
   <div class="todo-items"><details class="todo-item" id="todo-est-unterlagen" data-local="green">
   <summary><strong>ESt-Unterlagen nach Jahr und Falltyp prüfen</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li><li>Zusätzlich in der aktuellen Demo: Vorjahresabrechnung bleibt in der aktuellen Akte und wird auch nach erneutem Lesen nicht automatisch als aktueller Betrag angesetzt.</li><li>Ausnahme Hausgeld / Nebenkosten ausdrücklich beachten; kein pauschales Verbot aller Vorjahresbelege.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li><li>Zusätzlich in der aktuellen Demo: Vorjahresabrechnung bleibt in der aktuellen Akte und wird auch nach erneutem Lesen nicht automatisch als aktueller Betrag angesetzt.</li><li>Ausnahme Hausgeld / Nebenkosten ausdrücklich beachten; kein pauschales Verbot aller Vorjahresbelege.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Der Unterlagenkatalog und die Vollständigkeitsprüfung bleiben Teil der produktiven ESt-Akte.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · ESt-Unterlagen nach Jahr und Falltyp prüfen">Prompt kopieren</button>
@@ -2799,7 +2803,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/flows/est.ts, src/domain/est/unterlagen/, tests/anwendung.test.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2835,7 +2839,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-est-entwurf" data-local="green">
   <summary><strong>ESt-Entwurf mit Fundstellen und manueller Klärung</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li><li>Zusätzlich in der aktuellen Demo: neun Anlage-V-Positionen, negative Erstattungen, Verlust, Betragskorrekturen und Alt-Sammelfeld geprüft.</li><li>Objektweise Erfassung bleibt eine neue Folgeaufgabe; § 35a und Scans sind keine vollständig automatisierte Auslese.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li><li>Zusätzlich in der aktuellen Demo: neun Anlage-V-Positionen, negative Erstattungen, Verlust, Betragskorrekturen und Alt-Sammelfeld geprüft.</li><li>Objektweise Erfassung und lokale Anlage-V-Scan-OCR integriert; § 35a und nicht unterstützte Beleglayouts benötigen weiterhin fachliche Erfassung.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Ausleseregeln, Herkunftsnachweis und Entscheidungsstatus bleiben unabhängig vom Datenabruf und OCR-Anbieter verwendbar.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · ESt-Entwurf mit Fundstellen und manueller Klärung">Prompt kopieren</button>
@@ -2845,7 +2849,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/est/lstb/, src/domain/est/entwurf/, tests/lstb.test.ts, tests/est-vermietung.test.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2885,7 +2889,7 @@ Arbeitsrahmen
   <summary><strong>Jahresabschluss und EÜR</strong><span class="meta">1 Prompts</span></summary>
   <div class="todo-items"><details class="todo-item" id="todo-abschluss" data-local="green">
   <summary><strong>Abschlussakte, Abstimmungsfälle und Fachprüfung</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Checklisten, Abstimmungsfälle und Prüfprotokoll bleiben bei der späteren Wahl der Abschlusssoftware verwendbar.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Abschlussakte, Abstimmungsfälle und Fachprüfung">Prompt kopieren</button>
@@ -2895,7 +2899,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/flows/jaehrlich.ts, src/application/prozessDienst.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2934,7 +2938,7 @@ Arbeitsrahmen
   <summary><strong>Fristen und Bescheidprüfung</strong><span class="meta">2 Prompts</span></summary>
   <div class="todo-items"><details class="todo-item" id="todo-fristen" data-local="green">
   <summary><strong>Frist und unabhängige Kontrolle nachvollziehen</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Regeln und Testfälle bleiben bei späteren Bescheid-, Kalender- und Benachrichtigungsanbindungen gleich.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Frist und unabhängige Kontrolle nachvollziehen">Prompt kopieren</button>
@@ -2944,7 +2948,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/shared/fristen.ts, src/domain/flows/jaehrlich.ts, src/viewmodels/fristen.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -2980,7 +2984,7 @@ Arbeitsrahmen
   </div>
 </details><details class="todo-item" id="todo-bescheid" data-local="green">
   <summary><strong>Bescheidabweichungen und Entscheidungen verfolgen</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Die Zustände und fachlichen Vergleiche werden später mit echten Rückmeldungen und Bescheiden gefüllt.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Bescheidabweichungen und Entscheidungen verfolgen">Prompt kopieren</button>
@@ -2990,7 +2994,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/flows/jaehrlich.ts, src/viewmodels/fristen.ts, src/application/prozessDienst.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -3029,7 +3033,7 @@ Arbeitsrahmen
   <summary><strong>Kanzleiabrechnung</strong><span class="meta">1 Prompts</span></summary>
   <div class="todo-items"><details class="todo-item" id="todo-abrechnung" data-local="green">
   <summary><strong>Rechnung, Zahlung und Korrektur abstimmen</strong><span class="status green">Lokal abgenommen · Integrationsstand</span></summary>
-  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag im separaten Stand 87baf51 abgenommen; noch nicht vollständig in die Pages-Demo integriert.</li></ul>
+  <div class="todo-body"><ul class="points local-evidence"><li>Originalauftrag aus 87baf51 in den gemeinsamen lokalen Stand integriert; Pflichtfälle am 15.11. erneut ausgeführt. In der Pages-Demo vom 16.11. enthalten; kein Empfang echter Mandantenunterlagen.</li></ul>
     <p class="todo-result"><strong>Später nutzbar</strong> · Berechnung, Zahlungszuordnung und Prüfsummen bleiben bei späterer Zustellung, Bankanbindung und Archivierung nutzbar.</p>
     <div class="todo-actions">
       <button type="button" class="copy-prompt" aria-label="Prompt kopieren · Rechnung, Zahlung und Korrektur abstimmen">Prompt kopieren</button>
@@ -3039,7 +3043,7 @@ Arbeitsrahmen
 Bestandsaufnahme 14.11.2026
 - Originalauftrag im separaten Integrationsstand 87baf51 lokal abgenommen.
 - Vor neuer Implementierung vorhandene Lösung und Nachweise prüfen; keine bestandenen Teile neu bauen.
-- Pages-Demo und Integrationsstand sind noch getrennt. Neue Anforderungen gesondert evaluieren.
+- Gemeinsamer lokaler Stand am 15.11. integriert und erneut geprüft. Pages-Demo vom 16.11. enthält den Integrationsstand; neue Anforderungen gesondert evaluieren.
 
 Aufgabe
 Prüfe die vorhandene Umsetzung in src/domain/abrechnung/abrechnung.ts, src/application/abrechnungDienst.ts, src/viewmodels/abrechnung.ts. Behalte funktionierende Teile bei und ergänze nur die Lücken für das folgende Ergebnis.
@@ -3292,7 +3296,8 @@ function skilltreeStarten() {
   for (const phase of liste.querySelectorAll('.todo-phase')) {
     const titel = phase.querySelector('h3').textContent.trim();
     const button = skillButton('skill-phase', titel);
-    button.classList.add(phase.id === 'aufgaben-lokal' ? 'local-yellow' : 'local-red');
+    const lokalFertig = phase.id === 'aufgaben-lokal' && [...phase.querySelectorAll('.todo-item')].every(item => item.dataset.local === 'green');
+    button.classList.add(lokalFertig ? 'local-green' : phase.id === 'aufgaben-lokal' ? 'local-yellow' : 'local-red');
     button.setAttribute('aria-controls', aeste.id);
     button.addEventListener('click', () => phaseAnzeigen(phase, titel, button));
     phasenknoten.append(button);
@@ -3333,5 +3338,5 @@ skilltreeStarten();
 if (location.hash) zielAnzeigen();
 
 </script>
-<p style="padding:24px"><a href="./">Kanzlei-OS-Demo öffnen</a> · Quellcode-Verweise benötigen Zugriff auf das private Projekt.</p></body>
+</body>
 </html>

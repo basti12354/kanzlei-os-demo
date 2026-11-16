@@ -1,0 +1,76 @@
+
+> kanzlei-os@0.2.0 check
+> npm run format:check && npm run typecheck && npm run lint && npm run boundaries && npm run dup && npm run unused && npm run test
+
+
+> kanzlei-os@0.2.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> kanzlei-os@0.2.0 typecheck
+> vue-tsc --noEmit
+
+
+> kanzlei-os@0.2.0 lint
+> eslint .
+
+
+> kanzlei-os@0.2.0 boundaries
+> depcruise src --config .dependency-cruiser.cjs
+
+
+✔ no dependency violations found (196 modules, 971 dependencies cruised)
+
+
+> kanzlei-os@0.2.0 dup
+> jscpd src
+
+Using config from .jscpd.json
+[1mClone found (typescript)[22m
+ - [1m[32mapplication/fibuDienst.ts[39m[22m [232:49 - 239:10] (8 lines, 61 tokens)
+   application/lohnDienst.ts [177:52 - 184:10]
+[1mClone found (typescript)[22m
+ - [1m[32mdomain/fibu/ablauf.ts[39m[22m [282:20 - 291:16] (10 lines, 65 tokens)
+   domain/lohn/ablauf.ts [312:20 - 321:16]
+[1mClone found (html)[22m
+ - [1m[32mviews/portal/BelegePortal.vue:html[39m[22m [36:23 - 48:17] (13 lines, 99 tokens)
+   views/portal/LohnPortal.vue:html [36:19 - 48:17]
+[90m┌────────────┬────────────────┬─────────────┬──────────────┬──────────────┬──────────────────┬───────────────────┐[39m
+[90m│[39m[31m Format     [39m[90m│[39m[31m Files analyzed [39m[90m│[39m[31m Total lines [39m[90m│[39m[31m Total tokens [39m[90m│[39m[31m Clones found [39m[90m│[39m[31m Duplicated lines [39m[90m│[39m[31m Duplicated tokens [39m[90m│[39m
+[90m├────────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤[39m
+[90m│[39m css        [90m│[39m 1              [90m│[39m 49          [90m│[39m 260          [90m│[39m 0            [90m│[39m 0 (0.00%)        [90m│[39m 0 (0.00%)         [90m│[39m
+[90m├────────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤[39m
+[90m│[39m html       [90m│[39m 43             [90m│[39m 1675        [90m│[39m 17067        [90m│[39m 1            [90m│[39m 13 (0.78%)       [90m│[39m 99 (0.58%)        [90m│[39m
+[90m├────────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤[39m
+[90m│[39m typescript [90m│[39m 166            [90m│[39m 21261       [90m│[39m 170383       [90m│[39m 2            [90m│[39m 18 (0.08%)       [90m│[39m 126 (0.07%)       [90m│[39m
+[90m├────────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤[39m
+[90m│[39m vue        [90m│[39m 48             [90m│[39m 3187        [90m│[39m 23348        [90m│[39m 0            [90m│[39m 0 (0.00%)        [90m│[39m 0 (0.00%)         [90m│[39m
+[90m├────────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤[39m
+[90m│[39m [1mTotal:[22m     [90m│[39m 258            [90m│[39m 26172       [90m│[39m 211058       [90m│[39m 3            [90m│[39m 31 (0.12%)       [90m│[39m 225 (0.11%)       [90m│[39m
+[90m└────────────┴────────────────┴─────────────┴──────────────┴──────────────┴──────────────────┴───────────────────┘[39m
+[90mFound 3 clones.[39m
+[90mtime: 23.629ms[39m
+
+> kanzlei-os@0.2.0 unused
+> knip
+
+
+> kanzlei-os@0.2.0 test
+> vitest run
+
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - import "./ocr-assets.config" without a file extension (vite.config.ts:5:27). Add the file extension
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v5.1.0 <Projekt>
+
+
+ Test Files  44 passed (44)
+      Tests  1527 passed (1527)
+   Start at  23:22:59
+   Duration  8.47s (tests 84%, import 13%, transform 3%)
+
+    Isolate  44 workers spawned · ~189ms startup each (spawn + environment, per file)
+             at least ~567ms faster with isolate: false — reuses workers across files instead of one per file

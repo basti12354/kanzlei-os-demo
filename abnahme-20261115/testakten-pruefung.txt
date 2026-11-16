@@ -1,0 +1,17 @@
+{
+  "result": "BESTANDEN",
+  "documents": 68,
+  "scan_variants": 5,
+  "pages": 100,
+  "checks": [
+    "Alle PDF-Titel extrahierbar; Kennzeichnung auf jeder Text-PDF-Seite",
+    "Alle Eingangsdokumente spätestens am 15.04.2026 ausgestellt",
+    "Nachreichungen erst nach Eingangs-Stichtag",
+    "Alle Kontosalden rechnerisch konsistent, keine Zahlung nach Dokumentdatum",
+    "Fünf Szenario-Sollrechnungen unabhängig nachgerechnet",
+    "Fünf Scanvarianten ohne Textschicht",
+    "SHA-256 für jede Datei im Inventar"
+  ],
+  "not_claimed": "Keine automatische fachliche Gesamtabnahme der fünf Fälle in Kanzlei OS; keine Steuerberechnung."
+}
+<Projekt>/output/pdf/est-testszenarien-2025.zip

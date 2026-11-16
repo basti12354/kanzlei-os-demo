@@ -1,0 +1,2018 @@
+{
+  "schema_version": 1,
+  "tax_year": 2025,
+  "intake_date": "2026-04-15",
+  "researched_at": "2026-11-15",
+  "synthetic": true,
+  "currency": "EUR",
+  "amount_encoding": "Integer-Cent in expected; keine Steuer- oder Erstattungsberechnung",
+  "cases": {
+    "01-Arbeitnehmerin-Mira-Beispiel": {
+      "name": "Mira Beispiel",
+      "description": "Arbeitnehmerin: Pendeln, Homeoffice, Arbeitsmittel, Fortbildung und Nebenkosten der Mietwohnung.",
+      "profile": {
+        "address": "Beispielweg 12, 00000 Teststadt"
+      },
+      "expected": {
+        "lohn_cent": 5400000,
+        "lohnsteuer_cent": 807400,
+        "kv_cent": 461700,
+        "pv_cent": 129600,
+        "rv_cent": 502200,
+        "av_cent": 70200,
+        "pendeln_tage": 150,
+        "entfernung_km": 24,
+        "homeoffice_tage": 60,
+        "pendeln_cent": 112800,
+        "homeoffice_cent": 36000,
+        "arbeitsmittel_cent": 53550,
+        "fortbildung_cent": 32000,
+        "werbungskosten_summe_cent": 234350,
+        "spenden_cent": 18000,
+        "35a_arbeitsanteil_2024_cent": 36000
+      },
+      "tests": [
+        "Lohnsteuer sowie KV/PV getrennt erkennen und Quellen beibehalten.",
+        "150 Tage zur ersten Tätigkeitsstätte und 60 ausschließliche Homeoffice-Tage; keine Doppelzählung.",
+        "Vorjahres-Nebenkostenabrechnung als 2024-Quelle zulassen; Zuordnung nach §35a gesondert bestätigen.",
+        "Kein Ansatz von Materialkosten als haushaltsnaher Arbeitslohn."
+      ],
+      "exclusions": [
+        "Keine Vermietung, Kinder, Selbständigkeit oder Kapitaleinkünfte oberhalb Freistellung."
+      ]
+    },
+    "02-Vermieter-Jan-Probe": {
+      "name": "Jan Probe",
+      "description": "Arbeitnehmer mit bestehender WEG-Wohnung A und im Juli erworbenem Mietobjekt B.",
+      "profile": {
+        "address": "Musterufer 4, 00000 Teststadt"
+      },
+      "expected": {
+        "objects": {
+          "A": {
+            "kaltmiete_cent": 1080000,
+            "nebenkosten_cent": 240000,
+            "nachzahlung_cent": 12000,
+            "betriebskosten_cent": 275000,
+            "verwaltung_cent": 36000,
+            "erhaltung_cent": 101400,
+            "schuldzinsen_cent": 180000,
+            "afa_cent": 320000,
+            "ergebnis_cent": 419600,
+            "ruecklagenzufuehrung_nicht_abziehen_cent": 60000
+          },
+          "B": {
+            "kaltmiete_cent": 600000,
+            "nebenkosten_cent": 108000,
+            "betriebskosten_cent": 87000,
+            "erhaltung_cent": 119000,
+            "schuldzinsen_cent": 210000,
+            "afa_cent": 176000,
+            "ergebnis_cent": 116000,
+            "gebaeude_basis_cent": 17600000
+          }
+        },
+        "gesamt_nach_nachreichung_cent": 535600,
+        "vor_nachreichung_freigabe": false,
+        "lohn_cent": 6240000
+      },
+      "tests": [
+        "Zwei Objekte getrennt erfassen; nichts allein anhand gleicher Jahreszahl mischen.",
+        "WEG 2024 und Wirtschaftsplan 2025 liefern noch keine abschließenden Kosten 2025; Objekt A bleibt bis Nachreichung offen.",
+        "Zuführung 600 EUR zur Rücklage nicht abziehen; tatsächlich 2025 bezahlte Reparatur aus Rücklage 300 EUR separat.",
+        "Darlehenstilgung und Kaution nicht als Werbungskosten/Einnahmen erfassen.",
+        "Kauf B: Grund und Boden ausschließen, Erwerbsnebenkosten anteilig aktivieren, AfA ab Juli.",
+        "Reparatur B innerhalb drei Jahren: 15-Prozent-Prüfung fachlich dokumentieren; nur 1.000 EUR netto im Testfall."
+      ],
+      "exclusions": [
+        "Keine verbilligte Angehörigenvermietung, keine Umsatzsteueroption, keine Ferienwohnung, kein Leerstand, keine energetischen Förderungen."
+      ]
+    },
+    "03-Familie-Lena-und-Nils-Muster": {
+      "name": "Lena und Nils Muster",
+      "description": "Zusammenveranlagung: zwei Kinder, Arbeitgeberwechsel, Arbeitslosengeld und Kita mit getrennten Essenskosten.",
+      "profile": {
+        "address": "Familienweg 7, 00000 Teststadt"
+      },
+      "expected": {
+        "lohn_lena_cent": 4300000,
+        "lohn_nils_cent": 4800000,
+        "lohn_gesamt_cent": 9100000,
+        "lohnsteuer_gesamt_cent": 1330000,
+        "alg_progression_cent": 320000,
+        "kita_betreuung_cent": 600000,
+        "kita_essen_nicht_abziehbar_cent": 96000,
+        "kinderbetreuung_sonderausgaben_cent": 480000,
+        "kindergeld_gesamt_cent": 612000
+      },
+      "tests": [
+        "Zwei Lohnsteuerbescheinigungen derselben Person addieren; Ehepartner getrennt halten.",
+        "Arbeitslosengeld nicht zum Bruttoarbeitslohn addieren, Progressionsvorbehalt prüfen.",
+        "Essensgeld 960 EUR aus Betreuung herausnehmen; 6.000 x 80 % = 4.800 EUR.",
+        "Kindergeldanspruch je Kind und Zeitraum erfassen, keine Werbungskosten aus Kita bilden."
+      ],
+      "exclusions": [
+        "Keine Auslandsbezüge, kein Schulgeld, keine Alleinerziehendenentlastung, keine weiteren Lohnersatzleistungen."
+      ]
+    },
+    "04-Rentner-Otto-Fiktiv": {
+      "name": "Otto Fiktiv",
+      "description": "Altersrente seit 2023, Zinsen und Krankheitskosten mit Erstattung.",
+      "profile": {
+        "address": "Ruheweg 9, 00000 Teststadt"
+      },
+      "expected": {
+        "rente_brutto_cent": 2640000,
+        "rentenfreibetrag_fortfuehrung_cent": 441000,
+        "kv_cent": 225720,
+        "pv_cent": 95040,
+        "kapitalertrag_cent": 180000,
+        "freistellung_cent": 100000,
+        "kapitalertragsteuer_cent": 20000,
+        "soli_cent": 1100,
+        "krankheitskosten_cent": 220000,
+        "erstattung_cent": 60000,
+        "eigene_belastung_vor_zumutbar_cent": 160000
+      },
+      "tests": [
+        "Jahresbruttorente statt Banknetto übernehmen; KV/PV nicht doppelt rechnen.",
+        "Rentenbeginn und Vorjahresfreibetrag mitführen; keine neue Pauschalquote auf Gesamtrente 2025 erfinden.",
+        "Kapitalertrag, in Anspruch genommener Freibetrag und abgeführte Steuer getrennt.",
+        "Krankheitskosten um Erstattung mindern; 1.600 EUR ist noch kein automatisch abziehbarer Endbetrag."
+      ],
+      "exclusions": [
+        "Keine Betriebs-/Auslandsrente, kein Arbeitslohn, kein Pflegegrad, keine Vermietung."
+      ]
+    },
+    "05-Freiberuflerin-Nora-Test": {
+      "name": "Nora Test",
+      "description": "Freiberufliche Übersetzerin als Kleinunternehmerin; aktuelle Buchführung noch zu erstellen.",
+      "profile": {
+        "address": "Sprachweg 5, 00000 Teststadt"
+      },
+      "expected": {
+        "einnahmen_cent": 2400000,
+        "ausgaben": {
+          "internet_beruflich_cent": 29400,
+          "software_cent": 30000,
+          "bueromaterial_cent": 60000,
+          "fortbildung_cent": 45000,
+          "haftpflicht_cent": 24000,
+          "konto_cent": 12000,
+          "computer_abschreibung_cent": 100000,
+          "coworking_cent": 180000
+        },
+        "gewinn_cent": 1919600,
+        "kv_basis_cent": 420000,
+        "pv_cent": 78000,
+        "privatentnahme_nicht_ausgabe_cent": 300000,
+        "vorjahresumsatz_cent": 1800000
+      },
+      "tests": [
+        "Aufwand: 2024 gebucht, 2025 nur Belege; laufende Buchhaltung ausdrücklich einplanen.",
+        "Zwölf Ausgangsrechnungen und zwölf Zahlungseingänge auf Vollständigkeit abgleichen.",
+        "Internet nur 70 % beruflich; Privatentnahme keine Betriebsausgabe.",
+        "Computer über Anlageverzeichnis behandeln, nicht Rechnung plus AfA doppelt abziehen.",
+        "Private KV/PV in Vorsorgeaufwand, nicht EÜR."
+      ],
+      "exclusions": [
+        "Keine Angestellten, kein Gewerbe, keine Auslands-/Reverse-Charge-Leistungen, keine Umsatzsteueroption, kein PKW, keine häuslichen Arbeitszimmerkosten."
+      ]
+    }
+  },
+  "documents": [
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/01-mandantenangaben.pdf",
+      "title": "Angaben zur Einkommensteuer 2025",
+      "issuer": "Mandantenportal · ausgefüllter Fragebogen",
+      "issued": "2026-04-15",
+      "period": "2025",
+      "category": "Stammdaten",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "d37a8069b2e80af2520e668da2b1b753d0ad98d9f0d3da4fbb27f745b39c8059"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/02-lohnsteuerbescheinigung-2025.pdf",
+      "title": "Ausdruck der elektronischen Lohnsteuerbescheinigung 2025",
+      "issuer": "Fiktivwerk Digital GmbH",
+      "issued": "2026-02-12",
+      "period": "01.01.2025 - 31.12.2025",
+      "category": "Arbeitslohn",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "1351a93208735403ff9221b99d6319ee490e01e677ca6260529ded523896b515"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/03-vorjahresunterlagen-2024.pdf",
+      "title": "Vorjahresdaten 2024 · Übergabeauszug",
+      "issuer": "Fiktive Steuerkanzlei Vorjahr",
+      "issued": "2025-08-20",
+      "period": "2024",
+      "category": "Vorjahr",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "a7cff5d18505689e27df3923f253a50a51a8371efa7bc688dc694e2167555e6d"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/04-arbeitstage-2025.pdf",
+      "title": "Arbeitgeberbescheinigung · Tätigkeitsort und Arbeitstage",
+      "issuer": "Fiktivwerk Digital GmbH",
+      "issued": "2026-01-20",
+      "period": "2025",
+      "category": "Werbungskosten",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "8e7e6b1c3276ca4d983667029bfd8076bb2b4def957486be31f22dba60b638f7"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/05-monitor-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Bildpunkt Testhandel",
+      "issued": "2025-02-15",
+      "period": "2025-02-15",
+      "category": "Rechnung",
+      "object_id": null,
+      "required": true,
+      "gross_cent": 29750,
+      "payment_date": "2025-02-18",
+      "pages": 1,
+      "sha256": "c30aea54be2506a6f3e8890e81ff4b877f5ed340ebce8a0e080c1752b843f268"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/06-buerostuhl-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Sitzwerk Musterhandel",
+      "issued": "2025-03-10",
+      "period": "2025-03-10",
+      "category": "Rechnung",
+      "object_id": null,
+      "required": true,
+      "gross_cent": 23800,
+      "payment_date": "2025-03-12",
+      "pages": 1,
+      "sha256": "c55112d91416d2a11dc92c13893b2ae4c50a6c4ed6dec7ab211451428a88d667"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/07-nutzung-arbeitsmittel.pdf",
+      "title": "Erklärung zur beruflichen Nutzung",
+      "issuer": "Mira Beispiel",
+      "issued": "2026-04-15",
+      "period": "2025",
+      "category": "Werbungskosten",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "951768261dbbad847fb7753bd4b10ae3e25eb02565d8c5d7eba404bf28a4f83a"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/08-fortbildung-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Lernatelier Muster",
+      "issued": "2025-06-09",
+      "period": "2025-06-05",
+      "category": "Rechnung",
+      "object_id": null,
+      "required": true,
+      "gross_cent": 32000,
+      "payment_date": "2025-06-12",
+      "pages": 1,
+      "sha256": "7cf482a77d5d9345436ea1c7540b2984ef06c0b5669509b737ce0aa09a94b446"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/09-spendenbestaetigung.pdf",
+      "title": "Bestätigung über Geldzuwendung",
+      "issuer": "Fiktiver Leseförderverein e. V.",
+      "issued": "2025-12-18",
+      "period": "2025",
+      "category": "Sonderausgaben",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "24dd0d19dfb99f546d004a857294d5cda337c6a88eb3bad3250e42d15bb284b4"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/10-zahlungen-2025.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": null,
+      "required": true,
+      "bank": {
+        "initial_cent": 1000000,
+        "entries": [
+          {
+            "date": "2025-02-18",
+            "counterparty": "Bildpunkt Testhandel",
+            "reference": "BT-250215",
+            "cent": -29750
+          },
+          {
+            "date": "2025-03-12",
+            "counterparty": "Sitzwerk Musterhandel",
+            "reference": "SM-250310",
+            "cent": -23800
+          },
+          {
+            "date": "2025-06-12",
+            "counterparty": "Lernatelier Muster",
+            "reference": "LA-25-067",
+            "cent": -32000
+          },
+          {
+            "date": "2025-08-15",
+            "counterparty": "Mustervermietung",
+            "reference": "NK-Abrechnung 2024 Nachzahlung",
+            "cent": -12000
+          },
+          {
+            "date": "2025-12-10",
+            "counterparty": "Leseförderverein",
+            "reference": "Spende ohne Gegenleistung",
+            "cent": -18000
+          }
+        ],
+        "end_cent": 884450
+      },
+      "pages": 1,
+      "sha256": "111a807c102fb64ca81102bf4e4d3f59b6b1b54c094b71876469722a603e46ec"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/11-nebenkostenabrechnung-2024.pdf",
+      "title": "Nebenkostenabrechnung 2024 mit Arbeitsanteilen",
+      "issuer": "Mustervermietung Beispielweg",
+      "issued": "2025-07-25",
+      "period": "2024",
+      "category": "Haushaltsnahe Aufwendungen",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "015a760c14846cc7ad9d9082b1803edbfd79cca7a4033d38d17504b18801ce5c"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/12-auskunft-nk-2025.pdf",
+      "title": "Auskunft zum Stand der Nebenkostenabrechnung",
+      "issuer": "Mustervermietung Beispielweg",
+      "issued": "2026-04-02",
+      "period": "2025",
+      "category": "Nachforderung",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "2c4a7c269aca73b1cac7c824a557a1b8aaa736466f327b23724fc25e9f39ac04"
+    },
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/02_Nachreichung/13-nebenkostenabrechnung-2025.pdf",
+      "title": "Nebenkostenabrechnung 2025 mit Arbeitsanteilen",
+      "issuer": "Mustervermietung Beispielweg",
+      "issued": "2026-08-12",
+      "period": "2025",
+      "category": "Haushaltsnahe Aufwendungen",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "c2661efc45aff8545c8c843cf3d1828d40df7d6c5c4d971e9c8d76cd34a1671d"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/01-mandantenangaben.pdf",
+      "title": "Angaben zur Einkommensteuer 2025",
+      "issuer": "Mandantenportal · ausgefüllter Fragebogen",
+      "issued": "2026-04-15",
+      "period": "2025",
+      "category": "Stammdaten",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "b0c4e8d1b423b1be7e8515b42d5de85219a32636d6bdc57fdfc0217bac77b6c4"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/02-lohnsteuerbescheinigung-2025.pdf",
+      "title": "Ausdruck der elektronischen Lohnsteuerbescheinigung 2025",
+      "issuer": "Fiktivwerk Süd GmbH",
+      "issued": "2026-02-12",
+      "period": "01.01.2025 - 31.12.2025",
+      "category": "Arbeitslohn",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "64548af28162a0e7401b7eee23016fe564884148ef0b3240df0bb44f0fc28130"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/03-vorjahresunterlagen-2024.pdf",
+      "title": "Vorjahresdaten 2024 · Übergabeauszug",
+      "issuer": "Fiktive Steuerkanzlei Vorjahr",
+      "issued": "2025-08-20",
+      "period": "2024",
+      "category": "Vorjahr",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "49c67902cedefb1f4d183a67dcd0cc232368813482670256d5863a428be34a2a"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/04-A-mietvertrag.pdf",
+      "title": "Wohnraummietvertrag · Vertragsdaten",
+      "issuer": "Jan Probe",
+      "issued": "2019-12-01",
+      "period": "ab 2020-01-01",
+      "category": "Mietvertrag",
+      "object_id": "A",
+      "required": true,
+      "pages": 2,
+      "sha256": "c73bbf71b4aa8b417d8e49d993f8e8a383c057193cd0aacc198b579bcbf3f009"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/05-A-mietkonto-2025.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": "A",
+      "required": true,
+      "bank": {
+        "initial_cent": 0,
+        "entries": [
+          {
+            "date": "2025-01-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 01/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-02-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 02/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-03-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 03/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-04-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 04/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-05-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 05/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-06-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 06/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-07-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 07/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-08-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 08/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-09-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 09/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-09-10",
+            "counterparty": "Lina Testmieter",
+            "reference": "Nachzahlung NK 2024",
+            "cent": 12000
+          },
+          {
+            "date": "2025-10-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 10/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-11-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 11/2025; netto 900; NK 200",
+            "cent": 110000
+          },
+          {
+            "date": "2025-12-03",
+            "counterparty": "Lina Testmieter",
+            "reference": "Miete A 12/2025; netto 900; NK 200",
+            "cent": 110000
+          }
+        ],
+        "end_cent": 1332000
+      },
+      "pages": 1,
+      "sha256": "707979a88b28b0edc36829c83a313d66c7082b617cdae501a64662f0f4c93444"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/06-B-mietvertrag.pdf",
+      "title": "Wohnraummietvertrag · Vertragsdaten",
+      "issuer": "Jan Probe",
+      "issued": "2025-06-20",
+      "period": "ab 2025-07-01",
+      "category": "Mietvertrag",
+      "object_id": "B",
+      "required": true,
+      "pages": 2,
+      "sha256": "2053f002e81c9595bcef001e083df8136c1161afedf577a652dd6406fc1990fc"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/07-B-mietkonto-2025.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": "B",
+      "required": true,
+      "bank": {
+        "initial_cent": 0,
+        "entries": [
+          {
+            "date": "2025-07-03",
+            "counterparty": "Jonas Mietprobe",
+            "reference": "Miete B 07/2025; netto 1000; NK 180",
+            "cent": 118000
+          },
+          {
+            "date": "2025-08-03",
+            "counterparty": "Jonas Mietprobe",
+            "reference": "Miete B 08/2025; netto 1000; NK 180",
+            "cent": 118000
+          },
+          {
+            "date": "2025-09-03",
+            "counterparty": "Jonas Mietprobe",
+            "reference": "Miete B 09/2025; netto 1000; NK 180",
+            "cent": 118000
+          },
+          {
+            "date": "2025-10-03",
+            "counterparty": "Jonas Mietprobe",
+            "reference": "Miete B 10/2025; netto 1000; NK 180",
+            "cent": 118000
+          },
+          {
+            "date": "2025-11-03",
+            "counterparty": "Jonas Mietprobe",
+            "reference": "Miete B 11/2025; netto 1000; NK 180",
+            "cent": 118000
+          },
+          {
+            "date": "2025-12-03",
+            "counterparty": "Jonas Mietprobe",
+            "reference": "Miete B 12/2025; netto 1000; NK 180",
+            "cent": 118000
+          }
+        ],
+        "end_cent": 708000
+      },
+      "pages": 1,
+      "sha256": "1af7381e165a20d42670614fd54ff8f67a64566b83756a285cdab1fa8cc78083"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/08-A-nebenkostenabrechnung-mieter-2024.pdf",
+      "title": "Betriebskostenabrechnung an den Mieter 2024",
+      "issuer": "Jan Probe",
+      "issued": "2025-08-15",
+      "period": "2024",
+      "category": "Miet-Nebenkosten",
+      "object_id": "A",
+      "required": true,
+      "pages": 1,
+      "sha256": "940ca5f4f6311b3dcb5028733140026c96c148ae42f91d58094c41e2f9c9cbcf"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/09-A-hausgeldabrechnung-2024.pdf",
+      "title": "WEG-Einzelabrechnung 2024",
+      "issuer": "Testverwaltung WEG Musterweg",
+      "issued": "2025-07-15",
+      "period": "2024",
+      "category": "Hausgeldabrechnung",
+      "object_id": "A",
+      "required": true,
+      "pages": 1,
+      "sha256": "b6a1ad57e6b73d3a78266029dc5edbce5610ae92841a14d6320ded9fd09c15c8"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/10-A-wirtschaftsplan-2025.pdf",
+      "title": "WEG-Wirtschaftsplan 2025",
+      "issuer": "Testverwaltung WEG Musterweg",
+      "issued": "2024-11-20",
+      "period": "2025",
+      "category": "Hausgeld-Plan",
+      "object_id": "A",
+      "required": true,
+      "pages": 1,
+      "sha256": "de3a1328d689c63feaaf6be7dc072a4c786705245d2b97a78dc87706ae9f6681"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/11-A-verwalterauskunft-2025.pdf",
+      "title": "Ausstehende Jahresabrechnung 2025",
+      "issuer": "Testverwaltung WEG Musterweg",
+      "issued": "2026-04-03",
+      "period": "2025",
+      "category": "Nachforderung",
+      "object_id": "A",
+      "required": true,
+      "pages": 1,
+      "sha256": "9eeb48f993c449a9a0da31606b4f61b19457e4a73acfcf8a398429dd5479af39"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/12-A-reparatur-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Rohrklar Musterbetrieb",
+      "issued": "2025-09-18",
+      "period": "2025-09-15",
+      "category": "Erhaltungsaufwand",
+      "object_id": "A",
+      "required": true,
+      "gross_cent": 71400,
+      "payment_date": "2025-09-22",
+      "pages": 1,
+      "sha256": "63c3de2d59f15114422a113901d655c0380d7ea15a059fcf0668ce52ce0bebe4"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/13-A-kostenzahlungen-2025.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": "A",
+      "required": true,
+      "bank": {
+        "initial_cent": 1000000,
+        "entries": [
+          {
+            "date": "2025-01-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-02-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-03-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-04-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-05-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-06-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-07-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-08-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-09-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-09-22",
+            "counterparty": "Rohrklar",
+            "reference": "RK-25-218",
+            "cent": -71400
+          },
+          {
+            "date": "2025-10-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-11-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          },
+          {
+            "date": "2025-12-05",
+            "counterparty": "Testverwaltung",
+            "reference": "Hausgeld A inkl. 50 EUR Rücklage",
+            "cent": -30000
+          }
+        ],
+        "end_cent": 568600
+      },
+      "pages": 1,
+      "sha256": "d779cb98ea29343fe5a527f19e7496a3ebe8623eec29ffadd704f202de46b0ec"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/14-A-darlehensjahreskonto-2025.pdf",
+      "title": "Jahreskonto zum Immobiliendarlehen",
+      "issuer": "Testbank Finanzierung",
+      "issued": "2026-01-15",
+      "period": "2025",
+      "category": "Darlehen",
+      "object_id": "A",
+      "required": true,
+      "pages": 1,
+      "sha256": "2b278677c200570917da98b83e0e53fe363d047c8d5333dcfad84d3026761b2b"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/15-B-darlehensjahreskonto-2025.pdf",
+      "title": "Jahreskonto zum Immobiliendarlehen",
+      "issuer": "Testbank Finanzierung",
+      "issued": "2026-01-15",
+      "period": "2025",
+      "category": "Darlehen",
+      "object_id": "B",
+      "required": true,
+      "pages": 1,
+      "sha256": "43460abe8700ff0da821a6a8344d1c08c6af8cbd586e7ce0086ccbbebb9fbd04"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/16-B-kaufvertrag-auszug.pdf",
+      "title": "Kaufvertrag · Auszug der steuerrelevanten Angaben",
+      "issuer": "Notariat Fiktiv & Partner",
+      "issued": "2025-05-15",
+      "period": "2025",
+      "category": "Erwerb",
+      "object_id": "B",
+      "required": true,
+      "pages": 2,
+      "sha256": "5157efb20c1424e5c1e43be9ee9790075ddc842e8b7a303caa358592457bfc1d"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/17-B-aufteilung-uebergabe.pdf",
+      "title": "Kaufpreisaufteilung und Übergabeprotokoll",
+      "issuer": "Sachverständigenbüro Musterblick",
+      "issued": "2025-07-01",
+      "period": "2025",
+      "category": "Erwerb",
+      "object_id": "B",
+      "required": true,
+      "pages": 1,
+      "sha256": "6cf7c9fb85f8f287ae2166bd4ade59223416db912b02fb11baca578856b79318"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/18-B-grunderwerbsteuer.pdf",
+      "title": "Erwerbsnebenkosten · Kostenbeleg",
+      "issuer": "Test-Finanzverwaltung",
+      "issued": "2025-06-02",
+      "period": "2025",
+      "category": "Erwerb",
+      "object_id": "B",
+      "required": true,
+      "pages": 1,
+      "sha256": "da16932d9d2d1bb7dbd9769768f65a244c3a7b9656cf6ca2081ef5cbdeb3bb70"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/19-B-notar-grundbuch.pdf",
+      "title": "Erwerbsnebenkosten · Kostenbeleg",
+      "issuer": "Notariat und Registerkosten Test",
+      "issued": "2025-06-03",
+      "period": "2025",
+      "category": "Erwerb",
+      "object_id": "B",
+      "required": true,
+      "pages": 1,
+      "sha256": "c408b64311b70820352f51f6719db34a097dbf1fb85284426568532ff6b81e91"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/20-B-makler.pdf",
+      "title": "Erwerbsnebenkosten · Kostenbeleg",
+      "issuer": "Mustervermittlung",
+      "issued": "2025-06-04",
+      "period": "2025",
+      "category": "Erwerb",
+      "object_id": "B",
+      "required": true,
+      "pages": 1,
+      "sha256": "4afc252b6bf1ba63e951b6170c19d7278ee0dea4bd3b9312fa1970b6cad45781"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/21-B-erwerbszahlungen.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": "B",
+      "required": true,
+      "bank": {
+        "initial_cent": 23000000,
+        "entries": [
+          {
+            "date": "2025-06-12",
+            "counterparty": "Test-Finanzverwaltung",
+            "reference": "TEST-GREST-B",
+            "cent": -1000000
+          },
+          {
+            "date": "2025-06-12",
+            "counterparty": "Notariat / Register",
+            "reference": "TEST-NK-B",
+            "cent": -200000
+          },
+          {
+            "date": "2025-06-12",
+            "counterparty": "Mustervermittlung",
+            "reference": "TEST-MAK-B",
+            "cent": -800000
+          },
+          {
+            "date": "2025-07-01",
+            "counterparty": "Musterbau Vermögen",
+            "reference": "Kaufpreis B",
+            "cent": -20000000
+          }
+        ],
+        "end_cent": 1000000
+      },
+      "pages": 1,
+      "sha256": "c8b6127f44b2c642a69cd92a3579135a10952955111c6b439d1a37ca19706fc1"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/22-B-reparatur-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Elektro Testlicht",
+      "issued": "2025-08-08",
+      "period": "2025-08-06",
+      "category": "Erhaltungsaufwand",
+      "object_id": "B",
+      "required": true,
+      "gross_cent": 119000,
+      "payment_date": "2025-08-15",
+      "pages": 1,
+      "sha256": "a4ec0aea0427abe64b2ec29ab49ff5f4ede8dfabe43c231ebc8c04c32a401ff9"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/23-B-betriebskosten-bescheide.pdf",
+      "title": "Betriebskosten · Abrechnungsbelege 2025",
+      "issuer": "Testversorgung / Kommune / Gebäudeversicherung",
+      "issued": "2026-02-10",
+      "period": "2025-07-01 - 2025-12-31",
+      "category": "Betriebskosten",
+      "object_id": "B",
+      "required": true,
+      "pages": 1,
+      "sha256": "5bbd3d9b1d9ab8859c581a4420194d7455710eee2c9ec05c01d134f1a858a9d1"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/24-B-kostenzahlungen-2025.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": "B",
+      "required": true,
+      "bank": {
+        "initial_cent": 1000000,
+        "entries": [
+          {
+            "date": "2025-07-15",
+            "counterparty": "Testkommune",
+            "reference": "GS-B-25",
+            "cent": -18000
+          },
+          {
+            "date": "2025-07-15",
+            "counterparty": "Testversicherung",
+            "reference": "GV-B-25",
+            "cent": -24000
+          },
+          {
+            "date": "2025-08-15",
+            "counterparty": "Elektro Testlicht",
+            "reference": "ET-25-311",
+            "cent": -119000
+          },
+          {
+            "date": "2025-10-15",
+            "counterparty": "Testwasser",
+            "reference": "WA-B-25",
+            "cent": -30000
+          },
+          {
+            "date": "2025-10-15",
+            "counterparty": "Testentsorgung",
+            "reference": "MU-B-25",
+            "cent": -15000
+          }
+        ],
+        "end_cent": 794000
+      },
+      "pages": 1,
+      "sha256": "bac9f259cc0730b69aa9b857a67d9e65e65f3fdee590fb3ed13099d3e0f69259"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/02_Nachreichung/25-A-hausgeldabrechnung-2025.pdf",
+      "title": "WEG-Einzelabrechnung 2025 mit Rücklagenentwicklung",
+      "issuer": "Testverwaltung WEG Musterweg",
+      "issued": "2026-08-18",
+      "period": "2025",
+      "category": "Hausgeldabrechnung",
+      "object_id": "A",
+      "required": true,
+      "pages": 1,
+      "sha256": "a8a1ac01089ef55bcbf5b9d1978f2dbac72996cb3bc0bc86c107d55b1182485f"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/02_Nachreichung/26-A-weg-ausgaben-nachweis-2025.pdf",
+      "title": "WEG-Ausgabenbestätigung und Dachreparaturbeleg",
+      "issuer": "Testverwaltung WEG Musterweg",
+      "issued": "2026-08-18",
+      "period": "2025",
+      "category": "WEG-Kostennachweis",
+      "object_id": "A",
+      "required": true,
+      "pages": 1,
+      "sha256": "a399e9d9031b06f97b4da4bca8169f71cde6ec79cbfa5b7e369f16be0d8afca4"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/01-mandantenangaben.pdf",
+      "title": "Angaben zur Einkommensteuer 2025",
+      "issuer": "Mandantenportal · ausgefüllter Fragebogen",
+      "issued": "2026-04-15",
+      "period": "2025",
+      "category": "Stammdaten",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "e62449949117fb95d17a867a1a0fed1a3450bbc36bbde1ca696ca5c1bdbbd612"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/02-lohnsteuer-lena-arbeitgeber-1.pdf",
+      "title": "Ausdruck der elektronischen Lohnsteuerbescheinigung 2025",
+      "issuer": "Testkontor Alt GmbH",
+      "issued": "2026-02-12",
+      "period": "01.01.2025 - 30.04.2025",
+      "category": "Arbeitslohn",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "82cd3d80ad4e385fffcf2c36c0abb6270e47f9a42f312d408551753fd9685977"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/03-lohnsteuer-lena-arbeitgeber-2.pdf",
+      "title": "Ausdruck der elektronischen Lohnsteuerbescheinigung 2025",
+      "issuer": "Testkontor Neu GmbH",
+      "issued": "2026-02-12",
+      "period": "01.07.2025 - 31.12.2025",
+      "category": "Arbeitslohn",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "100f4c977a231b2ad58664282251dc0502663efa307d637dd41386cd9ada30db"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/04-lohnsteuer-nils.pdf",
+      "title": "Ausdruck der elektronischen Lohnsteuerbescheinigung 2025",
+      "issuer": "Musterplanung GmbH",
+      "issued": "2026-02-12",
+      "period": "01.01.2025 - 31.12.2025",
+      "category": "Arbeitslohn",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "4a462020a6184ce7847f900f30bd2a127e184224b3fb8407a71e247a09b31ac3"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/05-leistungsnachweis-alg.pdf",
+      "title": "Leistungsnachweis für das Kalenderjahr 2025",
+      "issuer": "Test-Agentur für Arbeit",
+      "issued": "2026-02-05",
+      "period": "2025",
+      "category": "Lohnersatzleistungen",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "67ebed7aa3da402a77366a59b41d60665350ddfb55f180152ff92f702cf1757d"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/06-kinderdaten-kindergeld.pdf",
+      "title": "Kinderdaten und Kindergeld-Zahlungsübersicht",
+      "issuer": "Familie Muster / Test-Familienkasse",
+      "issued": "2026-01-15",
+      "period": "2025",
+      "category": "Kinder",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "407494de43d041163fc0443e40b1dbecef27f4c6fcdf390f00b9555ce9a61234"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/07-kita-vertrag-jahresbescheinigung.pdf",
+      "title": "Betreuungsvertrag und Jahreskostenbescheinigung 2025",
+      "issuer": "Kita Testsonne gGmbH",
+      "issued": "2026-01-20",
+      "period": "2025",
+      "category": "Kinderbetreuung",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "64fb2bd0eca01a3f8e3b492fd3bce84e123048bd4354a59060caf3d10297916e"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/08-familienkonto-zahlungen.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": null,
+      "required": true,
+      "bank": {
+        "initial_cent": 1000000,
+        "entries": [
+          {
+            "date": "2025-01-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 01/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-02-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 02/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-03-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 03/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-04-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 04/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-05-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 05/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-05-30",
+            "counterparty": "Test-Agentur für Arbeit",
+            "reference": "ALG Mai",
+            "cent": 160000
+          },
+          {
+            "date": "2025-06-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 06/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-06-30",
+            "counterparty": "Test-Agentur für Arbeit",
+            "reference": "ALG Juni",
+            "cent": 160000
+          },
+          {
+            "date": "2025-07-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 07/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-08-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 08/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-09-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 09/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-10-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 10/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-11-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 11/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          },
+          {
+            "date": "2025-12-05",
+            "counterparty": "Kita Testsonne",
+            "reference": "Theo 12/2025; 500 Betreuung + 80 Essen",
+            "cent": -58000
+          }
+        ],
+        "end_cent": 624000
+      },
+      "pages": 1,
+      "sha256": "f1c998564dac82471e3e82fc714d14bc4518f1819ce9d8d6108ea1e702f016ce"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/09-vorjahresunterlagen-2024.pdf",
+      "title": "Vorjahresdaten 2024 · Übergabeauszug",
+      "issuer": "Fiktive Steuerkanzlei Vorjahr",
+      "issued": "2025-08-20",
+      "period": "2024",
+      "category": "Vorjahr",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "d149cb4ce24d6753e00e873a76d183596fa846188bae9335dee02048ded97146"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/01-mandantenangaben.pdf",
+      "title": "Angaben zur Einkommensteuer 2025",
+      "issuer": "Mandantenportal · ausgefüllter Fragebogen",
+      "issued": "2026-04-15",
+      "period": "2025",
+      "category": "Stammdaten",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "61106e0e788010e92e651f357bce96bb4562a438d8506d565d5549ce8f78ba0a"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/02-rentenbezugsmitteilung-2025.pdf",
+      "title": "Information über die gemeldeten Rentenleistungen 2025",
+      "issuer": "Test-Rentenversicherung",
+      "issued": "2026-02-16",
+      "period": "2025",
+      "category": "Rente",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "ef4fa7f6a85c15c109415fed1109caf5293c826e1ab610f9fe6a3f53f1da1125"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/03-vorjahresunterlagen-2024.pdf",
+      "title": "Vorjahresdaten 2024 · Übergabeauszug",
+      "issuer": "Fiktive Steuerkanzlei Vorjahr",
+      "issued": "2025-08-20",
+      "period": "2024",
+      "category": "Vorjahr",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "05b9465a5a8fb89e4d17d6414c035b22f2d95f182751a6e6123282889fcdd3e3"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/04-steuerbescheinigung-kapital-2025.pdf",
+      "title": "Jahressteuerbescheinigung 2025",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-02-20",
+      "period": "2025",
+      "category": "Kapitalvermögen",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "c08bddd8cf67a973bc3dc724ab5a49b16ed2d159d5bf8de4f8872d50e6be9826"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/05-zahnarzt-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Zahnarztpraxis Testbogen",
+      "issued": "2025-09-01",
+      "period": "2025-08-20",
+      "category": "Krankheitskosten",
+      "object_id": null,
+      "required": true,
+      "gross_cent": 180000,
+      "payment_date": "2025-09-15",
+      "pages": 1,
+      "sha256": "679635a141be28ec55ec50552e901c560bef026c2c56d276c9d1ff5cec7d9db8"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/06-sehhilfe-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Optik Musterblick",
+      "issued": "2025-10-04",
+      "period": "2025-10-04",
+      "category": "Krankheitskosten",
+      "object_id": null,
+      "required": true,
+      "gross_cent": 40000,
+      "payment_date": "2025-10-04",
+      "pages": 1,
+      "sha256": "1dedf7a4c9cc410bce58bd8ea30634e47c7ec6ab1978b8d167a4c36a620609c5"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/07-medizinische-bestaetigung.pdf",
+      "title": "Verordnung und medizinische Bestätigung",
+      "issuer": "Testpraxis Allgemeinmedizin",
+      "issued": "2025-08-01",
+      "period": "2025",
+      "category": "Krankheitskosten",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "f4584d5329a3b579a4db2b2f2d7c3ec57f8052af90c753f74627c4528d82ae5d"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/08-krankenkasse-erstattung.pdf",
+      "title": "Leistungsabrechnung · Kostenerstattung",
+      "issuer": "Testgesund Krankenkasse",
+      "issued": "2025-09-25",
+      "period": "2025",
+      "category": "Krankheitskosten",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "6286b6552cc7c551d8081b3ce042b64900cdd2a42425d6d8fc254480a9378ffa"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/09-zahlungen-2025.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": null,
+      "required": true,
+      "bank": {
+        "initial_cent": 1000000,
+        "entries": [
+          {
+            "date": "2025-09-15",
+            "counterparty": "Testpraxis Zahn",
+            "reference": "ZT-25-143",
+            "cent": -180000
+          },
+          {
+            "date": "2025-09-30",
+            "counterparty": "Testgesund",
+            "reference": "Erstattung ZT-25-143",
+            "cent": 60000
+          },
+          {
+            "date": "2025-10-04",
+            "counterparty": "Optik Musterblick",
+            "reference": "OM-25-088",
+            "cent": -40000
+          },
+          {
+            "date": "2025-12-31",
+            "counterparty": "Testbank",
+            "reference": "Zinsen 1800 minus KEST 200 und Soli 11",
+            "cent": 158900
+          }
+        ],
+        "end_cent": 998900
+      },
+      "pages": 1,
+      "sha256": "012d8d06be5d10f8b055c71cdb9da9b63ef6370a66e086a92479b5d82d2bfc38"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/01-mandantenangaben.pdf",
+      "title": "Angaben zur Einkommensteuer 2025",
+      "issuer": "Mandantenportal · ausgefüllter Fragebogen",
+      "issued": "2026-04-15",
+      "period": "2025",
+      "category": "Stammdaten",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "a050f7cd8df5139b5f0bbdf3a19b3b475051660d5ce079262ca27707955b8156"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/02-vorjahresunterlagen-2024.pdf",
+      "title": "Vorjahresdaten 2024 · Übergabeauszug",
+      "issuer": "Fiktive Steuerkanzlei Vorjahr",
+      "issued": "2025-08-20",
+      "period": "2024",
+      "category": "Vorjahr",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "de42b6a4b1193c80df1daaf92b6106575d4df51c25f38e6ec806255f3f62143f"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/03-ausgangsrechnungen-2025.pdf",
+      "title": "Ausgangsrechnungen 2025 · 12 Einzelrechnungen",
+      "issuer": "Nora Test",
+      "issued": "2025-12-20",
+      "period": "2025",
+      "category": "Betriebseinnahmen",
+      "object_id": null,
+      "required": true,
+      "pages": 12,
+      "sha256": "7584a24c23e862a703e1049294bb73331f8e6acb65db440ff5e242da41f0bbec"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/04-vertraege-jahresabrechnungen.pdf",
+      "title": "Verträge und Jahresabrechnungen 2025",
+      "issuer": "Testanbieter · gesammelte Kostenbestätigungen",
+      "issued": "2026-01-31",
+      "period": "2025",
+      "category": "Betriebsausgaben",
+      "object_id": null,
+      "required": true,
+      "pages": 2,
+      "sha256": "8c2a71b6e8da41b36444235f8118cbd14f103a8287baabb42b09d18f3437d5a7"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/05-bueromaterial-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Papier Musterhandel",
+      "issued": "2025-02-12",
+      "period": "2025-02-12",
+      "category": "Betriebsausgaben",
+      "object_id": null,
+      "required": true,
+      "gross_cent": 60000,
+      "payment_date": "2025-02-15",
+      "pages": 1,
+      "sha256": "6d03d8b7ed84fb8b1271ee951c42c7fec4801caefedf7f10bcdf63e8800ecb2b"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/06-fortbildung-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Sprachakademie Test",
+      "issued": "2025-03-10",
+      "period": "2025-03-08",
+      "category": "Betriebsausgaben",
+      "object_id": null,
+      "required": true,
+      "gross_cent": 45000,
+      "payment_date": "2025-03-15",
+      "pages": 1,
+      "sha256": "2d1e27252241e6d91ac2247db36c8dc0cbdf2a9b0f6469bb83b77652e07e5eb0"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/07-computer-rechnung.pdf",
+      "title": "Rechnung",
+      "issuer": "Rechner Testhandel",
+      "issued": "2025-06-10",
+      "period": "2025-06-10",
+      "category": "Anlagevermögen",
+      "object_id": null,
+      "required": true,
+      "gross_cent": 100000,
+      "payment_date": "2025-06-15",
+      "pages": 1,
+      "sha256": "7239273d3cf733c41e911a2fbba308765ac616b0d82877717615a6ac8ec6b6ad"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/08-anlagenverzeichnis-computer.pdf",
+      "title": "Anlagenverzeichnis · Zugang Computer 2025",
+      "issuer": "Nora Test",
+      "issued": "2026-04-15",
+      "period": "2025",
+      "category": "Anlagevermögen",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "b80f91b22ef8b68855948c7a1a9ad43f7377799fd566c1493b5165551550db60"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/09-geschaeftskonto-2025.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": null,
+      "required": true,
+      "bank": {
+        "initial_cent": 200000,
+        "entries": [
+          {
+            "date": "2025-01-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 01/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-01-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 01/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-01-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 01/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-01-15",
+            "counterparty": "Testbank",
+            "reference": "GK-2025",
+            "cent": -12000
+          },
+          {
+            "date": "2025-01-15",
+            "counterparty": "Testschutz",
+            "reference": "BH-2025",
+            "cent": -24000
+          },
+          {
+            "date": "2025-01-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-001",
+            "cent": 200000
+          },
+          {
+            "date": "2025-02-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 02/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-02-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 02/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-02-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 02/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-02-15",
+            "counterparty": "Papier Musterhandel",
+            "reference": "PM-25-019",
+            "cent": -60000
+          },
+          {
+            "date": "2025-02-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-002",
+            "cent": 200000
+          },
+          {
+            "date": "2025-03-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 03/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-03-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 03/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-03-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 03/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-03-15",
+            "counterparty": "Sprachakademie",
+            "reference": "SA-25-034",
+            "cent": -45000
+          },
+          {
+            "date": "2025-03-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-003",
+            "cent": 200000
+          },
+          {
+            "date": "2025-04-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 04/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-04-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 04/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-04-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 04/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-04-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-004",
+            "cent": 200000
+          },
+          {
+            "date": "2025-05-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 05/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-05-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 05/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-05-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 05/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-05-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-005",
+            "cent": 200000
+          },
+          {
+            "date": "2025-06-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 06/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-06-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 06/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-06-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 06/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-06-15",
+            "counterparty": "Rechner Testhandel",
+            "reference": "RT-25-061",
+            "cent": -100000
+          },
+          {
+            "date": "2025-06-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-006",
+            "cent": 200000
+          },
+          {
+            "date": "2025-07-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 07/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-07-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 07/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-07-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 07/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-07-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-007",
+            "cent": 200000
+          },
+          {
+            "date": "2025-08-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 08/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-08-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 08/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-08-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 08/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-08-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-008",
+            "cent": 200000
+          },
+          {
+            "date": "2025-09-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 09/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-09-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 09/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-09-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 09/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-09-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-009",
+            "cent": 200000
+          },
+          {
+            "date": "2025-10-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 10/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-10-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 10/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-10-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 10/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-10-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-010",
+            "cent": 200000
+          },
+          {
+            "date": "2025-11-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 11/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-11-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 11/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-11-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 11/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-11-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-011",
+            "cent": 200000
+          },
+          {
+            "date": "2025-12-05",
+            "counterparty": "Büro Testpunkt",
+            "reference": "Coworking 12/2025",
+            "cent": -15000
+          },
+          {
+            "date": "2025-12-05",
+            "counterparty": "Netztest",
+            "reference": "Internet 12/2025",
+            "cent": -3500
+          },
+          {
+            "date": "2025-12-05",
+            "counterparty": "Sprachtool",
+            "reference": "Software 12/2025",
+            "cent": -2500
+          },
+          {
+            "date": "2025-12-20",
+            "counterparty": "Eigenes Privatkonto",
+            "reference": "Privatentnahme",
+            "cent": -300000
+          },
+          {
+            "date": "2025-12-25",
+            "counterparty": "Textwerk Muster",
+            "reference": "NT-2025-012",
+            "cent": 200000
+          }
+        ],
+        "end_cent": 1807000
+      },
+      "pages": 2,
+      "sha256": "d128c15dd4b336d95b0ade6290c0c4088b5bef5b6257e805e5babef454a0aae0"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/10-private-krankenversicherung-2025.pdf",
+      "title": "Bescheinigung der Vorsorgeaufwendungen 2025",
+      "issuer": "Privatgesund Testversicherung",
+      "issued": "2026-02-17",
+      "period": "2025",
+      "category": "Vorsorgeaufwand",
+      "object_id": null,
+      "required": true,
+      "pages": 1,
+      "sha256": "e3d641b51b7bbefe03fd70eba8b803e983b7d96b308bef19bff2a2176a6c38db"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/11-privatkonto-vorsorge-2025.pdf",
+      "title": "Kontoumsätze · Test-Unterkonto",
+      "issuer": "Testbank Nord · synthetisches Institut",
+      "issued": "2026-01-08",
+      "period": "2025",
+      "category": "Zahlungsnachweise",
+      "object_id": null,
+      "required": true,
+      "bank": {
+        "initial_cent": 600000,
+        "entries": [
+          {
+            "date": "2025-01-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 01/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-02-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 02/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-03-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 03/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-04-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 04/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-05-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 05/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-06-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 06/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-07-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 07/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-08-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 08/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-09-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 09/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-10-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 10/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-11-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 11/2025",
+            "cent": -41500
+          },
+          {
+            "date": "2025-12-02",
+            "counterparty": "Privatgesund",
+            "reference": "KV 350 + PV 65, 12/2025",
+            "cent": -41500
+          }
+        ],
+        "end_cent": 102000
+      },
+      "pages": 1,
+      "sha256": "224ca8e79de4c714566701254c70d366c35f8b01d7186dee51cbb934396537a5"
+    }
+  ],
+  "scan_variants": [
+    {
+      "case": "01-Arbeitnehmerin-Mira-Beispiel",
+      "path": "01-Arbeitnehmerin-Mira-Beispiel/90_Kontrollvarianten/SCAN-02-lohnsteuerbescheinigung-2025.pdf",
+      "source": "01-Arbeitnehmerin-Mira-Beispiel/01_Eingang_2026-04-15/02-lohnsteuerbescheinigung-2025.pdf",
+      "pages": 1,
+      "purpose": "Vollständiges Bild-PDF ohne Textschicht. Alternativ zum Ursprungsbeleg; nicht zusätzlich als neue Einnahme/Kosten hochladen.",
+      "sha256": "1e9a496c1f83f3237dcd3c0bff0c396985bcd2ae06d8928d16e16a0b4e2223de"
+    },
+    {
+      "case": "02-Vermieter-Jan-Probe",
+      "path": "02-Vermieter-Jan-Probe/90_Kontrollvarianten/SCAN-02-lohnsteuerbescheinigung-2025.pdf",
+      "source": "02-Vermieter-Jan-Probe/01_Eingang_2026-04-15/02-lohnsteuerbescheinigung-2025.pdf",
+      "pages": 1,
+      "purpose": "Vollständiges Bild-PDF ohne Textschicht. Alternativ zum Ursprungsbeleg; nicht zusätzlich als neue Einnahme/Kosten hochladen.",
+      "sha256": "d6b27c4d2018244c2711d696fc081a4f0df85a566ac8ad2a323136e1dfdecad1"
+    },
+    {
+      "case": "03-Familie-Lena-und-Nils-Muster",
+      "path": "03-Familie-Lena-und-Nils-Muster/90_Kontrollvarianten/SCAN-02-lohnsteuer-lena-arbeitgeber-1.pdf",
+      "source": "03-Familie-Lena-und-Nils-Muster/01_Eingang_2026-04-15/02-lohnsteuer-lena-arbeitgeber-1.pdf",
+      "pages": 1,
+      "purpose": "Vollständiges Bild-PDF ohne Textschicht. Alternativ zum Ursprungsbeleg; nicht zusätzlich als neue Einnahme/Kosten hochladen.",
+      "sha256": "9c1bd4936fa82261a0cb1c3abbe8579606d78793340dfee08e662a35c9c93ad2"
+    },
+    {
+      "case": "04-Rentner-Otto-Fiktiv",
+      "path": "04-Rentner-Otto-Fiktiv/90_Kontrollvarianten/SCAN-02-rentenbezugsmitteilung-2025.pdf",
+      "source": "04-Rentner-Otto-Fiktiv/01_Eingang_2026-04-15/02-rentenbezugsmitteilung-2025.pdf",
+      "pages": 1,
+      "purpose": "Vollständiges Bild-PDF ohne Textschicht. Alternativ zum Ursprungsbeleg; nicht zusätzlich als neue Einnahme/Kosten hochladen.",
+      "sha256": "420a75f5db35593ab1250080c9b89004b726ab21bc19c6f70f87c5b769823292"
+    },
+    {
+      "case": "05-Freiberuflerin-Nora-Test",
+      "path": "05-Freiberuflerin-Nora-Test/90_Kontrollvarianten/SCAN-03-ausgangsrechnungen-2025.pdf",
+      "source": "05-Freiberuflerin-Nora-Test/01_Eingang_2026-04-15/03-ausgangsrechnungen-2025.pdf",
+      "pages": 12,
+      "purpose": "Vollständiges Bild-PDF ohne Textschicht. Alternativ zum Ursprungsbeleg; nicht zusätzlich als neue Einnahme/Kosten hochladen.",
+      "sha256": "6cd56863e8f64de9654156c946970a9567c03c2a6e816aa0e840629ec23d4414"
+    }
+  ],
+  "sources": [
+    [
+      "ELSTER: Anleitung Einkommensteuer 2025",
+      "https://www.elster.de/elsterweb/helpGlobal?themaGlobal=help_est_ufa_10_2025",
+      "Struktur der Anlagen und benötigte Angaben. Keine amtlichen Formulare nachgedruckt."
+    ],
+    [
+      "BMF: Geänderter Ausdruck der Lohnsteuerbescheinigung 2025, 20.02.2025",
+      "https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Lohnsteuer/2025-02-20-geaen-ausdruck-elektron-LSt-besch-2025.html",
+      "Nummerierte Lohn-, Steuer- und Sozialversicherungsfelder; eigener synthetischer Ausdruck."
+    ],
+    [
+      "BFH IX R 19/24 vom 14.01.2025",
+      "https://www.bundesfinanzhof.de/de/entscheidung/entscheidungen-online/detail/pdf/STRE202510025?type=1646225765",
+      "Einzahlung in die WEG-Erhaltungsrücklage nicht allein als Werbungskosten abziehbar; tatsächliche Verwendung getrennt belegen."
+    ],
+    [
+      "BMF: Anwendungsschreiben zu § 35a, 09.11.2016",
+      "https://www.ihk.de/blueprint/servlet/resource/blob/4490644/501083731b2f2cb3822075e3e587a1bb/bmf-schreiben-vom-9-november-2016-data.pdf",
+      "Arbeitsanteile und Zahlungs-/Abrechnungszeitpunkt getrennt prüfen, insbesondere Rz. 47. Originalschreiben beim IHK-Spiegel."
+    ],
+    [
+      "Familienportal des Bundes: Kinderbetreuungskosten",
+      "https://familienportal.de/familienportal/familienleistungen/steuerentlastungen/kann-ich-kosten-fuer-die-kinderbetreuung-als-sonderausgabe-absetzen--125214",
+      "Für 2025: 80 Prozent, maximal 4.800 Euro je Kind. Verpflegung separat; unbare Zahlung."
+    ],
+    [
+      "Deutsche Rentenversicherung: Steuern und Rente",
+      "https://www.deutsche-rentenversicherung.de/DRV/DE/Rente/In-der-Rente/Steuern/steuern_node.html",
+      "Jahresrente und Versicherungsbeiträge getrennt; Rentenbeginn und Vorjahresdaten mitführen."
+    ],
+    [
+      "Bundesagentur für Arbeit: Merkblatt für Arbeitslose",
+      "https://www.arbeitsagentur.de/datei/Merkblatt-fuer-Arbeitslose_ba015368.pdf",
+      "Leistungsnachweis separat vom Arbeitgeberlohn; elektronisch gemeldete Leistungen abgleichen."
+    ],
+    [
+      "BMF: Nutzungsdauer Computerhardware, 22.02.2022",
+      "https://lsth.bundesfinanzministerium.de/esth/2022/C-Anhaenge/Anhang-01/V/anhang-1-V.html",
+      "Einjährige Nutzungsdauer und nicht beanstandete volle Abschreibung im Anschaffungsjahr; Computer trotzdem im Anlagenverzeichnis."
+    ],
+    [
+      "§ 19 UStG",
+      "https://www.gesetze-im-internet.de/ustg_1980/__19.html",
+      "Kleinunternehmerfall: Vorjahresumsatz und laufenden Umsatz getrennt angeben. Einnahmen hier ohne ausgewiesene Umsatzsteuer."
+    ]
+  ]
+}
