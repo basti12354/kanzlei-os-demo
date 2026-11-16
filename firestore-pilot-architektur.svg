@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1250" viewBox="0 0 1200 1250" role="img" aria-labelledby="title desc"><title id="title">Kanzlei OS – Firestore-Pilot</title><desc id="desc">Browser über eigene API mit austauschbaren Adaptern für Anmeldung, Firestore und private Dateien. Getrennte Test- und Produktivsysteme, Audit, Sicherung und neutraler Export mit unabhängigem Importtest. Lokale Funktionen vorhanden, Cloud-Aufbau offen.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#76869b"/></marker></defs><style>text{font-family:Arial,sans-serif;fill:#24354b}.title{font-size:30px;font-weight:700}.heading{font-size:20px;font-weight:700}.body{font-size:16px}.small{font-size:14px}.label{font-size:12px;font-weight:700;letter-spacing:1px}.edge{fill:none;stroke:#76869b;stroke-width:2;marker-end:url(#arrow)}</style><rect width="1200" height="1250" fill="#f3f6fa"/>
+<text x="40" y="48" class="label" style="fill:#536882">KANZLEI OS / PILOTARCHITEKTUR</text>
+<text x="40" y="90" class="title">Eigene API. Firestore in Frankfurt. Geplanter Wechselweg.</text>
+<text x="40" y="123" class="body" style="fill:#536882">Zielbild · 16. November 2026 · Cloud-Dienste noch nicht eingerichtet</text>
+<circle cx="45" cy="155" r="5" fill="#247648"/>
+<text x="60" y="160" class="small">Grün: lokal nachgewiesen</text>
+<circle cx="355" cy="155" r="5" fill="#946600"/>
+<text x="370" y="160" class="small">Gelb: teilweise / entschieden</text>
+<circle cx="705" cy="155" r="5" fill="#ac403b"/>
+<text x="720" y="160" class="small">Rot: Go-Live-Nachweis fehlt</text>
+<rect x="40" y="190" width="1120" height="105" rx="12" fill="#ecf8f1" stroke="#247648" stroke-opacity=".4"/><rect x="40" y="206" width="4" height="73" rx="2" fill="#247648"/>
+<text x="60" y="216" class="label" style="fill:#247648">BESTEHENDER LOKALER FACHUMFANG · KEINE PRODUKTIVE CLOUD-FREIGABE</text>
+<text x="60" y="244" class="heading">Browser · Mandantenportal und Kanzleioberfläche</text>
+<text x="60" y="271" class="body">Fragebogen → Upload → Akte → PDF / Word / Excel → fachliche Prüfung und Freigabe</text>
+<path d="M600 295 V335" class="edge"/>
+<text x="620" y="322" class="small">HTTPS · kein Firestore-SDK im Browser</text>
+<rect x="40" y="335" width="315" height="148" rx="12" fill="#fff0ef" stroke="#ac403b" stroke-opacity=".4"/><rect x="40" y="351" width="4" height="116" rx="2" fill="#ac403b"/>
+<text x="60" y="361" class="label" style="fill:#ac403b">GO-LIVE OFFEN</text>
+<text x="60" y="389" class="heading">Anmeldung / Identität</text>
+<text x="60" y="416" class="body">Passkey oder Passwort + TOTP</text>
+<text x="60" y="439" class="body">Mandant und Kanzleiteam</text>
+<text x="60" y="462" class="body">Anbieter / Betrieb noch offen</text>
+<rect x="400" y="335" width="760" height="148" rx="12" fill="#fff0ef" stroke="#ac403b" stroke-opacity=".4"/><rect x="400" y="351" width="4" height="116" rx="2" fill="#ac403b"/>
+<text x="420" y="361" class="label" style="fill:#ac403b">GO-LIVE OFFEN</text>
+<text x="420" y="389" class="heading">Eigene TypeScript-API im portablen Container</text>
+<text x="420" y="416" class="body">Mandatsrechte · Validierung · Versionen / Konflikte · Freigaben</text>
+<text x="420" y="439" class="body">Fachlogik über eigene Speicher-, Datei- und Identitätsadapter</text>
+<text x="420" y="462" class="body">Hosting noch offen · Google-spezifischer Code nur im Adapter</text>
+<path d="M355 407 H400" class="edge"/>
+<path d="M780 483 V510 H215 V540" class="edge"/>
+<path d="M780 510 H600 V540" class="edge"/>
+<path d="M780 510 H985 V540" class="edge"/>
+<rect x="40" y="540" width="350" height="155" rx="12" fill="#fff6dd" stroke="#946600" stroke-opacity=".4"/><rect x="40" y="556" width="4" height="123" rx="2" fill="#946600"/>
+<text x="60" y="566" class="label" style="fill:#946600">DB ENTSCHIEDEN · UMSETZUNG OFFEN</text>
+<text x="60" y="594" class="heading">Firestore Standard</text>
+<text x="60" y="621" class="body">Frankfurt · europe-west3</text>
+<text x="60" y="644" class="body">Fachdaten, Bezüge und Audit</text>
+<text x="60" y="667" class="body">Änderung + Audit atomar</text>
+<rect x="425" y="540" width="350" height="155" rx="12" fill="#fff0ef" stroke="#ac403b" stroke-opacity=".4"/><rect x="425" y="556" width="4" height="123" rx="2" fill="#ac403b"/>
+<text x="445" y="566" class="label" style="fill:#ac403b">GO-LIVE OFFEN</text>
+<text x="445" y="594" class="heading">Private Dateiablage</text>
+<text x="445" y="621" class="body">Originale separat von Firestore</text>
+<text x="445" y="644" class="body">Jahr / Kategorie / Version / Hash</text>
+<text x="445" y="667" class="body">DE/EU · Anbieter noch offen</text>
+<rect x="810" y="540" width="350" height="155" rx="12" fill="#fff0ef" stroke="#ac403b" stroke-opacity=".4"/><rect x="810" y="556" width="4" height="123" rx="2" fill="#ac403b"/>
+<text x="830" y="566" class="label" style="fill:#ac403b">GO-LIVE OFFEN</text>
+<text x="830" y="594" class="heading">Jobs und Überwachung</text>
+<text x="830" y="621" class="body">PDF / OCR / Vorschauen</text>
+<text x="830" y="644" class="body">Begrenzte Wiederholungen</text>
+<text x="830" y="667" class="body">Bereinigte Logs und Alarme</text>
+<path d="M215 695 V725 H310 V755" class="edge"/>
+<path d="M600 695 V735 H890 V755" class="edge"/>
+<rect x="40" y="755" width="540" height="130" rx="12" fill="#fff0ef" stroke="#ac403b" stroke-opacity=".4"/><rect x="40" y="771" width="4" height="98" rx="2" fill="#ac403b"/>
+<text x="60" y="781" class="label" style="fill:#ac403b">SICHERUNG UND RESTORE · OFFEN</text>
+<text x="60" y="809" class="heading">Wiederherstellung im Betrieb</text>
+<text x="60" y="836" class="body">DB: PITR + native Backups; Dateien: eigene Sicherung</text>
+<text x="60" y="859" class="body">Ziel: ≤1 h Datenverlust · Wiederanlauf ≤1 Arbeitstag</text>
+<rect x="620" y="755" width="540" height="130" rx="12" fill="#eef2fa" stroke="#48608c" stroke-opacity=".4"/><rect x="620" y="771" width="4" height="98" rx="2" fill="#48608c"/>
+<text x="640" y="781" class="label" style="fill:#48608c">WECHSELWEG · OFFEN</text>
+<text x="640" y="809" class="heading">Neutraler Export + Import</text>
+<text x="640" y="836" class="body">Versionierte Daten, IDs, Audit, Originale, Prüfsummen</text>
+<text x="640" y="859" class="body">Fachzustand konsistent; Benutzerzuordnungen erhalten</text>
+<text x="810" y="719" class="small" style="fill:#536882">DB + Originale: beide Wege sichern.</text>
+<path d="M890 885 V920" class="edge"/>
+<rect x="620" y="920" width="540" height="120" rx="12" fill="#eef2fa" stroke="#48608c" stroke-opacity=".4"/><rect x="620" y="936" width="4" height="88" rx="2" fill="#48608c"/>
+<text x="640" y="946" class="label" style="fill:#48608c">LOKALER TEST + ECHTE TESTUMGEBUNG AUSSTEHEND</text>
+<text x="640" y="974" class="heading">Zwei Importnachweise</text>
+<text x="640" y="1001" class="body">Leere Firestore-DB + unabhängiger SQLite-Prüfadapter</text>
+<text x="640" y="1024" class="body">Gleiche API-/Fachtests · Exit-Ziel: ≤4 h Unterbrechung</text>
+<rect x="40" y="920" width="540" height="120" rx="12" fill="#fff0ef" stroke="#ac403b" stroke-opacity=".4"/><rect x="40" y="936" width="4" height="88" rx="2" fill="#ac403b"/>
+<text x="60" y="946" class="label" style="fill:#ac403b">GO-LIVE OFFEN</text>
+<text x="60" y="974" class="heading">Test und Produktion strikt getrennt</text>
+<text x="60" y="1001" class="body">Projekte · Login · DB · Dateien · Schlüssel · Logs</text>
+<text x="60" y="1024" class="body">Test bei Bedarf; lokal Emulator + synthetische Daten</text>
+<rect x="40" y="1075" width="1120" height="130" rx="12" fill="#21354d"/>
+<text x="62" y="1108" class="heading" style="fill:#ffffff">MAXIMAL 25 € / MONAT GESAMT</text>
+<text x="62" y="1136" class="body" style="fill:#e0e8f2">Planungsansatz: 16–23 € netto, noch nicht gemessen. API, Auth, Dateien, Test, Logs und Backup inklusive.</text>
+<text x="62" y="1162" class="body" style="fill:#e0e8f2">Vor Echtdaten: konkretes Angebot, Kostenlimits / Alarme, Datenschutz- und Betriebsfreigabe.</text>
+<text x="62" y="1187" class="small" style="fill:#c3d1e2">Region allein ist keine Datenschutzfreigabe. Anbieterwechsel erfordert einen geprüften Adapter und Datenimport.</text>
+</svg>

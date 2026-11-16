@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kanzlei OS Zielarchitektur</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: Kopf mit Kernaussage, Drei-Spalten-Bild (Eingänge → Plattform → Ausgänge), dann Schnittstellentabelle, Vorher/Jetzt, nächste Schritte. Schwesterseite zu „ESt-Strecke Hybrid“, gleiche Farblogik. */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --fg:#1d2430; --muted:#5b6575; --line:#d9dee6;
+  --os:#3e4fb5; --os-bg:#e8ebfa;
+  --mdt:#0f7c78; --mdt-bg:#e3f3f1;
+  --el:#b23a3a; --el-bg:#fbe8e6;
+  --fs:#2f7d32; --fs-bg:#e5f3e5;
+  --lohn:#9a5a12; --lohn-bg:#fbefe0;
+  --stb:#7a4bb0; --stb-bg:#f1e9fa;
+  --warn:#9a6a00; --warn-bg:#fff4d6;
+  --serif:"IBM Plex Serif",Georgia,serif; --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12161d; --surface:#1a2029; --fg:#e4e8ef; --muted:#9aa4b4; --line:#2c3440;
+  --os:#8f9cf0; --os-bg:#1e2445; --mdt:#4cc4bd; --mdt-bg:#15302f; --el:#ee8a85; --el-bg:#3a1f1f;
+  --fs:#7fcd82; --fs-bg:#1b331c; --lohn:#e2a35c; --lohn-bg:#36271a; --stb:#c09ae8; --stb-bg:#2a1f3b;
+  --warn:#e8c25a; --warn-bg:#352c12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12161d; --surface:#1a2029; --fg:#e4e8ef; --muted:#9aa4b4; --line:#2c3440;
+  --os:#8f9cf0; --os-bg:#1e2445; --mdt:#4cc4bd; --mdt-bg:#15302f; --el:#ee8a85; --el-bg:#3a1f1f;
+  --fs:#7fcd82; --fs-bg:#1b331c; --lohn:#e2a35c; --lohn-bg:#36271a; --stb:#c09ae8; --stb-bg:#2a1f3b;
+  --warn:#e8c25a; --warn-bg:#352c12; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+h1,h2{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
+h1{font-size:2rem;line-height:1.15}
+h2{font-size:1.4rem}
+h3{font-size:.98rem;margin:0;font-weight:600}
+p{margin:0;max-width:70ch}
+a{color:var(--os)}
+.lead{color:var(--muted);font-size:1.05rem}
+header,section{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.note{background:var(--warn-bg);color:var(--fg);border-radius:8px;padding:12px 14px;font-size:.92rem;max-width:none}
+.note b{color:var(--warn)}
+
+/* Kernaussagen */
+.claims{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.claim{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.claim .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.claim p{font-size:.93rem}
+
+/* Architekturbild */
+.arch{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1.5fr) 28px minmax(0,1.2fr);gap:0;align-items:stretch}
+.col{display:flex;flex-direction:column;gap:8px;min-width:0}
+.col>.ch{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-bottom:2px}
+.arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1.2rem}
+.box{border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:3px;border:1px solid transparent;min-width:0}
+.box small{color:var(--muted);font-size:.8rem;line-height:1.4}
+.box .proto{font-family:var(--mono);font-size:.72rem;color:var(--fg);opacity:.85}
+.in{background:var(--mdt-bg);border-color:color-mix(in srgb,var(--mdt) 30%,transparent)}
+.in h3{color:var(--mdt)}
+.out-el{background:var(--el-bg);border-color:color-mix(in srgb,var(--el) 30%,transparent)}
+.out-el h3{color:var(--el)}
+.out-fs{background:var(--fs-bg);border-color:color-mix(in srgb,var(--fs) 30%,transparent)}
+.out-fs h3{color:var(--fs)}
+.out-lohn{background:var(--lohn-bg);border-color:color-mix(in srgb,var(--lohn) 30%,transparent)}
+.out-lohn h3{color:var(--lohn)}
+.platform{background:var(--surface);border:2px solid var(--os);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.platform .ptitle{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.platform .ptitle h3{font-family:var(--serif);font-size:1.15rem;color:var(--os)}
+.platform .ptitle span{font-size:.8rem;color:var(--muted)}
+.stb{background:var(--stb-bg);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:3px}
+.stb h3{color:var(--stb)}
+.stb small{color:var(--muted);font-size:.8rem}
+.mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mod{background:var(--os-bg);border-radius:6px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.mod b{font-size:.88rem;color:var(--os)}
+.mod small{font-size:.78rem;color:var(--muted);line-height:1.4}
+.mod.new{outline:2px dashed var(--os);outline-offset:-2px}
+.svc{border:1px dashed var(--line);border-radius:6px;padding:8px 10px;font-size:.82rem;color:var(--muted)}
+.svc b{color:var(--fg)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+/* Tabelle */
+.scroller{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:900px;font-size:.88rem}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+tr:last-child td{border-bottom:none}
+td code{font-family:var(--mono);font-size:.8rem}
+.dir{font-family:var(--mono);font-size:.8rem;white-space:nowrap}
+.pill{display:inline-block;font-size:.72rem;font-weight:600;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.p1{background:var(--el-bg);color:var(--el)}
+.p2{background:var(--os-bg);color:var(--os)}
+.p3{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
+.grp td{background:var(--bg);font-weight:600;font-size:.82rem;color:var(--muted)}
+
+/* Vorher/Jetzt */
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.cmp>div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.cmp ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:.92rem}
+
+/* Schritte */
+ol.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+ol.steps li::before{content:counter(s);font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--os)}
+ol.steps li div{display:flex;flex-direction:column;gap:4px}
+ol.steps small{color:var(--muted);font-size:.85rem}
+.tag{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+
+ul.risk{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:80ch}
+.src{font-size:.82rem;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+
+@media (max-width:860px){
+  .arch{grid-template-columns:minmax(0,1fr)}
+  .arrow{transform:rotate(90deg);height:28px}
+  .mods{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Kanzlei OS · Pilotentscheidung · Stand 16.11.2026</div>
+  <h1>Kanzlei OS · Architektur und Pilot</h1>
+  <p class="lead">Firestore hinter unserer eigenen TypeScript-API. Die Übersicht trennt vorhandene lokale Funktionen, getroffene Entscheidungen und die noch offenen Schritte bis zum Betrieb mit echten Mandantendaten.</p>
+</header>
+
+<section id="firestore-pilot">
+  <h2>Der beschlossene Firestore-Pilot</h2><p><a href="plattformentscheidungen.html">Offene Plattformentscheidungen · sieben Vorlagen mit unabhängiger Challenge</a></p>
+  <p><a href="go-live-prozessuebersicht.html#aufgaben">Ampeln und Skilltree öffnen</a> · <a href="plattformentscheidungen.html#pilotvertrag">Architekturvertrag und Abnahmekriterien</a> · <a href="firestore-pilot-architektur.svg" download>Diagramm als SVG herunterladen</a></p>
+  <div style="overflow-x:auto;border:1px solid var(--line);border-radius:12px"><img src="firestore-pilot-architektur.svg" width="1200" height="1250" style="display:block;width:100%;min-width:800px;height:auto" alt="Architekturdiagramm: Browser über eigene API; Anmeldung, Firestore in Frankfurt, private Dateien und Jobs; getrennte Test- und Produktivsysteme; Backup und neutraler Export mit zwei Importnachweisen. Cloud-Aufbau offen."></div>
+  <div class="claims">
+    <div class="claim"><span class="k">Entschieden</span><h3>Firestore + eigene API</h3><ul><li>Pilotdatenbank: Firestore Standard.</li><li>Frankfurt eingeplant; Berlin ist eine Alternative.</li><li>Budget: maximal 25 € netto insgesamt.</li></ul></div>
+    <div class="claim"><span class="k">Lokal vorzubereiten</span><h3>Vier neue Pflichtaufgaben</h3><ul><li>API- und Speicherverträge.</li><li>Neutrales vollständiges Archiv.</li><li>Emulator-Roundtrip + unabhängiger Import.</li><li>Kosten- und Lastgrenzen simulieren.</li></ul></div>
+    <div class="claim"><span class="k">Vor Echtdaten offen</span><h3>Betrieb und Abnahme</h3><ul><li>Hosting, Login/MFA und private Dateien.</li><li>Umgebungstrennung, Audit und Sicherung.</li><li>Reale Exit-/Restore-Probe und Kostenbeleg.</li><li>Datenschutz- und Kanzleifreigabe.</li></ul></div>
+  </div>
+  <p class="note"><b>Standort:</b> Eine bestehende Firestore-Datenbank lässt sich nicht auf eine andere Region umstellen. Dazu braucht es eine neue Datenbank und eine Migration. Standorte für Login, Dateien, API und Logs müssen separat festgelegt werden. <a href="https://firebase.google.com/docs/firestore/locations">Google-Dokumentation zu Standorten</a>.</p>
+</section>
+<section><h2>Übergreifendes fachliches Zielbild</h2><p class="note">Die folgende ursprüngliche Skizze beschreibt die langfristigen Schnittstellen. Ihre Bereichsfarben sind keine Go-Live-Ampeln. Maßgeblich für den aktuellen Umsetzungsstand sind der Pilot oben und die verlinkte Go-Live-Übersicht.</p></section>
+
+
+<section>
+  <div class="claims">
+    <div class="claim"><span class="k">Wichtigste Schnittstelle</span><h3>ERiC (ELSTER)</h3><p>Eine Anbindung deckt fast alle amtlichen Übermittlungen ab: ESt, KSt, GewSt, UStVA, ZM, Lohnsteueranmeldung, E-Bilanz. Dazu kommen der Abruf vorausgefüllter Daten und von Bescheiddaten. Die Bibliothek ist kostenlos, eine eigene Hersteller-ID ist Pflicht.</p></div>
+    <div class="claim"><span class="k">Nicht selbst bauen</span><h3>Rechnen, Lohn, Abschluss</h3><p>Die Steuerberechnung, die Lohnabrechnung (Meldungen an die Sozialversicherung nur mit ITSG-Zertifikat) und die Abschlusserstellung kommen aus Fachsoftware. Die wird nach der Offenheit ihrer API ausgewählt.</p></div>
+    <div class="claim"><span class="k">Konsequenz für den Betrieb</span><h3>Die Plattform braucht einen Server-Dienst</h3><p>ERiC ist eine C-Bibliothek und läuft nicht im Browser. Ein eigener ERiC-Dienst in der EU-Cloud übernimmt Übermittlung, Zertifikate und Protokolle.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Was die Plattform macht und womit sie spricht</h2>
+  <div class="arch" role="img" aria-label="Eingänge links, die Plattform in der Mitte, Behörden und Fachsoftware rechts">
+    <div class="col">
+      <div class="ch">Eingänge</div>
+      <div class="box in"><h3>Mandant im Portal</h3><small>Fragebögen, Uploads, Freigaben</small><span class="proto">HTTPS · eID optional</span></div>
+      <div class="box in"><h3>Belege, Fotos, PDFs</h3><small>Text direkt lesen, OCR nur bei Scans</small><span class="proto">PDF-Text · OCR lokal</span></div>
+      <div class="box in"><h3>E-Rechnungen</h3><small>Strukturierte Daten statt Auslesen</small><span class="proto">XRechnung · ZUGFeRD</span></div>
+      <div class="box in"><h3>Bankkonten</h3><small>Umsätze für die Zuordnung von Zahlungen</small><span class="proto">PSD2 · FinTS · EBICS · camt.053</span></div>
+      <div class="box in"><h3>Arbeitgeber / HR-Daten</h3><small>Stammdaten und Bewegungen für den Lohn</small><span class="proto">REST / CSV des HR-Systems</span></div>
+    </div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="col">
+      <div class="ch">Kanzlei OS</div>
+      <div class="platform">
+        <div class="stb"><h3>Steuerberaterin</h3><small>sieht nur Ausnahmen, Entscheidungen und Freigaben · berät</small></div>
+        <div class="ptitle"><h3>Plattform</h3><span>eigenes Datenmodell: jeder Wert mit Quelle</span></div>
+        <div class="mods">
+          <div class="mod"><b>Portal und Fragebögen</b><small>Was trifft zu? Daraus die persönliche Unterlagenliste</small></div>
+          <div class="mod"><b>Dokumente und Auslesen</b><small>Lohnsteuerbescheinigung heute echt, weitere folgen</small></div>
+          <div class="mod new"><b>Regelwerk und Entwürfe</b><small>Erklärungsentwurf, Buchungsvorschläge, Plausibilitäten</small></div>
+          <div class="mod"><b>Prüfung und Freigabe</b><small>Vier Augen, Begründungen, Zustimmung des Mandanten (§ 87d AO)</small></div>
+          <div class="mod"><b>Fristen und Abläufe</b><small>7 Kernprozesse als Workflows</small></div>
+          <div class="mod"><b>Protokoll</b><small>Nachvollziehbarkeit nach GoBD, Versionen</small></div>
+          <div class="mod"><b>Abrechnung</b><small>Leistungen, StBVV, Rechnungen</small></div>
+          <div class="mod"><b>Adapter-Schicht</b><small>je Gegenstelle ein Adapter, austauschbar</small></div>
+        </div>
+        <div class="svc"><b>ERiC-Dienst (Server)</b> · Übermittlung, Testmodus, Zertifikate, Protokolle, Abruf von Bescheiddaten und vorausgefüllten Daten</div>
+      </div>
+    </div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="col">
+      <div class="ch">Ausgänge und Rückkanal</div>
+      <div class="box out-el"><h3>Finanzverwaltung</h3><small>Erklärungen, Anmeldungen, E-Bilanz · zurück: vorausgefüllte Daten, Bescheiddaten</small><span class="proto">ERiC · ELSTER-XML · XBRL</span></div>
+      <div class="box out-fs"><h3>Kanzlei-Fachsoftware</h3><small>Buchführung, Steuerberechnung, Abschluss · DATEV, Stotax, Addison, Agenda …</small><span class="proto">DATEV-Format (EXTF) · Hersteller-API</span></div>
+      <div class="box out-lohn"><h3>Lohnabrechnung</h3><small>ITSG-zertifiziert, meldet selbst an die Sozialversicherung</small><span class="proto">Lohn-API (REST) · DEÜV über Anbieter</span></div>
+      <div class="box out-fs"><h3>Software ohne API</h3><small>nur als Übergang</small><span class="proto">RPA / Agent über die Oberfläche</span></div>
+    </div>
+  </div>
+  <div class="legend"><span><i style="background:var(--mdt)"></i>Eingang</span><span><i style="background:var(--os)"></i>eigene Plattform</span><span><i style="background:var(--el)"></i>Finanzverwaltung</span><span><i style="background:var(--fs)"></i>Fachsoftware</span><span><i style="background:var(--lohn)"></i>Lohn</span><span><i style="background:var(--stb)"></i>Steuerberaterin</span><span>gestrichelt = wird gerade gebaut</span></div>
+</section>
+
+<section>
+  <h2>Schnittstellen und Protokolle</h2>
+  <p>Priorität 1 brauchen wir für die Einkommensteuer, Priorität 2 für FiBu und Lohn, Priorität 3 später oder optional.</p>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>Bereich</th><th>Richtung</th><th>Standard / Protokoll</th><th>Gegenstelle</th><th>Zugang / Voraussetzung</th><th>Prio</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="6">Finanzverwaltung (alles über ERiC)</td></tr>
+      <tr><td>Einkommensteuer, später KSt und GewSt</td><td class="dir">→</td><td>ERiC-Bibliothek (C), Datensätze im ELSTER-XML-Schema; Testmodus mit Testmerker</td><td>Finanzverwaltung</td><td>eigene Hersteller-ID (kostenlos, Registrierung beim BayLfSt), Kanzleizertifikat; Pflichten als Hersteller nach § 87c AO</td><td><span class="pill p1">1</span></td></tr>
+      <tr><td>Vorausgefüllte Daten (VaSt)</td><td class="dir">←</td><td>ERiC, Belegabruf</td><td>Finanzverwaltung</td><td>Vollmacht des Mandanten über die Vollmachtsdatenbank der Kammern (Kosten je Vollmacht)</td><td><span class="pill p1">1</span></td></tr>
+      <tr><td>Bescheiddaten</td><td class="dir">←</td><td>ERiC, Abruf von Bescheiddaten</td><td>Finanzverwaltung</td><td>wie oben; Verfahrensdetails im Entwicklerbereich prüfen</td><td><span class="pill p2">2</span></td></tr>
+      <tr><td>UStVA, ZM, Lohnsteueranmeldung</td><td class="dir">→</td><td>ERiC</td><td>Finanzverwaltung</td><td>gleiche Hersteller-ID</td><td><span class="pill p2">2</span></td></tr>
+      <tr><td>E-Bilanz (§ 5b EStG)</td><td class="dir">→</td><td>XBRL nach amtlicher Taxonomie, über ERiC</td><td>Finanzverwaltung</td><td>Abschluss kommt aus der Fachsoftware</td><td><span class="pill p3">3</span></td></tr>
+      <tr class="grp"><td colspan="6">Fachsoftware</td></tr>
+      <tr><td>Buchungen und Stammdaten</td><td class="dir">→</td><td>DATEV-Format (EXTF-Buchungsstapel, CSV), der faktische Standard aller Anbieter</td><td>DATEV, Stotax, Addison, Agenda, HMD, BMD …</td><td>keiner; Spezifikation öffentlich bei DATEV</td><td><span class="pill p2">2</span></td></tr>
+      <tr><td>Steuerfall anlegen, Berechnung zurücklesen</td><td class="dir">↔</td><td>Hersteller-API, sofern vorhanden (Stotax wirbt mit offener Web-API; DATEV ohne API zum Erstellen von Erklärungen)</td><td>gewählte Fachsoftware</td><td>Anbietergespräch, Sandbox, Kosten je Aufruf</td><td><span class="pill p2">2</span></td></tr>
+      <tr><td>Belege in die Fachsoftware</td><td class="dir">→</td><td>DATEV Belegbilderservice / Hersteller-Import</td><td>DATEV und andere</td><td>Entwicklerportal, Kosten beim Anwender</td><td><span class="pill p3">3</span></td></tr>
+      <tr><td>Software ohne API</td><td class="dir">↔</td><td>RPA oder KI-Agent über die Oberfläche</td><td>beliebig</td><td>nur als Brücke: bricht leicht, GoBD-Protokoll nötig</td><td><span class="pill p3">3</span></td></tr>
+      <tr class="grp"><td colspan="6">Lohn</td></tr>
+      <tr><td>Lohnabrechnung</td><td class="dir">↔</td><td>REST-API des Lohnanbieters (z. B. Lohnfluss, in Zertifizierung) oder Kanzlei-Lohnsoftware</td><td>ITSG-zertifizierter Anbieter</td><td>Lohn nie selbst bauen: Meldungen an die SV nur mit zertifizierter Software</td><td><span class="pill p2">2</span></td></tr>
+      <tr><td>SV-Meldungen, eAU</td><td class="dir">→</td><td>DEÜV-Meldeverfahren über das Kommunikationsserver-Netz</td><td>Krankenkassen, DRV</td><td>läuft komplett beim Lohnanbieter</td><td><span class="pill p2">2</span></td></tr>
+      <tr class="grp"><td colspan="6">Eingänge</td></tr>
+      <tr><td>Mandantenportal</td><td class="dir">↔</td><td>HTTPS, eigene API; Identifizierung nach GwG optional per eID</td><td>Mandanten</td><td>Hosting in der EU, Auftragsverarbeitung geregelt</td><td><span class="pill p1">1</span></td></tr>
+      <tr><td>PDF und Fotos</td><td class="dir">←</td><td>PDF-Text (pdf.js), OCR nur bei Scans (z. B. Tesseract lokal)</td><td>Mandanten</td><td>keine Weitergabe an Drittdienste nötig</td><td><span class="pill p1">1</span></td></tr>
+      <tr><td>E-Rechnungen</td><td class="dir">←</td><td>XRechnung (UBL/CII), ZUGFeRD (PDF/A-3 mit XML), optional Peppol</td><td>Lieferanten der Mandanten</td><td>Empfangspflicht B2B seit 2025</td><td><span class="pill p2">2</span></td></tr>
+      <tr><td>Bankumsätze</td><td class="dir">←</td><td>PSD2 (XS2A), FinTS/HBCI, EBICS; Kontoauszug als camt.053</td><td>Banken, über Dienstleister wie finAPI</td><td>Einwilligung des Mandanten, Vertrag mit dem Dienstleister</td><td><span class="pill p2">2</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>Was sich gegenüber der Hybrid-Skizze ändert</h2>
+  <div class="cmp">
+    <div><span class="eyebrow">Vorher (ESt-Strecke Hybrid)</span><ul>
+      <li>DATEV in der Mitte: Daten gehen nach „Meine Steuern“, DATEV rechnet und übermittelt.</li>
+      <li>ELSTER als Option für einfache Fälle.</li>
+      <li>Plattform vor allem Portal und Belegsammlung.</li>
+    </ul></div>
+    <div><span class="eyebrow">Jetzt</span><ul>
+      <li>Die Plattform hält das Datenmodell und erstellt Entwürfe mit Quellen.</li>
+      <li>ERiC wird zur Hauptschnittstelle für alle amtlichen Übermittlungen und braucht einen eigenen Server-Dienst.</li>
+      <li>Fachsoftware ist austauschbar. Die Anbindung läuft über das DATEV-Format und Hersteller-APIs, gewählt nach Offenheit.</li>
+      <li>Lohn läuft über einen zertifizierten Anbieter per API.</li>
+      <li>Agent-Steuerung nur als Übergang.</li>
+    </ul></div>
+  </div>
+  <p class="note"><b>Offen:</b> Wer rechnet die Steuer? ERiC prüft und übermittelt, berechnet nach unserem Kenntnisstand aber keine Steuer. Für einfache Fälle wäre eine eigene Berechnung denkbar, sonst kommt sie aus der Fachsoftware. Das ist die wichtigste Frage für die Anbietergespräche.</p>
+</section>
+
+<section>
+  <h2>Nächste Schritte</h2>
+  <ol class="steps">
+    <li><div><h3>Hersteller-ID bei ELSTER beantragen</h3><small>Kein Code, aber der Vorlauf entscheidet. Kostenlos, Prüfung durch das Bayerische Landesamt für Steuern, Zugang zu ERiC, Dokumentation und Testmodus.</small><span class="tag">parallel · Tage bis Wochen</span></div></li>
+    <li><div><h3>Erklärungsentwurf im Prototyp fertigstellen</h3><small>Anlage N mit Quellen, Prüfung durch die Steuerberaterin, Freigabe durch den Mandanten, Übergabedatensatz als JSON. Danach Blindtest mit den vier ESt-Testfällen.</small><span class="tag">läuft</span></div></li>
+    <li><div><h3>ERiC-Dienst als Durchstich</h3><small>Übergabedatensatz in ELSTER-XML umsetzen und im Testmodus durch ERiC prüfen und senden, nur mit erfundenen Daten. Die vier Testfälle bleiben laut Testpaket außen vor.</small><span class="tag">nach Hersteller-ID</span></div></li>
+    <li><div><h3>Anbietergespräche führen</h3><small>Stotax, Addison, Agenda, DATEV, HMD: dokumentierte API zum Schreiben und Zurücklesen? Sandbox? Kosten je Aufruf? Steuerberechnung per API? DATEV-Format, XRechnung, E-Bilanz?</small><span class="tag">parallel</span></div></li>
+    <li><div><h3>Lohn und FiBu konzipieren</h3><small>Lohnanbieter mit API auswählen (Zertifizierung prüfen), Buchungsvorschläge der Plattform im DATEV-Format, Bank über PSD2.</small><span class="tag">danach</span></div></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Risiken und Grenzen dieser Skizze</h2>
+  <ul class="risk">
+    <li><b>Herstellerpflichten:</b> Wer ERiC selbst einbindet, ist Softwarehersteller (§ 87c AO). ERiC und die Datensätze ändern sich mehrmals im Jahr.</li>
+    <li><b>Recherche nicht umfassend:</b> Die Angaben zu Anbieter-APIs stammen größtenteils aus Vergleichsportalen und Werbeseiten. Vor einer Entscheidung gezielt nachfragen.</li>
+    <li><b>Berufsrecht und Haftung</b> bleiben bei der Steuerberaterin. Automatisierung braucht deshalb lückenlose Protokolle und klare Freigabepunkte.</li>
+    <li><b>Datenschutz:</b> Hosting in der EU, Verträge zur Auftragsverarbeitung mit allen Dienstleistern (Hosting, Bank, Lohn, ggf. OCR).</li>
+  </ul>
+</section>
+
+<section class="src">
+  <span class="eyebrow">Quellen</span>
+  <span><a href="https://www.elster.de/elsterweb/infoseite/entwickler">ELSTER Entwickler</a> · <a href="https://forum.elster.de/anwenderforum/forum/elster-programme/elster-in-kommerzieller-steuersoftware/38929-elster-transfer-konsole-testmerker">ELSTER-Forum Testmerker</a> · <a href="https://www.elster.de/elsterweb/infoseite/vollmachtsdatenbank">Vollmachtsdatenbank</a> · <a href="https://www.haufe.de/id/kommentar/schwarzpahlkekess-ao-87c-nicht-amtliche-datenverarbe-2-anwendungsbereich-HI9949533.html">§ 87c AO (Haufe)</a></span>
+  <span><a href="https://developer.datev.de/de/help">DATEV Developer Portal</a> · <a href="https://www.stotax.de/buchfuehrungssoftware/">Stotax</a> · <a href="https://www.taxandbytes.de/tools/kanzleisoftware-all-in-one/addison">ADDISON</a> · <a href="https://www.softguide.de/programm/agenda-software-fuer-steuerberater">Agenda</a> · <a href="https://tax-tech.de/tax-tech-verzeichnis/kategorie/kanzleisoftware/">Tax-Tech-Verzeichnis</a></span>
+  <span><a href="https://support.personio.de/hc/en-us/articles/13632466245661-Personio-Payroll-About">ITSG-Pflicht (Personio)</a> · <a href="https://lohnfluss.de/lohnabrechnung-api">Lohnfluss</a> · <a href="https://www.haufe.de/steuern/taxulting/in-diesen-faellen-ist-rpa-in-der-steuerkanzlei-sinnvoll_598848_570088.html">RPA in der Kanzlei (Haufe)</a> · <a href="https://www.steuerschroeder.de/blog/e-bilanz/">E-Bilanz</a></span>
+</section>
+</div>
+
+</body>
+</html>

@@ -711,8 +711,10 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 .todo-item > summary { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
 .skill-node.local-green .skill-orb { color: #87e5ae; border-color: #87e5ae; box-shadow: 0 0 9px #87e5ae40; }
 .skill-node.local-red .skill-orb, .skill-phase.local-red .skill-orb { color: #ff9e9b; border-color: #ff9e9b; }
-.skill-phase.local-yellow .skill-orb { color: #f2cc70; border-color: #f2cc70; }
+.skill-node.local-yellow .skill-orb, .skill-phase.local-yellow .skill-orb { color: #f2cc70; border-color: #f2cc70; }
 .skill-node.local-green::after { content: 'Lokal abgenommen · integriert'; color: #a8ebc3; font-size: .7rem; display: block; }
+.skill-node.decision-complete::after { content: 'Entscheidung abgeschlossen'; }
+.skill-node.local-yellow::after { content: 'Teilweise entschieden'; color: #f2cc70; font-size: .7rem; display: block; }
 .skill-node.local-red::after { content: 'Offen'; color: #ffc3c0; font-size: .7rem; display: block; white-space: nowrap; flex-shrink: 0; }
 </style>
 </head>
@@ -732,6 +734,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <main class="wrap" id="main">
 <section id="ueberblick" aria-labelledby="ueberblick-titel">
   <h2 id="ueberblick-titel">Go-Live auf einen Blick</h2>
+<div class="notice" id="pilotentscheidung"><p><strong>Pilotentscheidung · 16.11.2026:</strong> Firestore Standard hinter eigener TypeScript-API. Zielregion Frankfurt. Maximal 25 € netto/Monat insgesamt.</p><ul class="points"><li>Beschlossen ist die Technologie; API, Login, Isolation und Cloud-Abnahmen sind noch offen.</li><li>Neutraler Export, Import in leere Firestore-Umgebung und unabhängiges SQLite-Prüfziel sind Pflichtnachweise vor Echtdaten.</li><li>Vier neue lokale Vorbereitungen ergänzen die 22 bestandenen Fachaufgaben.</li></ul><p><a href="architektur.html#firestore-pilot">Architekturdiagramm</a> · <a href="plattformentscheidungen.html">Entscheidungsvorlagen mit Claude-Challenge</a> · <a href="plattformentscheidungen.html#pilotvertrag">Entscheidung und Abnahmekriterien</a> · <a href="plattformentscheidungen.html#kosten">Kostenmodell</a></p></div>
   <div class="notice">
     <p><strong>Für echte Mandantendaten ist noch kein Ablauf freigegeben.</strong></p>
     <ul class="points">
@@ -763,7 +766,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <h2 id="fortschritt-titel">Was ist bereits erledigt?</h2>
 <p class="intro">Gemeinsamer lokaler Entwicklungsstand: Agentenlauf, ESt/OCR, Onboarding und objektbezogene Anlage V sind integriert. Der Pages-Build vom 16.11. enthält diesen integrierten Stand; die Demo bleibt ausschließlich für synthetische Daten. Grün bei „Lokal“ gilt für den benannten Testumfang. Die Go-Live-Ampeln in den Prozessschritten bewerten weiterhin den Einsatz mit echten Mandantendaten.</p>
 <div class="legend">
-<div><span class="status green">Lokal · 22 / 22 abgenommen</span><p>20 Originalaufgaben aus <code>87baf51</code> und beide Folgeaufgaben gemeinsam integriert und erneut geprüft. <a href="abnahme-20261115/index.html">Abnahmebericht und Testnachweise öffnen</a>.</p></div>
+<div><span class="status yellow">Lokal · 22 abgenommen · 4 neu offen</span><p>20 Originalaufgaben aus <code>87baf51</code> und beide Folgeaufgaben sind abgenommen. Die Firestore-Entscheidung ergänzt vier neue lokale API-/Export-/Import-/Budgetaufgaben. <a href="abnahme-20261115/index.html">Abnahmebericht und Testnachweise öffnen</a>.</p></div>
 <div><span class="status green">Demo · gemeinsamer Integrationsstand</span><p>Pages-Build vom 16.11.: Fragebogen vor Gebührenentscheidung, centgenauer Regler, objektbezogene Anlage V sowie PDF-, Word- und Excel-Vorschauen. <a href="pages-abnahme-20261116.html">Veröffentlichung und Live-Prüfung</a>. Die frühere Demo vom 15.11. wird damit ersetzt.</p></div>
 <div><span class="status green">Zusammenführung · lokal bestanden</span><p>1.527 Projekttests, 78 Orchestrierungstests, Qualitätscheck und Build. Elf Browserfälle zur Mandantenakte sowie Objektverwaltung, Aufwandsfragebogen und 350,37-€-Gebühr geprüft. PDF-Seiten werden jetzt auch ohne eingebauten PDF-Viewer angezeigt.</p></div>
 </div>
@@ -1355,7 +1358,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Feste Regeln</strong> · Beauftragte Fachprozesse bei aktivem Mandat und zulässigem Beginn starten</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/src/domain/flows/onboarding.ts">Prozessdefinition und Projektstand</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/src/domain/flows/onboarding.ts">Prozessdefinition und Projektstand</a></p>
 </details><details class="process" id="p-belege" open>
 <summary><h3>Belegeingang und Mandantenakte</h3><span class="meta">Laufend · Teil von ESt und FiBu · 7 Schritte</span></summary>
 <p class="desc">Vom Eingang bis zur fachlich zugeordneten Originaldatei. Der Ablauf liegt heute in den Fachprozessen.</p>
@@ -1411,7 +1414,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Original, Fundstelle und Entscheidung in der Mandantenakte verknüpfen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/docs/ARCHITEKTUR.md#digitale-mandantenakte">Prozessdefinition und Projektstand</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/docs/ARCHITEKTUR.md#digitale-mandantenakte">Prozessdefinition und Projektstand</a></p>
 </details><details class="process" id="p-fibu" open>
 <summary><h3>Finanzbuchhaltung und UStVA</h3><span class="meta">Monatlich · Unternehmen · 13 Schritte</span></summary>
 <p class="desc">Vom Kontoauszug und Beleg bis zur geprüften Übergabe, Umsatzsteuer-Voranmeldung und Monatsfortführung.</p>
@@ -1509,7 +1512,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Schnittstellen</strong> · Übermittlungsstatus und Quittung vom Fachsystem abrufen und dem Zeitraum zuordnen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/src/domain/flows/laufend.ts">Prozessdefinition und Projektstand</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/src/domain/flows/laufend.ts">Prozessdefinition und Projektstand</a></p>
 </details><details class="process" id="p-lohn" open>
 <summary><h3>Lohnabrechnung</h3><span class="meta">Monatlich · Arbeitgeber · 12 Schritte</span></summary>
 <p class="desc">Vom Personalstamm über den Monatslauf bis zu Abrechnung, Meldungen und Rücklieferung ins Portal.</p>
@@ -1600,7 +1603,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Aufgaben und Termine für Jahreswechsel, Bescheinigungen und Korrekturen anlegen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/src/domain/flows/laufend.ts">Prozessdefinition und Projektstand</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/docs/LOHN.md">Lohnprozess und Schnittstellen im Projekt</a> · <a href="https://www.gkv-datenaustausch.de/arbeitgeber/entgeltabrechnung/entgeltabrechnung.jsp">GKV-Datenaustausch · Systemuntersuchung</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/src/domain/flows/laufend.ts">Prozessdefinition und Projektstand</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/docs/LOHN.md">Lohnprozess und Schnittstellen im Projekt</a> · <a href="https://www.gkv-datenaustausch.de/arbeitgeber/entgeltabrechnung/entgeltabrechnung.jsp">GKV-Datenaustausch · Systemuntersuchung</a></p>
 </details><details class="process" id="p-est" open>
 <summary><h3>Einkommensteuer</h3><span class="meta">Jährlich · Privatmandate · 12 Schritte</span></summary>
 <p class="desc">Von der Unterlagenabfrage über Entwurf und Rückfragen bis zur bestätigten Übermittlung.</p>
@@ -1688,7 +1691,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Quittung ablegen, Mandant informieren und die Bescheidprüfung anstoßen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/src/domain/flows/est.ts">Prozessdefinition und Projektstand</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/docs/ENTWURF.md">ESt-Erklärungsentwurf im Projekt</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/docs/LSTB_AUSLESE.md">Lohnsteuer-PDF-Auslese im Projekt</a> · <a href="https://github.com/basti12354/kanzlei-os/issues/14">Issue #14</a> · <a href="https://github.com/basti12354/kanzlei-os/issues/15">Issue #15</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__87d.html">§ 87d AO · Datenübermittlung im Auftrag</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/src/domain/flows/est.ts">Prozessdefinition und Projektstand</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/docs/ENTWURF.md">ESt-Erklärungsentwurf im Projekt</a> · <a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/docs/LSTB_AUSLESE.md">Lohnsteuer-PDF-Auslese im Projekt</a> · <a href="https://github.com/basti12354/kanzlei-os/issues/14">Issue #14</a> · <a href="https://github.com/basti12354/kanzlei-os/issues/15">Issue #15</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__87d.html">§ 87d AO · Datenübermittlung im Auftrag</a></p>
 </details><details class="process" id="p-ja" open>
 <summary><h3>Jahresabschluss und EÜR</h3><span class="meta">Jährlich · Unternehmen · 10 Schritte</span></summary>
 <p class="desc">Von Abschlussunterlagen und Buchungsstand über Bilanz oder EÜR bis zu Abgabe und gegebenenfalls Offenlegung.</p>
@@ -1765,7 +1768,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Abgabenachweis archivieren und Aufgaben für Bescheidprüfung und Abrechnung erstellen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/src/domain/flows/jaehrlich.ts">Prozessdefinition und Projektstand</a> · <a href="https://www.gesetze-im-internet.de/hgb/__245.html">§ 245 HGB · Unterzeichnung</a> · <a href="https://www.gesetze-im-internet.de/hgb/__325.html">§ 325 HGB · Offenlegung</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/src/domain/flows/jaehrlich.ts">Prozessdefinition und Projektstand</a> · <a href="https://www.gesetze-im-internet.de/hgb/__245.html">§ 245 HGB · Unterzeichnung</a> · <a href="https://www.gesetze-im-internet.de/hgb/__325.html">§ 325 HGB · Offenlegung</a></p>
 </details><details class="process" id="p-fristen" open>
 <summary><h3>Fristen und Bescheidprüfung</h3><span class="meta">Querschnittlich · Alle Mandate · 10 Schritte</span></summary>
 <p class="desc">Vom Bescheideingang über Frist und Abweichung bis zur erledigten Zahlung oder zum Verfahrensabschluss.</p>
@@ -1839,7 +1842,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Nach Abschluss Bescheid und Nachweise ablegen und offene Folgeaufgaben anzeigen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/src/domain/flows/jaehrlich.ts">Prozessdefinition und Projektstand</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__122a.html">§ 122a AO · Digitale Bekanntgabe</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__355.html">§ 355 AO · Einspruchsfrist</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/src/domain/flows/jaehrlich.ts">Prozessdefinition und Projektstand</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__122a.html">§ 122a AO · Digitale Bekanntgabe</a> · <a href="https://www.gesetze-im-internet.de/ao_1977/__355.html">§ 355 AO · Einspruchsfrist</a></p>
 </details><details class="process" id="p-zusatzauftrag" open>
 <summary><h3>Zusatzaufträge im Bestandsmandat</h3><span class="meta">Bei Bedarf · Lokaler Entwicklungsstand · 6 Schritte</span></summary>
 <p class="desc">Von der Anfrage für eine zusätzliche Leistung bis zur Bestätigung oder Ablehnung. Die Schritte sind im lokalen Arbeitsstand sichtbar.</p>
@@ -1888,7 +1891,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Ablaufsteuerung</strong> · Freigegebenen Absagehinweis zustellen und die Zustellung protokollieren</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/src/domain/flows/zusatzauftrag.ts">Lokale Prozessdefinition</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/src/domain/flows/zusatzauftrag.ts">Lokale Prozessdefinition</a></p>
 </details><details class="process" id="p-abrechnung" open>
 <summary><h3>Kanzleiabrechnung</h3><span class="meta">Monatlich und nach Leistung · 6 Schritte</span></summary>
 <p class="desc">Von der erbrachten Leistung über die Rechnung bis zum Zahlungseingang. Querschnittsfunktion im Prototyp.</p>
@@ -1937,7 +1940,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <ul class="points"><li><strong>Schnittstellen</strong> · Rechnung, Zahlung und Korrekturbeleg an die FiBu übergeben und den Abgleich nachweisen</li></ul>
 </details></div>
 </li></ol>
-<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/src/domain/abrechnung/abrechnung.ts">Prozessdefinition und Projektstand</a></p>
+<p class="source"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/src/domain/abrechnung/abrechnung.ts">Prozessdefinition und Projektstand</a></p>
 </details>
 </section>
 <section id="gemeinsam" aria-labelledby="gemeinsam-titel">
@@ -1948,8 +1951,8 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <p>Die Pfeile zeigen den Weg vom Portal zu Daten, Verarbeitung und Fachsystemen. Jede Aufgabe führt zum Abnahmekriterium.</p></figcaption>
 <div class="arch-row"><div class="arch-card yellow"><span class="status yellow">Teilweise vorhanden</span>
 <h4>Kanzlei und Mandant</h4><ul class="points"><li><a href="#g-rechte">Login und Mandatsrechte</a></li><li><a href="#g-kommunikation">Posteingang und Benachrichtigung</a></li></ul></div></div><p class="arch-arrow"><span aria-hidden="true">↓</span> Zugriff auf die Anwendung</p><div class="arch-row"><div class="arch-card red"><span class="status red">Für Go-Live offen</span>
-<h4>TypeScript-API und Produktionshosting</h4><ul class="points"><li><a href="#g-plattform">Hosting festlegen · Cloud Run in Frankfurt als Option</a></li><li><a href="#g-umgebungen">Test und Produktion trennen</a></li><li><a href="#g-freigaben">Startprüfung, Auftrag und Freigaben</a></li></ul></div></div><p class="arch-arrow"><span aria-hidden="true">↓</span> Daten speichern, Aufgaben ausführen und Ergebnisse übergeben</p><div class="arch-row"><div class="arch-card yellow"><span class="status yellow">Teilweise vorhanden</span>
-<h4>Mandantenakte und Daten</h4><ul class="points"><li><a href="#g-akte">Private Originale und Vorschauen</a></li><li><a href="#g-plattform">Firestore und Cloud Storage als Option</a></li><li><a href="#g-archiv">Aufbewahrung, Export und Restore</a></li></ul></div><div class="arch-card red"><span class="status red">Für Go-Live offen</span>
+<h4>TypeScript-API und Produktionshosting</h4><ul class="points"><li><a href="#g-plattform">Portablen API-Host im Gesamtbudget wählen</a></li><li><a href="#g-umgebungen">Test und Produktion trennen</a></li><li><a href="#g-freigaben">Startprüfung, Auftrag und Freigaben</a></li></ul></div></div><p class="arch-arrow"><span aria-hidden="true">↓</span> Daten speichern, Aufgaben ausführen und Ergebnisse übergeben</p><div class="arch-row"><div class="arch-card yellow"><span class="status yellow">Teilweise vorhanden</span>
+<h4>Mandantenakte und Daten</h4><ul class="points"><li><a href="#g-akte">Private Originale und Vorschauen</a></li><li><a href="#g-plattform">Firestore Frankfurt beschlossen · private Dateiablage offen</a></li><li><a href="#g-archiv">Aufbewahrung, Export und Restore</a></li></ul></div><div class="arch-card red"><span class="status red">Für Go-Live offen</span>
 <h4>Hintergrundverarbeitung</h4><ul class="points"><li><a href="#g-betrieb">Jobs und Überwachung</a></li><li><a href="#g-ocr">OCR oder geprüfter manueller Erfassungsweg</a></li><li><a href="#g-fristen">Fristen und Eskalation</a></li></ul></div><div class="arch-card red"><span class="status red">Für Go-Live offen</span>
 <h4>Externe Fachsysteme</h4><ul class="points"><li><a href="#g-schnittstellen">ESt, FiBu, Lohn und Abschluss</a></li><li><a href="#g-schnittstellen">Rückmeldungen und Fehlerfälle</a></li></ul></div></div>
 <div class="arch-shared">
@@ -1961,7 +1964,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
   <div class="gap-list"><article class="gap" id="g-plattform">
 <span class="status red">P0 · Voraussetzung</span>
 <h3>Produktionsplattform und Hosting</h3>
-<div class="gap-content"><div><strong>Heute</strong><ul class="points"><li>Vue-Demo mit localStorage und IndexedDB</li><li>Cloud Run, Firestore und Objektspeicher als Optionen</li></ul></div><div><strong>Abnahme</strong><ul class="points"><li>Betreiber und Zielarchitektur wählen</li><li>Regionen, Datenflüsse, Kosten, Zugriff, Betrieb und Exit prüfen</li><li>Plattform mit synthetischem Mandat abnehmen</li></ul></div></div>
+<div class="gap-content"><div><strong>Heute</strong><ul class="points"><li>Vue-Demo mit localStorage und IndexedDB</li><li>Firestore Standard hinter eigener API beschlossen; Frankfurt eingeplant; API-Host und Dateiablage noch offen</li></ul></div><div><strong>Abnahme</strong><ul class="points"><li>Betreiber, API-Host und Login festlegen; Firestore-Entscheidung umsetzen</li><li>Regionen, Datenflüsse, Kosten, Zugriff, Betrieb und Exit prüfen</li><li>Plattform mit synthetischem Mandat abnehmen</li></ul></div></div>
 <p class="meta">Vorgeschlagene Verantwortung · Technik und Kanzleileitung</p>
 <p class="links"><a href="https://github.com/basti12354/kanzlei-os/issues/7">Issue #7</a> <a href="https://github.com/basti12354/kanzlei-os/issues/8">Issue #8</a> <a href="https://docs.cloud.google.com/run/docs/locations">Cloud Run · Standorte</a> <a href="https://docs.cloud.google.com/firestore/native/docs/locations">Firestore · Standorte</a> <a href="https://docs.cloud.google.com/storage/docs/locations">Cloud Storage · Standorte</a> <a class="prompt-jump" href="#aufgaben-entscheidung">Zur Plattformentscheidung</a></p>
 </article><article class="gap" id="g-umgebungen">
@@ -1997,7 +2000,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 </article><article class="gap" id="g-archiv">
 <span class="status red">P0 · Voraussetzung</span>
 <h3>Aufbewahrung, Export, Löschung und Wiederherstellung</h3>
-<div class="gap-content"><div><strong>Heute</strong><ul class="points"><li>Lokale Dateien und Standexport</li><li>Einzelne Fach-Exporte</li></ul></div><div><strong>Abnahme</strong><ul class="points"><li>Aufbewahrung, Löschung, Sperren und Verfahrensdokumentation festlegen</li><li>Originalformate und Prüfsummen sichern</li><li>Export und Restore samt Rechten und Audit testen</li></ul></div></div>
+<div class="gap-content"><div><strong>Heute</strong><ul class="points"><li>Lokale Dateien und Standexport</li><li>Einzelne Fach-Exporte</li></ul></div><div><strong>Abnahme</strong><ul class="points"><li>Aufbewahrung, Löschung, Sperren und Verfahrensdokumentation festlegen</li><li>Originalformate und Prüfsummen sichern</li><li>Firestore-Roundtrip UND unabhängigen SQLite-Import mit denselben Fach-/Rechtetests nachweisen; Betriebs-Restore separat testen</li></ul></div></div>
 <p class="meta">Vorgeschlagene Verantwortung · Kanzlei und Technik</p>
 <p class="links"><a href="https://github.com/basti12354/kanzlei-os/issues/5">Issue #5</a> <a href="https://github.com/basti12354/kanzlei-os/issues/3">Issue #3</a> <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2025-07-14-GoBD-2-aenderung.pdf?__blob=publicationFile&amp;v=4">BMF · GoBD-Änderung vom Juli 2025</a> <a class="prompt-jump" href="#todo-archiv">Lokalen Prompt öffnen</a></p>
 </article><article class="gap" id="g-freigaben">
@@ -2058,11 +2061,11 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <section id="quellen" aria-labelledby="quellen-titel">
   <h2 id="quellen-titel">Grundlagen der Bewertung</h2>
   <p class="intro">Die Bewertung stützt sich auf Prozessdefinitionen und Fachmodule im Repository, den Architekturplan und die verifizierten GitHub-Issues. Lokaler Funktionsstand und Go-Live-Ampeln beschreiben unterschiedliche Kriterien. Externe Quellen sind bei den betroffenen Aufgaben verlinkt.</p>
-  <div class="sources"><a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/docs/ARCHITEKTUR.md">Architekturplan</a> <a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/docs/RECHT_UMSETZUNG.md">Rechtsprüfung im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/docs/LOHN.md">Lohnprozess und Schnittstellen im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/docs/ENTWURF.md">ESt-Erklärungsentwurf im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/bc90623df33f69b13f1492acb39382049f77858d/docs/LSTB_AUSLESE.md">Lohnsteuer-PDF-Auslese im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/issues">GitHub-Issues im privaten Repository</a></div>
+  <div class="sources"><a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/docs/ARCHITEKTUR.md">Architekturplan</a> <a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/docs/RECHT_UMSETZUNG.md">Rechtsprüfung im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/docs/LOHN.md">Lohnprozess und Schnittstellen im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/docs/ENTWURF.md">ESt-Erklärungsentwurf im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/blob/cee1220473dccdfe2d69b9bd2d023d52c2390c16/docs/LSTB_AUSLESE.md">Lohnsteuer-PDF-Auslese im Projekt</a> <a href="https://github.com/basti12354/kanzlei-os/issues">GitHub-Issues im privaten Repository</a></div>
 </section>
 <section id="aufgaben" aria-labelledby="aufgaben-titel">
 <h2 id="aufgaben-titel">To-do-Liste bis zum Go-Live</h2>
-<p class="intro" id="skilltree-hinweis" hidden>Wähle eine Phase und öffne eine Aufgabe. Grün = lokal abgenommener Umfang im gemeinsamen Stand; Rot = offen. Go-Live-Freigaben werden weiterhin in den Prozessschritten bewertet.</p>
+<p class="intro" id="skilltree-hinweis" hidden>Wähle eine Phase und öffne eine Aufgabe. Grün = im jeweiligen Umfang abgeschlossen (lokale Abnahme oder Architekturentscheidung); Gelb = teilweise; Rot = offen. Go-Live-Freigaben werden weiterhin in den Prozessschritten bewertet.</p>
 <div class="skill-map" id="skill-map" role="region" aria-label="Skilltree bis zum Go-Live" hidden>
   <div class="skill-root"><span class="skill-orb" aria-hidden="true"></span><span>Go-Live</span></div>
   <div class="skill-phases" role="group" aria-label="Phase auswählen"></div>
@@ -2083,7 +2086,7 @@ footer { padding: 1rem 0; border-top: 1px solid var(--line); color: var(--muted)
 <section class="todo-phase" id="aufgaben-lokal" aria-labelledby="aufgaben-lokal-titel">
   <h3 id="aufgaben-lokal-titel">Lokal</h3>
   <ul class="points phase-intro">
-    <li>Alle 22 definierten lokalen Aufgaben sind gemeinsam integriert und lokal abgenommen. Der Stand ist zur fachlichen Erprobung mit synthetischen Akten bereit. Neue Anforderungen und produktive Freigaben sind damit nicht vorweggenommen.</li>
+    <li>Die bisherigen 22 lokalen Fachaufgaben sind abgenommen; vier neue Pilotvorbereitungen L-F1 bis L-F4 sind offen. Der Stand ist zur fachlichen Erprobung mit synthetischen Akten bereit. Neue Anforderungen und produktive Freigaben sind damit nicht vorweggenommen.</li>
     <li>Gemeinsame Aufgaben sind gebündelt und aus den betroffenen Prozessschritten verlinkt. Jeder Prompt enthält einen Normalfall, einen Gegenfall und klare Kriterien für den lokalen Status.</li>
     <li><strong>OCR</strong> · PDF-Text und lokale Browser-OCR sind im Pilot vorhanden. Vorschläge bleiben an Original, Seite und Prüfregeln gebunden. Fünf neue Testakten ergänzen den Korpus; eine universelle steuerliche Erkennung beliebiger Belege und der produktive OCR-Anschluss sind damit nicht abgenommen.</li>
   </ul>
@@ -3079,21 +3082,50 @@ Arbeitsrahmen
   </div>
 </details></div>
 </details></div>
+<details class="todo-group" id="todo-gruppe-firestore" open><summary><strong>Neue lokale Pilotvorbereitung · Firestore und Exit</strong><span class="meta">4 Aufgaben offen</span></summary><div class="todo-items"><details class="todo-item" id="todo-pilot-api" data-local="red"><summary><span class="status red">P0 · offen</span><strong>L-F1 · Fachliche API- und Speicherverträge</strong></summary><div class="todo-body"><ul class="points"><li>Eigene mandatsgebundene API-Operationen, Versionsprüfung und Speicherport festlegen. Google-SDK bleibt im Adapter.</li><li><strong>Eval:</strong> Berechtigter Zugriff gelingt; Fremdmandat und veraltete Freigabe scheitern. Abbruch zwischen Änderung und Audit hinterlässt beide oder keines. Doppelte Jobzustellung wirkt einmal.</li></ul><div class="todo-actions"><button type="button" class="copy-prompt">Prompt kopieren</button></div><pre class="agent-prompt" tabindex="0">Kanzlei OS · Lokal · P0 · L-F1 · Fachliche API- und Speicherverträge
+Status: OFFEN – neue Pilotvorbereitung, keine Cloud-Abnahme.
+Aufgabe: Eigene mandatsgebundene API-Operationen, Versionsprüfung und Speicherport festlegen. Google-SDK bleibt im Adapter.
+Arbeitsrahmen: Vorhandene Lösung prüfen und weiterverwenden. Nur lokale Werkzeuge, Emulator und synthetische Daten; keine Cloud-Ressourcen oder kostenpflichtigen Dienste anlegen.
+Eval: Berechtigter Zugriff gelingt; Fremdmandat und veraltete Freigabe scheitern. Abbruch zwischen Änderung und Audit hinterlässt beide oder keines. Doppelte Jobzustellung wirkt einmal.
+Ergebnisprotokoll: Fall | Eingabe | Soll | Ist | Status | Testbefehl/Nachweis.
+BESTANDEN: Alle Pflichtfälle ausgeführt und erfüllt. FEHLGESCHLAGEN: Mindestens eine Soll/Ist-Abweichung. OFFEN: Umsetzung oder Pflichtnachweis fehlt.
+Vertrag: docs/FIRESTORE-PILOT.md. SDK-Typen und Anbieterpfade nicht in Fachlogik oder UI übernehmen.</pre><p><a href="plattformentscheidungen.html#pilotvertrag">Pilotvertrag öffnen</a></p></div></details><details class="todo-item" id="todo-pilot-archiv" data-local="red"><summary><span class="status red">P0 · offen</span><strong>L-F2 · Neutrales vollständiges Exportformat</strong></summary><div class="todo-body"><ul class="points"><li>Vorhandenes lokales Archiv weiterverwenden; versioniertes JSON/NDJSON, IDs, Beziehungen, Audit, Originaldateien und SHA-256-Manifest ergänzen.</li><li><strong>Eval:</strong> Unveränderte Daten und Originale sind byte-/typgleich; fehlende Originale, korrupte Hashes, unbekannte Schemafassung und Fremdmandate werden abgelehnt. Keine Geheimnisse im Archiv.</li></ul><div class="todo-actions"><button type="button" class="copy-prompt">Prompt kopieren</button></div><pre class="agent-prompt" tabindex="0">Kanzlei OS · Lokal · P0 · L-F2 · Neutrales vollständiges Exportformat
+Status: OFFEN – neue Pilotvorbereitung, keine Cloud-Abnahme.
+Aufgabe: Vorhandenes lokales Archiv weiterverwenden; versioniertes JSON/NDJSON, IDs, Beziehungen, Audit, Originaldateien und SHA-256-Manifest ergänzen.
+Arbeitsrahmen: Vorhandene Lösung prüfen und weiterverwenden. Nur lokale Werkzeuge, Emulator und synthetische Daten; keine Cloud-Ressourcen oder kostenpflichtigen Dienste anlegen.
+Eval: Unveränderte Daten und Originale sind byte-/typgleich; fehlende Originale, korrupte Hashes, unbekannte Schemafassung und Fremdmandate werden abgelehnt. Keine Geheimnisse im Archiv.
+Ergebnisprotokoll: Fall | Eingabe | Soll | Ist | Status | Testbefehl/Nachweis.
+BESTANDEN: Alle Pflichtfälle ausgeführt und erfüllt. FEHLGESCHLAGEN: Mindestens eine Soll/Ist-Abweichung. OFFEN: Umsetzung oder Pflichtnachweis fehlt.
+Vertrag: docs/FIRESTORE-PILOT.md. SDK-Typen und Anbieterpfade nicht in Fachlogik oder UI übernehmen.</pre><p><a href="plattformentscheidungen.html#pilotvertrag">Pilotvertrag öffnen</a></p></div></details><details class="todo-item" id="todo-pilot-import" data-local="red"><summary><span class="status red">P0 · offen</span><strong>L-F3 · Firestore-Emulator und unabhängiger Import</strong></summary><div class="todo-body"><ul class="points"><li>Synthetische Daten aus Firestore-Emulator exportieren und in leeren Emulator sowie SQLite-Prüfadapter importieren. Gleiche API-/Fachtests auf beiden Zielen ausführen.</li><li><strong>Eval:</strong> Mehrseitige Akte vollständig; Beziehungen, Rechte, Freigaben und Audit stimmen. Unterbrochener Import rollt sicher zurück oder setzt ohne Dubletten fort. Kein Google-SDK im unabhängigen Ziel. Cloud-Nachweis bleibt offen.</li></ul><div class="todo-actions"><button type="button" class="copy-prompt">Prompt kopieren</button></div><pre class="agent-prompt" tabindex="0">Kanzlei OS · Lokal · P0 · L-F3 · Firestore-Emulator und unabhängiger Import
+Status: OFFEN – neue Pilotvorbereitung, keine Cloud-Abnahme.
+Aufgabe: Synthetische Daten aus Firestore-Emulator exportieren und in leeren Emulator sowie SQLite-Prüfadapter importieren. Gleiche API-/Fachtests auf beiden Zielen ausführen.
+Arbeitsrahmen: Vorhandene Lösung prüfen und weiterverwenden. Nur lokale Werkzeuge, Emulator und synthetische Daten; keine Cloud-Ressourcen oder kostenpflichtigen Dienste anlegen.
+Eval: Mehrseitige Akte vollständig; Beziehungen, Rechte, Freigaben und Audit stimmen. Unterbrochener Import rollt sicher zurück oder setzt ohne Dubletten fort. Kein Google-SDK im unabhängigen Ziel. Cloud-Nachweis bleibt offen.
+Ergebnisprotokoll: Fall | Eingabe | Soll | Ist | Status | Testbefehl/Nachweis.
+BESTANDEN: Alle Pflichtfälle ausgeführt und erfüllt. FEHLGESCHLAGEN: Mindestens eine Soll/Ist-Abweichung. OFFEN: Umsetzung oder Pflichtnachweis fehlt.
+Vertrag: docs/FIRESTORE-PILOT.md. SDK-Typen und Anbieterpfade nicht in Fachlogik oder UI übernehmen.</pre><p><a href="plattformentscheidungen.html#pilotvertrag">Pilotvertrag öffnen</a></p></div></details><details class="todo-item" id="todo-pilot-budget" data-local="red"><summary><span class="status red">P0 · offen</span><strong>L-F4 · Budget und Betriebsgrenzen simulieren</strong></summary><div class="todo-body"><ul class="points"><li>Parametrisiertes Kostenmodell für maximal 25 € netto insgesamt vorbereiten; Normalfall, Spitzenlast, Test, Export/Restore und Retry-Schleifen berücksichtigen.</li><li><strong>Eval:</strong> Alle Kostenposten einschließlich Auth, Originalen, Logs und Backup enthalten. Überschreitung wird erkannt, Warnungen bei 20/23 € simuliert. Keine behauptete harte Cloud-Kostensperre; keine bestätigten Daten oder Backups verwerfen.</li></ul><div class="todo-actions"><button type="button" class="copy-prompt">Prompt kopieren</button></div><pre class="agent-prompt" tabindex="0">Kanzlei OS · Lokal · P0 · L-F4 · Budget und Betriebsgrenzen simulieren
+Status: OFFEN – neue Pilotvorbereitung, keine Cloud-Abnahme.
+Aufgabe: Parametrisiertes Kostenmodell für maximal 25 € netto insgesamt vorbereiten; Normalfall, Spitzenlast, Test, Export/Restore und Retry-Schleifen berücksichtigen.
+Arbeitsrahmen: Vorhandene Lösung prüfen und weiterverwenden. Nur lokale Werkzeuge, Emulator und synthetische Daten; keine Cloud-Ressourcen oder kostenpflichtigen Dienste anlegen.
+Eval: Alle Kostenposten einschließlich Auth, Originalen, Logs und Backup enthalten. Überschreitung wird erkannt, Warnungen bei 20/23 € simuliert. Keine behauptete harte Cloud-Kostensperre; keine bestätigten Daten oder Backups verwerfen.
+Ergebnisprotokoll: Fall | Eingabe | Soll | Ist | Status | Testbefehl/Nachweis.
+BESTANDEN: Alle Pflichtfälle ausgeführt und erfüllt. FEHLGESCHLAGEN: Mindestens eine Soll/Ist-Abweichung. OFFEN: Umsetzung oder Pflichtnachweis fehlt.
+Vertrag: docs/FIRESTORE-PILOT.md. SDK-Typen und Anbieterpfade nicht in Fachlogik oder UI übernehmen.</pre><p><a href="plattformentscheidungen.html#pilotvertrag">Pilotvertrag öffnen</a></p></div></details></div></details>
 </section>
-<section class="todo-phase" id="aufgaben-entscheidung" aria-labelledby="aufgaben-entscheidung-titel">
+<section class="todo-phase" id="aufgaben-entscheidung" data-status="yellow" aria-labelledby="aufgaben-entscheidung-titel">
   <h3 id="aufgaben-entscheidung-titel">Plattformentscheidung</h3>
-  <p class="intro">Offen: Auswahl und Freigabe des Startumfangs. Lokale Abnahmen ersetzen diese Entscheidungen nicht.</p>
-  <div class="phase-checklists"><div><h4>Startumfang und Belegweg</h4><ul class="points"><li>Leistungen, zulässige Fälle, Belegtypen und benötigte Fachsoftware je Prozess festlegen. ESt mit Text-PDFs ist als erster vollständiger Fall vorgesehen.</li><li>Für Bildscans einen OCR-Dienst oder einen geprüften manuellen Weg auswählen. Prüfkorpus und Fehlerfälle aus der lokalen Phase als Vergleich verwenden.</li></ul></div><div><h4>Hosting und Datenhaltung</h4><ul class="points"><li>Hosting, Datenregionen, Betriebsverantwortung und Kosten für Test und Produktion vergleichen.</li><li>Firestore als Pilotoption hinter der TypeScript-API bewerten. Originalablage, Export und Import, Wiederherstellung und laufende Kosten in die Entscheidung aufnehmen.</li></ul></div><div><h4>Datenschutz und Identität</h4><ul class="points"><li>Datenflüsse, Unterauftragnehmer, Verträge, Löschkonzept und Berufsgeheimnis für den konkreten Aufbau prüfen lassen.</li><li>Login mit MFA oder Passkeys, Identifizierung, GwG-Verfahren sowie Freigabe- und Unterschriftswege für die gewählten Prozesse festlegen.</li></ul></div><div><h4>Externe Übergaben</h4><ul class="points"><li>Für FiBu, Lohn, Abschluss, Bescheide und Bank die Zielsysteme, Datenformate und verlässlichen Rückmeldungen festlegen.</li><li>ESt-Übergabe über Fachsoftware oder ELSTER/ERiC festlegen. ELSTER-Entwicklerregistrierung für eine direkte Anbindung parallel anstoßen, falls vorgesehen.</li></ul></div></div>
+  <p class="intro">Teilweise entschieden: Firestore Standard hinter eigener API ist beschlossen; Frankfurt ist eingeplant. API-Hosting, Login, Dateiablage, Betreiber und rechtliche Freigabe sind noch offen. Gesamtbudget maximal 25 € netto/Monat.</p>
+  <div class="phase-checklists"><div data-status="green"><h4>Datenbankauswahl · abgeschlossen</h4><ul class="points"><li>Beschlossen: Firestore Standard hinter eigener TypeScript-API; keine direkte Bindung der Oberfläche an Google-SDKs.</li><li>Frankfurt als Zielregion eingeplant, maximales Gesamtbudget 25 € netto/Monat. Neutraler Export und unabhängiger Importnachweis sind Pflicht.</li><li>Grün gilt für diese Architekturentscheidung. Einrichtung, Kostenbeleg und Betriebsabnahme stehen in den nachfolgenden Phasen weiterhin offen.</li></ul></div><div><h4>Startumfang und Belegweg</h4><ul class="points"><li><a href="plattformentscheidungen.html#d-umfang">D1 · Entscheidungsvorlage: Pilotumfang und Belegweg</a></li><li>Leistungen, zulässige Fälle, Belegtypen und benötigte Fachsoftware je Prozess festlegen. ESt mit Text-PDFs ist als erster vollständiger Fall vorgesehen.</li><li>Für Bildscans einen OCR-Dienst oder einen geprüften manuellen Weg auswählen. Prüfkorpus und Fehlerfälle aus der lokalen Phase als Vergleich verwenden.</li></ul></div><div data-status="yellow"><h4>Hosting und Datenhaltung · teilweise entschieden</h4><ul class="points"><li><a href="plattformentscheidungen.html#d-hosting">D2 · Hosting und Betreiber</a> · <a href="plattformentscheidungen.html#d-dateien">D4 · Dateien und Sicherung</a> · <a href="plattformentscheidungen.html#d-budget">D7 · Budget</a></li><li>Beschlossen: Firestore Standard; Zielregion Frankfurt (europe-west3). Ein späterer Regionswechsel benötigt Migration in eine neue Datenbank.</li><li>API-Hosting, Login und Originalablage in DE/EU festlegen; vollständige Kosten inklusive Test, Backups, Logs und Transfer unter 25 € nachweisen. Siehe Pilotvertrag und Kostenmodell.</li></ul></div><div><h4>Datenschutz und Identität</h4><ul class="points"><li><a href="plattformentscheidungen.html#d-login">D3 · Login und Recovery</a> · <a href="plattformentscheidungen.html#d-recht">D5 · Datenschutz und Freigabe</a></li><li>Datenflüsse, Unterauftragnehmer, Verträge, Löschkonzept und Berufsgeheimnis für den konkreten Aufbau prüfen lassen.</li><li>Login mit MFA oder Passkeys, Identifizierung, GwG-Verfahren sowie Freigabe- und Unterschriftswege für die gewählten Prozesse festlegen.</li></ul></div><div><h4>Externe Übergaben</h4><ul class="points"><li><a href="plattformentscheidungen.html#d-uebergaben">D6 · Fachsoftware und ELSTER</a></li><li>Für FiBu, Lohn, Abschluss, Bescheide und Bank die Zielsysteme, Datenformate und verlässlichen Rückmeldungen festlegen.</li><li>ESt-Übergabe über Fachsoftware oder ELSTER/ERiC festlegen. ELSTER-Entwicklerregistrierung für eine direkte Anbindung parallel anstoßen, falls vorgesehen.</li></ul></div></div>
 </section>
 <section class="todo-phase" id="aufgaben-plattform" aria-labelledby="aufgaben-plattform-titel">
   <h3 id="aufgaben-plattform-titel">Plattform</h3>
-  <p class="intro">Offen: produktive Plattform nach der Auswahl einrichten. Die statische GitHub-Pages-Demo ist keine Produktionsplattform für Steuerdaten. Lokale Regeln, Formate und Prüfdatensätze werden an echte Dienste angeschlossen.</p>
-  <div class="phase-checklists"><div><h4>Betrieb und Umgebungen</h4><ul class="points"><li>Getrennte Test- und Produktivumgebungen mit eigenen Daten, Zugängen, Schlüsseln und Release-Wegen einrichten.</li><li>Serverseitige TypeScript-API, gewählten Datenspeicher und Dokumentablage mit Zugriffskontrollen betreiben. Upload-Prüfung, Sicherungen und Wiederherstellung einrichten.</li></ul></div><div><h4>Berechtigungen, Audit und Überwachung</h4><ul class="points"><li>Identitätsdienst mit MFA oder Passkeys und serverseitige Mandatsrechte anbinden. Einladungen, Stellvertretung, Sperrung und Wiederherstellung testen.</li><li>Audit-Ereignisse verlässlich speichern. Technische Überwachung, Alarmierung, Hintergrundjobs und Verantwortlichkeiten einrichten.</li></ul></div><div><h4>Fachdienste und Zustellung</h4><ul class="points"><li>Gewählte OCR- oder manuelle Scan-Strecke, GwG- und Unterschriftswege, Fachsoftware sowie ELSTER, soweit erforderlich, im getrennten Testsystem anbinden.</li><li>Echte Übergaben und Rückmeldungen für Buchung, UStVA, Lohn, ESt und Abschluss prüfen. Bescheid- und Einspruchswege, Portalzustellung und Rechnungsversand mit Nachweis betreiben.</li></ul></div></div>
+  <p class="intro">Offen: beschlossenen Firestore-Pilot in Frankfurt mit eigener TypeScript-API einrichten. Die statische GitHub-Pages-Demo ist keine Produktionsplattform für Steuerdaten. Lokale Regeln, Formate und Prüfdatensätze werden an echte Dienste angeschlossen.</p>
+  <div class="phase-checklists"><div><h4>Betrieb und Umgebungen</h4><ul class="points"><li>Getrennte Test- und Produktivumgebungen mit eigenen Daten, Zugängen, Schlüsseln und Release-Wegen einrichten.</li><li>P-F1/P-F2: Firestore nur hinter eigener API; Browser-Direktzugriff sperren, minimale IAM-Rechte und Mandatsrechte an jeder Route. Private Originale separat speichern; Uploadprüfung und Versionskonflikte testen.</li></ul></div><div><h4>Berechtigungen, Audit und Überwachung</h4><ul class="points"><li>Identitätsdienst mit MFA oder Passkeys und serverseitige Mandatsrechte anbinden. Einladungen, Stellvertretung, Sperrung und Wiederherstellung testen.</li><li>P-F3: Fachänderung und Audit atomar; PITR, Backups, verschlüsselte neutrale Exporte und Dateisicherungen einrichten. Bereinigte technische Logs, Ausfallalarme und idempotente Jobs nachweisen.</li></ul></div><div><h4>Fachdienste und Zustellung</h4><ul class="points"><li>Gewählte OCR- oder manuelle Scan-Strecke, GwG- und Unterschriftswege, Fachsoftware sowie ELSTER, soweit erforderlich, im getrennten Testsystem anbinden.</li><li>Echte Übergaben und Rückmeldungen für Buchung, UStVA, Lohn, ESt und Abschluss prüfen. Bescheid- und Einspruchswege, Portalzustellung und Rechnungsversand mit Nachweis betreiben.</li></ul></div></div>
 </section>
 <section class="todo-phase" id="aufgaben-abnahme" aria-labelledby="aufgaben-abnahme-titel">
   <h3 id="aufgaben-abnahme-titel">Go-Live-Abnahme</h3>
   <p class="intro">Die Ampeln richten sich nach den Nachweisen für den bestätigten Startumfang. Ein bestandenes lokales Eval belegt die lokale Umsetzung.</p>
-  <div class="phase-checklists"><div><h4>Ende-zu-Ende</h4><ul class="points"><li>Je freigegebenem Prozess einen vollständigen synthetischen Fall in den vorgesehenen Testumgebungen der Zielsysteme durchführen. Eingänge, Entscheidungen, Übergaben und Rückmeldungen belegen.</li><li>Fehlerfälle, Nachbearbeitung, Fristenkontrolle und vereinbarte manuelle Wege durchspielen. Offene Pflichtfälle pro Prozess festhalten.</li></ul></div><div><h4>Sicherheit, Datenschutz und Betrieb</h4><ul class="points"><li>Mandatstrennung, Audit, Löschung und die Trennung der Umgebungen am eingerichteten System prüfen.</li><li>Export und Import, Wiederherstellung aus einem Betriebsbackup, Alarmwege und Rückrollen nachweisen.</li><li>Fachliche, datenschutzrechtliche und betriebliche Freigaben mit Zuständigkeit und dokumentiertem Startumfang festhalten.</li></ul></div></div>
+  <div class="phase-checklists"><div><h4>Ende-zu-Ende</h4><ul class="points"><li>Je freigegebenem Prozess einen vollständigen synthetischen Fall in den vorgesehenen Testumgebungen der Zielsysteme durchführen. Eingänge, Entscheidungen, Übergaben und Rückmeldungen belegen.</li><li>Fehlerfälle, Nachbearbeitung, Fristenkontrolle und vereinbarte manuelle Wege durchspielen. Offene Pflichtfälle pro Prozess festhalten.</li></ul></div><div><h4>Sicherheit, Datenschutz und Betrieb</h4><ul class="points"><li>Mandatstrennung, Audit, Löschung und die Trennung der Umgebungen am eingerichteten System prüfen.</li><li>A-F1–A-F3: echte Firestore-Testdatenbank in Frankfurt prüfen; neutralen Export in unabhängigen Adapter importieren und gleiche API-/Fachtests ausführen. Anbieterwechsel ≤4 h ohne bestätigten Datenverlust; Katastrophen-Restore ≤1 h Datenverlust und innerhalb eines Arbeitstags. Originale, Audit und Login-Zuordnung einbeziehen.</li><li>A-F4: regionale Gesamtkosten ≤25 € inklusive Test, Auth, Dateien, Backups und Logs belegen. Fachliche, datenschutzrechtliche und betriebliche Freigaben mit Verantwortung festhalten; Budgetwarnungen sind kein harter Kostendeckel.</li></ul></div></div>
 </section>
 </details>
 </section>
@@ -3237,6 +3269,7 @@ function skilltreeStarten() {
 
   function aufgabenknoten(titel, pfad, inhalt, status = 'red') {
     const button = skillButton('skill-node local-' + status, titel);
+    if (pfad === 'Plattformentscheidung' && status === 'green') button.classList.add('decision-complete');
     button.setAttribute('aria-haspopup', 'dialog');
     button.addEventListener('click', () => {
       aeste.querySelector('.is-selected')?.classList.remove('is-selected');
@@ -3287,6 +3320,7 @@ function skilltreeStarten() {
           thema.querySelector('h4').textContent.trim(),
           phaseTitel,
           thema.querySelector('ul'),
+          thema.dataset.status || 'red',
         ));
       }
       aeste.append(aufgabenliste);
@@ -3297,7 +3331,7 @@ function skilltreeStarten() {
     const titel = phase.querySelector('h3').textContent.trim();
     const button = skillButton('skill-phase', titel);
     const lokalFertig = phase.id === 'aufgaben-lokal' && [...phase.querySelectorAll('.todo-item')].every(item => item.dataset.local === 'green');
-    button.classList.add(lokalFertig ? 'local-green' : phase.id === 'aufgaben-lokal' ? 'local-yellow' : 'local-red');
+    button.classList.add(lokalFertig ? 'local-green' : phase.id === 'aufgaben-lokal' || phase.dataset.status === 'yellow' ? 'local-yellow' : 'local-red');
     button.setAttribute('aria-controls', aeste.id);
     button.addEventListener('click', () => phaseAnzeigen(phase, titel, button));
     phasenknoten.append(button);
