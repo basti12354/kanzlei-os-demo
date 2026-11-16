@@ -1,0 +1,18 @@
+Personalfragebogen (erfunden) – im Portal unter „Lohn melden“ → „Neue Mitarbeiterin / neuer Mitarbeiter“ eintragen
+
+Vorname:                 Emil
+Nachname:                Neumann
+Geburtsdatum:            17.02.2004
+Erster Arbeitstag:       03.11.2026
+Art der Beschäftigung:   Teilzeit
+Tätigkeit:               Küchenhilfe
+Bezahlung:               Stundenlohn
+Betrag:                  14,50
+Stunden pro Woche:       20
+Steuer-ID:               (fehlt noch – bewusst leer lassen)
+Sozialversicherungsnr.:  (fehlt noch – bewusst leer lassen)
+Krankenkasse:            Testkasse Nord
+IBAN:                    DE86100200300004711007
+
+Nachgereicht in der Rückfrage:
+Steuer-ID:               78912345670

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "AK-N01/N03-pdf",
+    "soll": "Zuordnung und bytegleiches Original in echter IndexedDB, stabil nach Zustandsreload",
+    "ist": "02-miet-und-kostenuebersicht-2025.pdf: Mandat est02, Jahr 2025, Kategorie und Original-ID id20 korrekt; Bytes nach Reload gleich",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-N04",
+    "soll": "Echte Parser, Produktdialog und bytegleicher Originaldownload",
+    "ist": "pdf: echter Parser und gerenderter DateiVorschau-Dialog, erwarteter Inhalt/Schutz und Original-Link geprüft",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-G02-pdf",
+    "soll": "Erneutes Mounten/Ansicht ändern schreibt kein Original",
+    "ist": "ID id20, Bytes und Schreibzähler unverändert; URLs freigegeben",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-N01/N03-docx",
+    "soll": "Zuordnung und bytegleiches Original in echter IndexedDB, stabil nach Zustandsreload",
+    "ist": "02-vermietungsnotiz-2024.docx: Mandat est02, Jahr 2024, Kategorie und Original-ID id21 korrekt; Bytes nach Reload gleich",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-N05",
+    "soll": "Echte Parser, Produktdialog und bytegleicher Originaldownload",
+    "ist": "docx: echter Parser und gerenderter DateiVorschau-Dialog, erwarteter Inhalt/Schutz und Original-Link geprüft",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-G02-docx",
+    "soll": "Erneutes Mounten/Ansicht ändern schreibt kein Original",
+    "ist": "ID id21, Bytes und Schreibzähler unverändert; URLs freigegeben",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-N01/N03-xlsx",
+    "soll": "Zuordnung und bytegleiches Original in echter IndexedDB, stabil nach Zustandsreload",
+    "ist": "02-einnahmen-und-kosten-2025.xlsx: Mandat est02, Jahr 2025, Kategorie und Original-ID id22 korrekt; Bytes nach Reload gleich",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-N06",
+    "soll": "Echte Parser, Produktdialog und bytegleicher Originaldownload",
+    "ist": "xlsx: echter Parser und gerenderter DateiVorschau-Dialog, erwarteter Inhalt/Schutz und Original-Link geprüft",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-G02-xlsx",
+    "soll": "Erneutes Mounten/Ansicht ändern schreibt kein Original",
+    "ist": "ID id22, Bytes und Schreibzähler unverändert; URLs freigegeben",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-R03",
+    "soll": "Kaputte Office-Dateien abgelehnt, fehlendes Original mit verständlichem Hinweis",
+    "ist": "Echte Office-Parser lehnen ungültige Bytes ab; Produktdialog zeigt fehlendes Original ohne Download",
+    "status": "BESTANDEN"
+  },
+  {
+    "id": "AK-R05",
+    "soll": "SIMULIERTE verspätete Ablagelesung überschreibt neue Vorschau nicht; URLs freigegeben",
+    "ist": "Verzögerter Reader gezielt simuliert; echter Vue-Watcher bleibt bei Word, erneutes Öffnen zeigt PDF, URLs aufgeräumt",
+    "status": "BESTANDEN"
+  }
+]

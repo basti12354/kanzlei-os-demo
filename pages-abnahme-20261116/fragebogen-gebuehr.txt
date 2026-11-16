@@ -1,0 +1,172 @@
+- banner:
+  - generic: Kanzlei OS Prototyp
+  - navigation "Perspektive":
+    - link "Kanzlei":
+      - /url: "#heute"
+    - link "Steuerberaterin 2":
+      - /url: "#stb"
+      - text: Steuerberaterin
+      - generic: "2"
+    - link "Mandant":
+      - /url: "#portal"
+  - generic "Demo":
+    - text: Demo
+  - option "schnell"
+  - option "normal" [selected]
+  - option "langsam"
+- paragraph:
+  - strong: Demo · nur Testdaten.
+  - text: Eingaben und Unterlagen bleiben in diesem Browser. Es erfolgt keine Übermittlung an die Kanzlei.
+- main:
+  - navigation "Kanzlei":
+    - link "Übersicht":
+      - /url: "#heute"
+      - generic: Übersicht
+    - link "Mandanten 6":
+      - /url: "#mandanten"
+      - generic: Mandanten
+      - generic: "6"
+    - link "Prozesse 6":
+      - /url: "#prozesse"
+      - generic: Prozesse
+      - generic: "6"
+    - link "Fristen":
+      - /url: "#fristen"
+      - generic: Fristen
+    - link "Abrechnung":
+      - /url: "#abrechnung"
+      - generic: Abrechnung
+    - link "Protokoll":
+      - /url: "#protokoll"
+      - generic: Protokoll
+    - link "Anmerkungen":
+      - /url: "#anmerkungen"
+      - generic: Anmerkungen
+  - heading "Mandanten" [level=1]
+  - paragraph: Wer steht wo – auf einen Blick.
+  - button "Liste"
+  - button "Matrix"
+  - button "Interessent":
+    - text: Interessent
+  - searchbox "Suchen"
+  - button "Alle"
+  - button "Bei Steuerberaterin": Bei Steuerberaterin
+  - button "Beim Mandanten": Beim Mandanten
+  - button "Automatisch": Automatisch
+  - button "Frist ≤ 7 Tage"
+  - 'button "QP QA Pages Vermietung im Onboarding Beauftragen: Auftrag, Verträge, Vollmachten, Unterschrift · Beim Mandanten"':
+    - generic: QP
+    - text: QA Pages Vermietung
+    - generic: im Onboarding
+    - generic: "Beauftragen: Auftrag, Verträge, Vollmachten, Unterschrift · Beim Mandanten"
+  - button "MT Mara Testquell Mandant beantwortet Fragen + lädt Unterlagen hoch · Beim Mandanten":
+    - generic: MT
+    - generic: Mara Testquell
+    - generic: Mandant beantwortet Fragen + lädt Unterlagen hoch · Beim Mandanten
+  - button "JM Jan Musterhain Prüfung + Gestaltung · Bei der Steuerberaterin":
+    - generic: JM
+    - generic: Jan Musterhain
+    - generic: Prüfung + Gestaltung · Bei der Steuerberaterin
+  - button "NP Nele Probefeld Mandant beantwortet Fragen + lädt Unterlagen hoch · Beim Mandanten":
+    - generic: NP
+    - generic: Nele Probefeld
+    - generic: Mandant beantwortet Fragen + lädt Unterlagen hoch · Beim Mandanten
+  - button "LT Leonie Testgarten Mandant beantwortet Fragen + lädt Unterlagen hoch · Beim Mandanten":
+    - generic: LT
+    - generic: Leonie Testgarten
+    - generic: Mandant beantwortet Fragen + lädt Unterlagen hoch · Beim Mandanten
+  - button "PA Pages Abnahme 16.11. Interessent Aufwand prüfen, Gebühr festlegen und Mandat annehmen · Bei der Steuerberaterin":
+    - generic: PA
+    - text: Pages Abnahme 16.11.
+    - generic: Interessent
+    - generic: Aufwand prüfen, Gebühr festlegen und Mandat annehmen · Bei der Steuerberaterin
+  - paragraph:
+    - text: "Punkte = laufende Vorgänge:"
+    - generic: Steuerberaterin
+    - generic: Mandant
+    - generic: automatisch
+- dialog:
+  - button "Pages Abnahme 16.11.":
+    - text: Pages Abnahme 16.11.
+  - button "Fertig"
+  - paragraph: Mandanten-Onboarding
+  - heading "Onboarding" [level=1]
+  - link "Pages Abnahme 16.11.":
+    - /url: "#"
+  - generic "Anfrage über Website/Portal"
+  - 'generic "Fragebogen: Rechtsform, Umfang, Belegvolumen"'
+  - generic "Aufwand auswerten und internen Gebührenvorschlag erstellen"
+  - generic "Aufwand prüfen, Gebühr festlegen und Mandat annehmen"
+  - 'generic "Beauftragen: Auftrag, Verträge, Vollmachten, Unterschrift"'
+  - generic "GwG-Identifizierung per eID"
+  - 'generic "GwG: Risikoeinstufung, PEP, wirtschaftlich Berechtigte"'
+  - generic "Mandant in DATEV + Portal anlegen"
+  - generic "Bankzugang verbinden, Belegpfad einrichten"
+  - generic "Mandat aktiv"
+  - paragraph: Schritt 4 von etwa 10
+  - generic: Bei der Steuerberaterin · gerade eben
+  - heading "Aufwand prüfen, Gebühr festlegen und Mandat annehmen" [level=2]
+  - paragraph: Diese Entscheidung trifft die Steuerberaterin – normalerweise in ihrem Arbeitskorb.
+  - generic: Vor der Entscheidung prüfen
+  - checkbox "Keine Interessenkollision mit bestehenden Mandaten (§ 57 StBerG, Konfliktprüfung)" [checked]
+  - text: Keine Interessenkollision mit bestehenden Mandaten (§ 57 StBerG, Konfliktprüfung)
+  - checkbox "Auftrag liegt im zulässigen Tätigkeitsbereich und kann fachlich übernommen werden" [checked]
+  - text: Auftrag liegt im zulässigen Tätigkeitsbereich und kann fachlich übernommen werden
+  - generic: Aufwand laut Mandantenfragebogen
+  - list:
+    - listitem: Welche Unterlagen aus dem Vorjahr können Sie bereitstellen? Nur Bescheid vorhanden
+    - listitem: Wie sind Ihre Unterlagen vorbereitet? Vollständig und digital sortiert
+  - paragraph: Offene Angaben vor dem Angebot klären. Der Vorschlag bewertet diese Angaben nicht automatisch mit Zuschlägen.
+  - generic: Welchen Satz möchtest du ansetzen?
+  - generic: StBVV-Rahmen 141,90 € – 1.135,20 €
+  - text: "Betrag fein wählen:"
+  - generic: 350,37 € netto pro Jahr
+  - slider "Gebühr netto fein wählen": "350.37"
+  - generic: Minimum 141,90 €
+  - generic: Kanzleitarif 380,00 €
+  - generic: Maximum 1.135,20 €
+  - button "Kanzleitarif 380,00 €":
+    - generic: Kanzleitarif
+    - generic: 380,00 €
+  - button "Mindestsatz 141,90 €":
+    - generic: Mindestsatz
+    - generic: 141,90 €
+  - button "Mittelgebühr 638,55 €":
+    - generic: Mittelgebühr
+    - generic: 638,55 €
+  - button "Höchstsatz 1.135,20 €":
+    - generic: Höchstsatz
+    - generic: 1.135,20 €
+  - button "Eigener Betrag …":
+    - generic: Eigener Betrag
+    - generic: …
+  - text: Betrag netto pro Jahr in €
+  - spinbutton "Betrag netto pro Jahr in €": "350.37"
+  - generic: Gründe nach § 11 StBVV (Pflicht beim gewählten Satz)
+  - checkbox "Umfang der Arbeit" [checked]
+  - text: Umfang der Arbeit
+  - checkbox "Schwierigkeit"
+  - text: Schwierigkeit
+  - checkbox "Bedeutung der Angelegenheit"
+  - text: Bedeutung der Angelegenheit
+  - checkbox "Einkommens- und Vermögensverhältnisse"
+  - text: Einkommens- und Vermögensverhältnisse
+  - checkbox "Haftungsrisiko"
+  - text: Haftungsrisiko
+  - generic: Verwandtschaft oder ob du das Mandat gern machst, zählen nach § 11 nicht. Ein Preisnachlass, etwa für die Familie, ist eine Vergütungsvereinbarung (§§ 4, 4a).
+  - text: Notiz zur Begründung (optional, landet im Protokoll)
+  - textbox "Notiz zur Begründung (optional, landet im Protokoll)" [active]:
+    - /placeholder: z. B. viele Belege, Auslandsbezug
+    - text: "Synthetische Live-Abnahme: digital sortierte Unterlagen, nur Vorjahresbescheid."
+  - paragraph: "Angebot an den Mandanten: 416,94 € inkl. USt pro Jahr (350,37 € netto) – liegt im geschätzten Rahmen."
+  - generic "Berechnung nach StBVV"
+  - button "Ja"
+  - button "Nein"
+  - generic "Ablaufdiagramm"
+  - generic "Verlauf 4":
+    - text: Verlauf
+    - generic: "4"
+  - generic "Anmerkungen zu „Aufwand prüfen, Gebühr festlegen und Mandat annehmen“ 0":
+    - text: Anmerkungen zu „Aufwand prüfen, Gebühr festlegen und Mandat annehmen“
+    - generic: "0"
+  - generic "Erweitert"

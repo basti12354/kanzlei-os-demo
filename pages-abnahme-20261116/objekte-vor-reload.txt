@@ -1,0 +1,767 @@
+- banner:
+  - generic: Kanzlei OS Prototyp
+  - navigation "Perspektive":
+    - link "Kanzlei":
+      - /url: "#heute"
+    - link "Steuerberaterin 1":
+      - /url: "#stb"
+      - text: Steuerberaterin
+      - generic: "1"
+    - link "Mandant":
+      - /url: "#portal"
+  - generic "Demo":
+    - text: Demo
+  - option "schnell"
+  - option "normal" [selected]
+  - option "langsam"
+- paragraph:
+  - strong: Demo · nur Testdaten.
+  - text: Eingaben und Unterlagen bleiben in diesem Browser. Es erfolgt keine Übermittlung an die Kanzlei.
+- main:
+  - paragraph: Arbeitskorb
+  - heading "Guten Tag" [level=1]
+  - paragraph: 1 Entscheidung wartet auf dich. Alles andere läuft automatisch oder liegt beim Mandanten.
+  - button "JM Prüfung + Gestaltung Jan Musterhain · ESt 2025 · seit gestern":
+    - generic: JM
+    - generic: Prüfung + Gestaltung
+    - generic: Jan Musterhain · ESt 2025 · seit gestern
+  - paragraph: "Freigabe gesperrt: 26 Positionen sind noch nicht entschieden (1 fehlt, 8 prüfen, 17 manuell). Bitte im Erklärungsentwurf übernehmen, Wert ändern oder als nicht relevant markieren."
+  - paragraph: "Erklärungsentwurf Version 1: jede Position übernehmen, Wert ändern (mit Begründung) oder als nicht relevant markieren – unter „Alle Details“ → „Erklärungsentwurf“."
+  - list:
+    - text: Unterlagen auf Vollständigkeit prüfen
+    - text: 1 Dateien und 2 Angaben auf Vollständigkeit geprüft · Inhalt prüft die Steuerberaterin
+    - text: Vollständig?
+    - text: "Entscheidung: ja"
+    - text: Entwurf + Vergleich Vorjahr
+    - text: "Entwurf v1 erstellt (Steuerjahr 2025, Rechtsstand 2025) · 34 Positionen, davon 19 zu entscheiden: 10 ok, 1 fehlt, 0 prüfen, 8 manuell · keine Steuerberechnung"
+  - generic "Notiz hinzufügen"
+  - button "An Mandant zur Freigabe" [disabled]
+  - button "Rückfrage an Mandant"
+  - button "Alle Details"
+- dialog:
+  - button "Fertig"
+  - paragraph: Einkommensteuererklärung
+  - heading "ESt 2025" [level=1]
+  - link "Jan Musterhain":
+    - /url: "#"
+  - button "Mandantenakte"
+  - generic: fällig 01.03.2027
+  - 'generic "Jahresstart: Unterlagen-Abfrage im Portal"'
+  - generic "Mandant beantwortet Fragen + lädt Unterlagen hoch"
+  - generic "Datenabruf vorausgefüllte Erklärung"
+  - generic "Unterlagen auf Vollständigkeit prüfen"
+  - generic "Vollständig?"
+  - generic "Entwurf + Vergleich Vorjahr"
+  - generic "Prüfung + Gestaltung"
+  - generic "Freigabe durch Mandant im Portal (§ 87d AO)"
+  - generic "Übermittlung"
+  - paragraph: Schritt 7 von etwa 9
+  - generic: Bei der Steuerberaterin · seit gestern
+  - heading "Prüfung + Gestaltung" [level=2]
+  - paragraph: Diese Entscheidung trifft die Steuerberaterin – normalerweise in ihrem Arbeitskorb.
+  - paragraph: "Freigabe gesperrt: 26 Positionen sind noch nicht entschieden (1 fehlt, 8 prüfen, 17 manuell). Bitte im Erklärungsentwurf übernehmen, Wert ändern oder als nicht relevant markieren."
+  - paragraph: "Erklärungsentwurf Version 1: jede Position übernehmen, Wert ändern (mit Begründung) oder als nicht relevant markieren – unter „Alle Details“ → „Erklärungsentwurf“."
+  - button "An Mandant zur Freigabe" [disabled]
+  - button "Rückfrage an Mandant"
+  - generic "Erklärungsentwurf v1 · 26 offen":
+    - text: Erklärungsentwurf
+    - generic: v1 · 26 offen
+  - paragraph: Version 1 · Rechtsstand 2025 · berechnet 16.11., 15:16
+  - paragraph: "37 Positionen zu entscheiden: 11 ok · 1 fehlt · 8 prüfen · 17 manuell. Keine Steuerberechnung, keine Erstattungsprognose."
+  - paragraph: "Freigabe gesperrt: 26 Positionen sind noch nicht entschieden (1 fehlt, 8 prüfen, 17 manuell). Bitte im Erklärungsentwurf übernehmen, Wert ändern oder als nicht relevant markieren."
+  - button "Neu berechnen"
+  - button "PDFs erneut auslesen"
+  - generic: Erneutes Auslesen aktualisiert die Werte aus gespeicherten Lohnsteuer-PDFs und Vermietungsbelegen (inklusive Scan-OCR im Browser). Entscheidungen bleiben, solange sich der Ausgangswert nicht ändert.
+  - region "Mietobjekte":
+    - heading "Mietobjekte und Belegzuordnung" [level=4]
+    - paragraph: Jede vermietete Einheit erhält eigene Werte, Quellen und Entscheidungen. Belege werden ausdrücklich zugeordnet. Alte Sammelwerte müssen abgeglichen werden.
+    - button "Mietobjekt anlegen"
+    - paragraph:
+      - text: Pages-Test A · Testweg 1, Wohnung A
+      - button "Bearbeiten"
+    - paragraph:
+      - text: Pages-Test B · Testweg 2, Wohnung B
+      - button "Bearbeiten"
+    - paragraph:
+      - text: 2025_Kosten_Vermietung_Musterhain.pdf
+      - combobox "2025_Kosten_Vermietung_Musterhain.pdf":
+        - option "Bitte Mietobjekt auswählen" [disabled]
+        - option "Pages-Test A · Testweg 1, Wohnung A" [selected]
+        - option "Pages-Test B · Testweg 2, Wohnung B"
+  - heading "Hauptvordruck" [level=4]
+  - table:
+    - rowgroup:
+      - row "Position · Quelle Wert Status":
+        - columnheader "Position · Quelle"
+        - columnheader "Wert"
+        - columnheader "Status"
+    - rowgroup:
+      - 'row "Familienstand: ledig Persönliche Angaben Mandant · Antworten: partner, frueherVerheiratet, trennung, verwitwet Aus den Ja/Nein-Antworten abgeleitet. – ok Bestätigen Wert ändern Nicht relevant"':
+        - 'cell "Familienstand: ledig Persönliche Angaben Mandant · Antworten: partner, frueherVerheiratet, trennung, verwitwet Aus den Ja/Nein-Antworten abgeleitet."':
+          - text: "Familienstand: ledig"
+          - generic: Persönliche Angaben
+          - generic: "Mandant · Antworten: partner, frueherVerheiratet, trennung, verwitwet"
+          - generic: Aus den Ja/Nein-Antworten abgeleitet.
+        - cell "–"
+        - cell "ok Bestätigen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Bestätigen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+  - heading "Anlage N" [level=4]
+  - table:
+    - rowgroup:
+      - row "Position · Quelle Wert Status":
+        - columnheader "Position · Quelle"
+        - columnheader "Wert"
+        - columnheader "Status"
+    - rowgroup:
+      - row "Bruttoarbeitslohn (Nr. 3) Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1) PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „3. Bruttoarbeitslohn einschl. Sachbezüge 62.400,00“ 62.400,00 € ok Übernehmen Wert ändern Nicht relevant":
+        - cell "Bruttoarbeitslohn (Nr. 3) Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1) PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „3. Bruttoarbeitslohn einschl. Sachbezüge 62.400,00“":
+          - text: Bruttoarbeitslohn (Nr. 3)
+          - generic: Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1)
+          - text: PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/eb14a9f2-4450-49dc-a106-9256a3c16962#page=1
+          - text: · „3. Bruttoarbeitslohn einschl. Sachbezüge 62.400,00“
+        - cell "62.400,00 €"
+        - cell "ok Übernehmen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Einbehaltene Lohnsteuer (Nr. 4) Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1) PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „4. Einbehaltene Lohnsteuer von 3. 9.658,18“ 9.658,18 € ok Übernehmen Wert ändern Nicht relevant":
+        - cell "Einbehaltene Lohnsteuer (Nr. 4) Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1) PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „4. Einbehaltene Lohnsteuer von 3. 9.658,18“":
+          - text: Einbehaltene Lohnsteuer (Nr. 4)
+          - generic: Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1)
+          - text: PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/eb14a9f2-4450-49dc-a106-9256a3c16962#page=1
+          - text: · „4. Einbehaltene Lohnsteuer von 3. 9.658,18“
+        - cell "9.658,18 €"
+        - cell "ok Übernehmen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Einbehaltener Solidaritätszuschlag (Nr. 5) Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1) PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „5. Einbehaltener Solidaritätszuschlag von 3. 0,00“ 0,00 € ok Übernehmen Wert ändern Nicht relevant":
+        - cell "Einbehaltener Solidaritätszuschlag (Nr. 5) Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1) PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „5. Einbehaltener Solidaritätszuschlag von 3. 0,00“":
+          - text: Einbehaltener Solidaritätszuschlag (Nr. 5)
+          - generic: Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1)
+          - text: PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/eb14a9f2-4450-49dc-a106-9256a3c16962#page=1
+          - text: · „5. Einbehaltener Solidaritätszuschlag von 3. 0,00“
+        - cell "0,00 €"
+        - cell "ok Übernehmen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Einbehaltene Kirchensteuer (Nr. 6) Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1) PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „6. Einbehaltene Kirchensteuer des Arbeitnehmers von 3. 869,24“ 869,24 € ok Übernehmen Wert ändern Nicht relevant":
+        - cell "Einbehaltene Kirchensteuer (Nr. 6) Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1) PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „6. Einbehaltene Kirchensteuer des Arbeitnehmers von 3. 869,24“":
+          - text: Einbehaltene Kirchensteuer (Nr. 6)
+          - generic: Arbeitslohn – Fiktivwerk Süd GmbH (Bescheinigung 1)
+          - text: PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/eb14a9f2-4450-49dc-a106-9256a3c16962#page=1
+          - text: · „6. Einbehaltene Kirchensteuer des Arbeitnehmers von 3. 869,24“
+        - cell "869,24 €"
+        - cell "ok Übernehmen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Summe Bruttoarbeitslohn (alle Bescheinigungen) Arbeitslohn – Summe Berechnet: 62.400,00 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?). 62.400,00 € ok"':
+        - 'cell "Summe Bruttoarbeitslohn (alle Bescheinigungen) Arbeitslohn – Summe Berechnet: 62.400,00 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?)."':
+          - text: Summe Bruttoarbeitslohn (alle Bescheinigungen)
+          - generic: Arbeitslohn – Summe
+          - generic: "Berechnet: 62.400,00 €"
+          - generic: Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?).
+        - cell "62.400,00 €"
+        - cell "ok":
+          - generic: ok
+      - 'row "Summe einbehaltene Lohnsteuer (alle Bescheinigungen) Arbeitslohn – Summe Berechnet: 9.658,18 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?). 9.658,18 € ok"':
+        - 'cell "Summe einbehaltene Lohnsteuer (alle Bescheinigungen) Arbeitslohn – Summe Berechnet: 9.658,18 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?)."':
+          - text: Summe einbehaltene Lohnsteuer (alle Bescheinigungen)
+          - generic: Arbeitslohn – Summe
+          - generic: "Berechnet: 9.658,18 €"
+          - generic: Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?).
+        - cell "9.658,18 €"
+        - cell "ok":
+          - generic: ok
+      - 'row "Summe Einbehaltener Solidaritätszuschlag (Nr. 5) Arbeitslohn – Summe Berechnet: 0,00 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?). 0,00 € ok"':
+        - 'cell "Summe Einbehaltener Solidaritätszuschlag (Nr. 5) Arbeitslohn – Summe Berechnet: 0,00 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?)."':
+          - text: Summe Einbehaltener Solidaritätszuschlag (Nr. 5)
+          - generic: Arbeitslohn – Summe
+          - generic: "Berechnet: 0,00 €"
+          - generic: Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?).
+        - cell "0,00 €"
+        - cell "ok":
+          - generic: ok
+      - 'row "Summe Einbehaltene Kirchensteuer (Nr. 6) Arbeitslohn – Summe Berechnet: 869,24 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?). 869,24 € ok"':
+        - 'cell "Summe Einbehaltene Kirchensteuer (Nr. 6) Arbeitslohn – Summe Berechnet: 869,24 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?)."':
+          - text: Summe Einbehaltene Kirchensteuer (Nr. 6)
+          - generic: Arbeitslohn – Summe
+          - generic: "Berechnet: 869,24 €"
+          - generic: Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?).
+        - cell "869,24 €"
+        - cell "ok":
+          - generic: ok
+      - 'row "Summe der Werbungskosten (Einzelnachweis) Werbungskosten – Vergleich Berechnet: keine Werbungskosten mit Betrag 0,00 € ok"':
+        - 'cell "Summe der Werbungskosten (Einzelnachweis) Werbungskosten – Vergleich Berechnet: keine Werbungskosten mit Betrag"':
+          - text: Summe der Werbungskosten (Einzelnachweis)
+          - generic: Werbungskosten – Vergleich
+          - generic: "Berechnet: keine Werbungskosten mit Betrag"
+        - cell "0,00 €"
+        - cell "ok":
+          - generic: ok
+      - row "Arbeitnehmer-Pauschbetrag Werbungskosten – Vergleich § 9a Satz 1 Nr. 1 Buchst. a EStG Einmal je Person, auch bei mehreren Arbeitgebern. 1.230,00 € ok":
+        - cell "Arbeitnehmer-Pauschbetrag Werbungskosten – Vergleich § 9a Satz 1 Nr. 1 Buchst. a EStG Einmal je Person, auch bei mehreren Arbeitgebern.":
+          - text: Arbeitnehmer-Pauschbetrag
+          - generic: Werbungskosten – Vergleich
+          - generic: § 9a Satz 1 Nr. 1 Buchst. a EStG
+          - generic: Einmal je Person, auch bei mehreren Arbeitgebern.
+        - cell "1.230,00 €"
+        - cell "ok":
+          - generic: ok
+      - 'row "Voraussichtlich angesetzt Werbungskosten – Vergleich Berechnet: max(0,00 €; 1.230,00 €) Pauschbetrag: Werbungskosten liegen 1.230,00 € darunter. 1.230,00 € ok"':
+        - 'cell "Voraussichtlich angesetzt Werbungskosten – Vergleich Berechnet: max(0,00 €; 1.230,00 €) Pauschbetrag: Werbungskosten liegen 1.230,00 € darunter."':
+          - text: Voraussichtlich angesetzt
+          - generic: Werbungskosten – Vergleich
+          - generic: "Berechnet: max(0,00 €; 1.230,00 €)"
+          - generic: "Pauschbetrag: Werbungskosten liegen 1.230,00 € darunter."
+        - cell "1.230,00 €"
+        - cell "ok":
+          - generic: ok
+  - heading "Anlage Vorsorgeaufwand" [level=4]
+  - table:
+    - rowgroup:
+      - row "Position · Quelle Wert Status":
+        - columnheader "Position · Quelle"
+        - columnheader "Wert"
+        - columnheader "Status"
+    - rowgroup:
+      - row "Arbeitgeberanteil Rentenversicherung (Nr. 22a) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „22a. Arbeitgeberanteil zur gesetzlichen Rentenversicherung 5.803,20“ 5.803,20 € ok Übernehmen Wert ändern Nicht relevant":
+        - cell "Arbeitgeberanteil Rentenversicherung (Nr. 22a) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „22a. Arbeitgeberanteil zur gesetzlichen Rentenversicherung 5.803,20“":
+          - text: Arbeitgeberanteil Rentenversicherung (Nr. 22a)
+          - generic: Vorsorgeaufwand – Fiktivwerk Süd GmbH
+          - text: PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/eb14a9f2-4450-49dc-a106-9256a3c16962#page=1
+          - text: · „22a. Arbeitgeberanteil zur gesetzlichen Rentenversicherung 5.803,20“
+        - cell "5.803,20 €"
+        - cell "ok Übernehmen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Arbeitnehmeranteil Rentenversicherung (Nr. 23a) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „23a. Arbeitnehmeranteil zur gesetzlichen Rentenversicherung 5.803,20“ 5.803,20 € ok Übernehmen Wert ändern Nicht relevant":
+        - cell "Arbeitnehmeranteil Rentenversicherung (Nr. 23a) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „23a. Arbeitnehmeranteil zur gesetzlichen Rentenversicherung 5.803,20“":
+          - text: Arbeitnehmeranteil Rentenversicherung (Nr. 23a)
+          - generic: Vorsorgeaufwand – Fiktivwerk Süd GmbH
+          - text: PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/eb14a9f2-4450-49dc-a106-9256a3c16962#page=1
+          - text: · „23a. Arbeitnehmeranteil zur gesetzlichen Rentenversicherung 5.803,20“
+        - cell "5.803,20 €"
+        - cell "ok Übernehmen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Arbeitnehmerbeiträge Krankenversicherung (Nr. 25) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „25. Arbeitnehmerbeiträge zur gesetzlichen Krankenversicherung 5.335,20“ 5.335,20 € ok Übernehmen Wert ändern Nicht relevant":
+        - cell "Arbeitnehmerbeiträge Krankenversicherung (Nr. 25) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „25. Arbeitnehmerbeiträge zur gesetzlichen Krankenversicherung 5.335,20“":
+          - text: Arbeitnehmerbeiträge Krankenversicherung (Nr. 25)
+          - generic: Vorsorgeaufwand – Fiktivwerk Süd GmbH
+          - text: PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/eb14a9f2-4450-49dc-a106-9256a3c16962#page=1
+          - text: · „25. Arbeitnehmerbeiträge zur gesetzlichen Krankenversicherung 5.335,20“
+        - cell "5.335,20 €"
+        - cell "ok Übernehmen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Arbeitnehmerbeiträge Pflegeversicherung (Nr. 26) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „26. Arbeitnehmerbeiträge zur sozialen Pflegeversicherung 1.310,40“ 1.310,40 € ok Übernehmen Wert ändern Nicht relevant":
+        - cell "Arbeitnehmerbeiträge Pflegeversicherung (Nr. 26) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „26. Arbeitnehmerbeiträge zur sozialen Pflegeversicherung 1.310,40“":
+          - text: Arbeitnehmerbeiträge Pflegeversicherung (Nr. 26)
+          - generic: Vorsorgeaufwand – Fiktivwerk Süd GmbH
+          - text: PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/eb14a9f2-4450-49dc-a106-9256a3c16962#page=1
+          - text: · „26. Arbeitnehmerbeiträge zur sozialen Pflegeversicherung 1.310,40“
+        - cell "1.310,40 €"
+        - cell "ok Übernehmen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Arbeitnehmerbeiträge Arbeitslosenversicherung (Nr. 27) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „27. Arbeitnehmerbeiträge zur Arbeitslosenversicherung 811,20“ 811,20 € ok Übernehmen Wert ändern Nicht relevant":
+        - cell "Arbeitnehmerbeiträge Arbeitslosenversicherung (Nr. 27) Vorsorgeaufwand – Fiktivwerk Süd GmbH PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf · Seite 1 · „27. Arbeitnehmerbeiträge zur Arbeitslosenversicherung 811,20“":
+          - text: Arbeitnehmerbeiträge Arbeitslosenversicherung (Nr. 27)
+          - generic: Vorsorgeaufwand – Fiktivwerk Süd GmbH
+          - text: PDF 2025_Lohnsteuerbescheinigung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/eb14a9f2-4450-49dc-a106-9256a3c16962#page=1
+          - text: · „27. Arbeitnehmerbeiträge zur Arbeitslosenversicherung 811,20“
+        - cell "811,20 €"
+        - cell "ok Übernehmen Wert ändern Nicht relevant":
+          - generic: ok
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Summe Arbeitgeberanteil Rentenversicherung (Nr. 22a) Vorsorgeaufwand – Summe Berechnet: 5.803,20 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?). 5.803,20 € ok"':
+        - 'cell "Summe Arbeitgeberanteil Rentenversicherung (Nr. 22a) Vorsorgeaufwand – Summe Berechnet: 5.803,20 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?)."':
+          - text: Summe Arbeitgeberanteil Rentenversicherung (Nr. 22a)
+          - generic: Vorsorgeaufwand – Summe
+          - generic: "Berechnet: 5.803,20 €"
+          - generic: Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?).
+        - cell "5.803,20 €"
+        - cell "ok":
+          - generic: ok
+      - 'row "Summe Arbeitnehmeranteil Rentenversicherung (Nr. 23a) Vorsorgeaufwand – Summe Berechnet: 5.803,20 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?). 5.803,20 € ok"':
+        - 'cell "Summe Arbeitnehmeranteil Rentenversicherung (Nr. 23a) Vorsorgeaufwand – Summe Berechnet: 5.803,20 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?)."':
+          - text: Summe Arbeitnehmeranteil Rentenversicherung (Nr. 23a)
+          - generic: Vorsorgeaufwand – Summe
+          - generic: "Berechnet: 5.803,20 €"
+          - generic: Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?).
+        - cell "5.803,20 €"
+        - cell "ok":
+          - generic: ok
+      - 'row "Summe Arbeitnehmerbeiträge Krankenversicherung (Nr. 25) Vorsorgeaufwand – Summe Berechnet: 5.335,20 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?). 5.335,20 € ok"':
+        - 'cell "Summe Arbeitnehmerbeiträge Krankenversicherung (Nr. 25) Vorsorgeaufwand – Summe Berechnet: 5.335,20 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?)."':
+          - text: Summe Arbeitnehmerbeiträge Krankenversicherung (Nr. 25)
+          - generic: Vorsorgeaufwand – Summe
+          - generic: "Berechnet: 5.335,20 €"
+          - generic: Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?).
+        - cell "5.335,20 €"
+        - cell "ok":
+          - generic: ok
+      - 'row "Summe Arbeitnehmerbeiträge Pflegeversicherung (Nr. 26) Vorsorgeaufwand – Summe Berechnet: 1.310,40 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?). 1.310,40 € ok"':
+        - 'cell "Summe Arbeitnehmerbeiträge Pflegeversicherung (Nr. 26) Vorsorgeaufwand – Summe Berechnet: 1.310,40 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?)."':
+          - text: Summe Arbeitnehmerbeiträge Pflegeversicherung (Nr. 26)
+          - generic: Vorsorgeaufwand – Summe
+          - generic: "Berechnet: 1.310,40 €"
+          - generic: Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?).
+        - cell "1.310,40 €"
+        - cell "ok":
+          - generic: ok
+      - 'row "Summe Arbeitnehmerbeiträge Arbeitslosenversicherung (Nr. 27) Vorsorgeaufwand – Summe Berechnet: 811,20 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?). 811,20 € ok"':
+        - 'cell "Summe Arbeitnehmerbeiträge Arbeitslosenversicherung (Nr. 27) Vorsorgeaufwand – Summe Berechnet: 811,20 € Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?)."':
+          - text: Summe Arbeitnehmerbeiträge Arbeitslosenversicherung (Nr. 27)
+          - generic: Vorsorgeaufwand – Summe
+          - generic: "Berechnet: 811,20 €"
+          - generic: Mit dem Datenabruf beim Finanzamt abgleichen (weitere Arbeitgeber?).
+        - cell "811,20 €"
+        - cell "ok":
+          - generic: ok
+  - heading "Anlage V" [level=4]
+  - paragraph: PDF-Text und gescannte Vermietungsbelege werden automatisch ausgelesen. Erkannte Beträge mit Quelle bestätigen; unklare Beträge bleiben zur Erfassung offen. OCR läuft auf diesem Gerät. Einnahmen und Kosten getrennt erfassen. Betriebskosten enthalten zum Beispiel Grundsteuer, Gebäudeversicherung und umlagefähige Kosten. Verwaltung und Reparaturen nur zusätzlich erfassen, soweit sie dort noch nicht enthalten sind. Hausgeldzahlungen und Rücklagen sind nicht pauschal Werbungskosten. Belegjahr und steuerliche Zuordnung bitte prüfen. Belege mehrerer Objekte bitte getrennt hochladen und oben dem jeweiligen Mietobjekt zuordnen.
+  - table:
+    - rowgroup:
+      - row "Position · Quelle Wert Status":
+        - columnheader "Position · Quelle"
+        - columnheader "Wert"
+        - columnheader "Status"
+    - rowgroup:
+      - row "Kaltmiete Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Kaltmiete 10.800,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 10.800,00 € ok übernommen · 16.11., 15:16 Wert ändern Nicht relevant Zurücknehmen":
+        - cell "Kaltmiete Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Kaltmiete 10.800,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Kaltmiete
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - text: PDF 2025_Kosten_Vermietung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/7ffb7737-8be9-4221-b804-4f8839318365#page=1
+          - text: · „Kaltmiete 10.800,00 EUR“
+          - generic: Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "10.800,00 €"
+        - cell "ok übernommen · 16.11., 15:16 Wert ändern Nicht relevant Zurücknehmen":
+          - generic: ok
+          - generic: übernommen · 16.11., 15:16
+          - button "Wert ändern"
+          - button "Nicht relevant"
+          - button "Zurücknehmen"
+      - row "Nebenkostenvorauszahlungen Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Nebenkostenvorauszahlungen 2.160,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 2.160,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Nebenkostenvorauszahlungen Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Nebenkostenvorauszahlungen 2.160,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Nebenkostenvorauszahlungen
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - text: PDF 2025_Kosten_Vermietung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/7ffb7737-8be9-4221-b804-4f8839318365#page=1
+          - text: · „Nebenkostenvorauszahlungen 2.160,00 EUR“
+          - generic: Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "2.160,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Betriebskosten Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Betriebskosten 2.310,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 2.310,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Betriebskosten Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Betriebskosten 2.310,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Betriebskosten
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - text: PDF 2025_Kosten_Vermietung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/7ffb7737-8be9-4221-b804-4f8839318365#page=1
+          - text: · „Betriebskosten 2.310,00 EUR“
+          - generic: Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "2.310,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Erhaltungsaufwand Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Erhaltungsaufwand 780,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 780,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Erhaltungsaufwand Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Erhaltungsaufwand 780,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Erhaltungsaufwand
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - text: PDF 2025_Kosten_Vermietung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/7ffb7737-8be9-4221-b804-4f8839318365#page=1
+          - text: · „Erhaltungsaufwand 780,00 EUR“
+          - generic: Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "780,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Schuldzinsen Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Schuldzinsen 1.650,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 1.650,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Schuldzinsen Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Schuldzinsen 1.650,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Schuldzinsen
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - text: PDF 2025_Kosten_Vermietung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/7ffb7737-8be9-4221-b804-4f8839318365#page=1
+          - text: · „Schuldzinsen 1.650,00 EUR“
+          - generic: Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "1.650,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Nebenkostenerstattung 120,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. -120,00 € prüfen Übernehmen Wert ändern Nicht relevant"':
+        - 'cell "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Nebenkostenerstattung 120,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen."':
+          - text: "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter"
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - text: PDF 2025_Kosten_Vermietung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/7ffb7737-8be9-4221-b804-4f8839318365#page=1
+          - text: · „Nebenkostenerstattung 120,00 EUR“
+          - generic: Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "-120,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Hausverwaltung und sonstige Verwaltungskosten Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Verwaltungskosten 240,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 240,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Hausverwaltung und sonstige Verwaltungskosten Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Verwaltungskosten 240,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Hausverwaltung und sonstige Verwaltungskosten
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - text: PDF 2025_Kosten_Vermietung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/7ffb7737-8be9-4221-b804-4f8839318365#page=1
+          - text: · „Verwaltungskosten 240,00 EUR“
+          - generic: Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "240,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Sonstige Werbungskosten der Vermietung Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Sonstige Werbungskosten 85,50 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 85,50 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Sonstige Werbungskosten der Vermietung Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Sonstige Werbungskosten 85,50 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Sonstige Werbungskosten der Vermietung
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - text: PDF 2025_Kosten_Vermietung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/7ffb7737-8be9-4221-b804-4f8839318365#page=1
+          - text: · „Sonstige Werbungskosten 85,50 EUR“
+          - generic: Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "85,50 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - row "Abschreibung (AfA) Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Jahres-AfA 2.400,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen. 2.400,00 € prüfen Übernehmen Wert ändern Nicht relevant":
+        - cell "Abschreibung (AfA) Pages-Test A · Testweg 1, Wohnung A PDF 2025_Kosten_Vermietung_Musterhain.pdf · Seite 1 · „Jahres-AfA 2.400,00 EUR“ Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.":
+          - text: Abschreibung (AfA)
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - text: PDF 2025_Kosten_Vermietung_Musterhain.pdf
+          - link "· Seite 1":
+            - /url: blob:https://basti12354.github.io/7ffb7737-8be9-4221-b804-4f8839318365#page=1
+          - text: · „Jahres-AfA 2.400,00 EUR“
+          - generic: Per OCR aus einer Übersicht gelesen – bitte am Original prüfen. Jahreszuordnung, Mietobjekt und mögliche Doppelzählungen bestätigen.
+        - cell "2.400,00 €"
+        - cell "prüfen Übernehmen Wert ändern Nicht relevant":
+          - generic: prüfen
+          - button "Übernehmen"
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Kaltmiete Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Kaltmiete Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Kaltmiete
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Nebenkostenvorauszahlungen Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Nebenkostenvorauszahlungen Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Nebenkostenvorauszahlungen
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Betriebskosten Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Betriebskosten Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Betriebskosten
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Erhaltungsaufwand Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Erhaltungsaufwand Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Erhaltungsaufwand
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Schuldzinsen Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Schuldzinsen Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Schuldzinsen
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: "Nebenkostenabrechnung: Nachzahlungen / Erstattungen an Mieter"
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Hausverwaltung und sonstige Verwaltungskosten Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Hausverwaltung und sonstige Verwaltungskosten Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Hausverwaltung und sonstige Verwaltungskosten
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Sonstige Werbungskosten der Vermietung Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen. – manuell Wert ändern Nicht relevant"':
+        - 'cell "Sonstige Werbungskosten der Vermietung Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen."':
+          - text: Sonstige Werbungskosten der Vermietung
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch"
+          - generic: Kein eindeutiger Betrag gefunden. Bitte prüfen und bei Bedarf erfassen.
+        - cell "–"
+        - cell "manuell Wert ändern Nicht relevant":
+          - generic: manuell
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Abschreibung (AfA) Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Für die Abschreibung fehlen Angaben aus dem Kaufvertrag sowie Baujahr und Gebäudeanteil oder ein belegter AfA-Jahresbetrag. – fehlt Wert ändern Nicht relevant"':
+        - 'cell "Abschreibung (AfA) Pages-Test B · Testweg 2, Wohnung B miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch Für die Abschreibung fehlen Angaben aus dem Kaufvertrag sowie Baujahr und Gebäudeanteil oder ein belegter AfA-Jahresbetrag."':
+          - text: Abschreibung (AfA)
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "miete: Fehlt noch · vm_kosten: Fehlt noch · darlehen: Fehlt noch · kaufvertrag: Fehlt noch"
+          - generic: Für die Abschreibung fehlen Angaben aus dem Kaufvertrag sowie Baujahr und Gebäudeanteil oder ein belegter AfA-Jahresbetrag.
+        - cell "–"
+        - cell "fehlt Wert ändern Nicht relevant":
+          - generic: fehlt
+          - button "Wert ändern"
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.kaltmiete Altdaten abgleichen Mandant: V.kaltmiete = „10.800,00 € · uebernehmen“ Historischer Wert 10.800,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.kaltmiete Altdaten abgleichen Mandant: V.kaltmiete = „10.800,00 € · uebernehmen“ Historischer Wert 10.800,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.kaltmiete
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.kaltmiete = „10.800,00 € · uebernehmen“"
+          - generic: Historischer Wert 10.800,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.umlagen Altdaten abgleichen Mandant: V.umlagen = „2.160,00 € · uebernehmen“ Historischer Wert 2.160,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.umlagen Altdaten abgleichen Mandant: V.umlagen = „2.160,00 € · uebernehmen“ Historischer Wert 2.160,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.umlagen
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.umlagen = „2.160,00 € · uebernehmen“"
+          - generic: Historischer Wert 2.160,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.betriebskosten Altdaten abgleichen Mandant: V.betriebskosten = „2.310,00 € · uebernehmen“ Historischer Wert 2.310,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.betriebskosten Altdaten abgleichen Mandant: V.betriebskosten = „2.310,00 € · uebernehmen“ Historischer Wert 2.310,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.betriebskosten
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.betriebskosten = „2.310,00 € · uebernehmen“"
+          - generic: Historischer Wert 2.310,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.erhaltung Altdaten abgleichen Mandant: V.erhaltung = „780,00 € · uebernehmen“ Historischer Wert 780,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.erhaltung Altdaten abgleichen Mandant: V.erhaltung = „780,00 € · uebernehmen“ Historischer Wert 780,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.erhaltung
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.erhaltung = „780,00 € · uebernehmen“"
+          - generic: Historischer Wert 780,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.schuldzinsen Altdaten abgleichen Mandant: V.schuldzinsen = „1.650,00 € · uebernehmen“ Historischer Wert 1.650,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.schuldzinsen Altdaten abgleichen Mandant: V.schuldzinsen = „1.650,00 € · uebernehmen“ Historischer Wert 1.650,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.schuldzinsen
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.schuldzinsen = „1.650,00 € · uebernehmen“"
+          - generic: Historischer Wert 1.650,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.nachzahlung Altdaten abgleichen Mandant: V.nachzahlung = „-120,00 € · uebernehmen“ Historischer Wert -120,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.nachzahlung Altdaten abgleichen Mandant: V.nachzahlung = „-120,00 € · uebernehmen“ Historischer Wert -120,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.nachzahlung
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.nachzahlung = „-120,00 € · uebernehmen“"
+          - generic: Historischer Wert -120,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.verwaltung Altdaten abgleichen Mandant: V.verwaltung = „240,00 € · uebernehmen“ Historischer Wert 240,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.verwaltung Altdaten abgleichen Mandant: V.verwaltung = „240,00 € · uebernehmen“ Historischer Wert 240,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.verwaltung
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.verwaltung = „240,00 € · uebernehmen“"
+          - generic: Historischer Wert 240,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.sonstige Altdaten abgleichen Mandant: V.sonstige = „85,50 € · uebernehmen“ Historischer Wert 85,50 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.sonstige Altdaten abgleichen Mandant: V.sonstige = „85,50 € · uebernehmen“ Historischer Wert 85,50 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.sonstige
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.sonstige = „85,50 € · uebernehmen“"
+          - generic: Historischer Wert 85,50 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Bisheriger Sammelwert V.afa Altdaten abgleichen Mandant: V.afa = „2.400,00 € · uebernehmen“ Historischer Wert 2.400,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren. – manuell Nicht relevant"':
+        - 'cell "Bisheriger Sammelwert V.afa Altdaten abgleichen Mandant: V.afa = „2.400,00 € · uebernehmen“ Historischer Wert 2.400,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren."':
+          - text: Bisheriger Sammelwert V.afa
+          - generic: Altdaten abgleichen
+          - generic: "Mandant: V.afa = „2.400,00 € · uebernehmen“"
+          - generic: Historischer Wert 2.400,00 €. Keine automatische Aufteilung. In den richtigen Objekten erfassen und den Abgleich begründet als nicht relevant markieren.
+        - cell "–"
+        - cell "manuell Nicht relevant":
+          - generic: manuell
+          - button "Nicht relevant"
+      - 'row "Summe Einnahmen Pages-Test A · Testweg 1, Wohnung A Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Summe Einnahmen Pages-Test A · Testweg 1, Wohnung A Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Summe Einnahmen
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - generic: "Berechnet: Summe bestätigter Einzelpositionen"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Summe Werbungskosten einschließlich AfA Pages-Test A · Testweg 1, Wohnung A Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Summe Werbungskosten einschließlich AfA Pages-Test A · Testweg 1, Wohnung A Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Summe Werbungskosten einschließlich AfA
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - generic: "Berechnet: Summe bestätigter Einzelpositionen"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Überschuss / Verlust aus Vermietung Pages-Test A · Testweg 1, Wohnung A Berechnet: Einnahmen − Werbungskosten Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Überschuss / Verlust aus Vermietung Pages-Test A · Testweg 1, Wohnung A Berechnet: Einnahmen − Werbungskosten Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Überschuss / Verlust aus Vermietung
+          - generic: Pages-Test A · Testweg 1, Wohnung A
+          - generic: "Berechnet: Einnahmen − Werbungskosten"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Summe Einnahmen Pages-Test B · Testweg 2, Wohnung B Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Summe Einnahmen Pages-Test B · Testweg 2, Wohnung B Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Summe Einnahmen
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "Berechnet: Summe bestätigter Einzelpositionen"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Summe Werbungskosten einschließlich AfA Pages-Test B · Testweg 2, Wohnung B Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Summe Werbungskosten einschließlich AfA Pages-Test B · Testweg 2, Wohnung B Berechnet: Summe bestätigter Einzelpositionen Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Summe Werbungskosten einschließlich AfA
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "Berechnet: Summe bestätigter Einzelpositionen"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Überschuss / Verlust aus Vermietung Pages-Test B · Testweg 2, Wohnung B Berechnet: Einnahmen − Werbungskosten Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind. – prüfen"':
+        - 'cell "Überschuss / Verlust aus Vermietung Pages-Test B · Testweg 2, Wohnung B Berechnet: Einnahmen − Werbungskosten Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind."':
+          - text: Überschuss / Verlust aus Vermietung
+          - generic: Pages-Test B · Testweg 2, Wohnung B
+          - generic: "Berechnet: Einnahmen − Werbungskosten"
+          - generic: Erst verfügbar, wenn alle zugehörigen Einzelpositionen entschieden sind.
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+      - 'row "Gesamter Überschuss / Verlust Alle Mietobjekte Berechnet: Summe der geprüften Objektergebnisse – prüfen"':
+        - 'cell "Gesamter Überschuss / Verlust Alle Mietobjekte Berechnet: Summe der geprüften Objektergebnisse"':
+          - text: Gesamter Überschuss / Verlust
+          - generic: Alle Mietobjekte
+          - generic: "Berechnet: Summe der geprüften Objektergebnisse"
+        - cell "–"
+        - cell "prüfen":
+          - generic: prüfen
+  - generic "Unterlagen 2/3":
+    - text: Unterlagen
+    - generic: 2/3
+  - generic "Ablaufdiagramm"
+  - generic "Verlauf 7":
+    - text: Verlauf
+    - generic: "7"
+  - generic "Anmerkungen zu „Prüfung + Gestaltung“ 0":
+    - text: Anmerkungen zu „Prüfung + Gestaltung“
+    - generic: "0"
+  - generic "Erweitert"
+- generic: Übernommen
