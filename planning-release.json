@@ -1,15 +1,15 @@
 {
   "release": "2026-11-16-firestore-entscheidungen",
-  "sourceCommit": "6c70f76f4df115552a7a2143a4191efd01ff78e5",
+  "sourceCommit": "7f6abfb76d56a1f741ca85baacd6e524fefa3035",
   "scope": "Planning documents only; application build unchanged",
   "publicationVerification": "See GitHub Pages deployment and separate live verification",
   "localTasksAccepted": 22,
   "newLocalTasksOpen": 4,
   "platformProvisioned": false,
   "files": {
-    "go-live-prozessuebersicht.html": "357bb5c1c2213c92d9f4a8682896e4b3dc130efe16408feb001f24ee78fad627",
+    "go-live-prozessuebersicht.html": "bfa2a11ce10eaeeee3d749ca4b406317f191672a4e76fabf05d5d97a7b86849e",
     "architektur.html": "9a8ec07a01b5f9a51dabdec34d1f92f59c2a8f22e2028e8524ace6bb0cf59e1e",
-    "plattformentscheidungen.html": "9fb1e37f3f9f87748571d836028c402158ed4f8a13bc56710449c6492909c453",
+    "plattformentscheidungen.html": "538f2aff23cb3dfb9ca566691d8bd92845dc38b5a2ad42b3555c465500056ade",
     "firestore-pilot-architektur.svg": "22c2f1d19a15bd3bf6827f3d44db3ebc47447f50c7c97e7b4a744efe13e77cc9"
   }
 }
