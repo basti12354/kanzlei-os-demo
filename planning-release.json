@@ -1,15 +1,16 @@
 {
   "release": "2026-11-16-firestore-entscheidungen",
-  "sourceCommit": "7f6abfb76d56a1f741ca85baacd6e524fefa3035",
+  "sourceCommit": "bf9360cdff39eeef904d4adede0624da5ebb6330",
   "scope": "Planning documents only; application build unchanged",
   "publicationVerification": "See GitHub Pages deployment and separate live verification",
   "localTasksAccepted": 22,
   "newLocalTasksOpen": 4,
   "platformProvisioned": false,
   "files": {
-    "go-live-prozessuebersicht.html": "bfa2a11ce10eaeeee3d749ca4b406317f191672a4e76fabf05d5d97a7b86849e",
-    "architektur.html": "9a8ec07a01b5f9a51dabdec34d1f92f59c2a8f22e2028e8524ace6bb0cf59e1e",
-    "plattformentscheidungen.html": "538f2aff23cb3dfb9ca566691d8bd92845dc38b5a2ad42b3555c465500056ade",
+    "go-live-prozessuebersicht.html": "c8cc9d69680fe5fae4b5fd3ecffd74c3b6f6cef8bdc97c1d006eda0bec5d1c99",
+    "architektur.html": "e9f4b65bd8a0ae7ebf80cd60db84d80ec4c8d7ee6ed430069c883e2dc377cc83",
+    "plattformentscheidungen.html": "303c35d54fef2eb7cb3e314ab3ac88c9ea645b474e3c76d8c83118feb2e3e5b4",
+    "container-prototyp.html": "2877827ca217bc95f9b2a49dc366bf76e0bf9127a875690ecd85d870e2bf0ded",
     "firestore-pilot-architektur.svg": "22c2f1d19a15bd3bf6827f3d44db3ebc47447f50c7c97e7b4a744efe13e77cc9"
   }
 }
